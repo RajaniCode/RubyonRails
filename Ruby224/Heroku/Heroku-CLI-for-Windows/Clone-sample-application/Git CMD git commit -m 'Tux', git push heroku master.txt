@@ -1,0 +1,120 @@
+C:\Users\Aspire>e:
+
+E:\>cd E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku login
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Enter your Heroku credentials.
+Email: *****@gmail.com
+Password (typing will be hidden):
+Logged in as *****@gmail.com
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git add .
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git commit -m "Tux"
+[master 4e0be8d] Tux
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git push heroku master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 554 bytes | 0 bytes/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.3.1-jruby-9.1.5.0
+remote: -----> Installing JVM: openjdk-8
+remote: -----> Installing dependencies using bundler 1.11.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler is older than the version that created the lockfile. We suggest you upgrade to the latest version of Bund
+ler by running `gem install bundler`.
+remote:        Using rake 10.4.0
+remote:        Using i18n 0.6.11
+remote:        Using json 1.8.1
+remote:        Using minitest 5.4.3
+remote:        Using thread_safe 0.3.4
+remote:        Using builder 3.2.2
+remote:        Using erubis 2.7.0
+remote:        Using rack 1.5.2
+remote:        Using mime-types 2.4.3
+remote:        Using arel 5.0.1.20140414130214
+remote:        Using jdbc-postgres 9.3.1102
+remote:        Using execjs 2.2.2
+remote:        Using coffee-script-source 1.8.0
+remote:        Using thor 0.19.1
+remote:        Using cowsay 0.3.0
+remote:        Using hike 1.2.3
+remote:        Using multi_json 1.10.1
+remote:        Using bundler 1.11.2
+remote:        Using tilt 1.4.1
+remote:        Using rails_serve_static_assets 0.0.2
+remote:        Using rails_stdout_logging 0.0.3
+remote:        Using sass 3.2.19
+remote:        Using rdoc 4.1.2
+remote:        Using rack-test 0.6.2
+remote:        Using puma 2.9.1
+remote:        Using mail 2.6.3
+remote:        Using tzinfo 1.2.2
+remote:        Using coffee-script 2.3.0
+remote:        Using uglifier 2.5.3
+remote:        Using sprockets 2.12.3
+remote:        Using rails_12factor 0.0.3
+remote:        Using sdoc 0.4.1
+remote:        Using activesupport 4.1.8
+remote:        Using tzinfo-data 1.2015.1
+remote:        Using actionview 4.1.8
+remote:        Using activemodel 4.1.8
+remote:        Using jbuilder 2.2.5
+remote:        Using actionpack 4.1.8
+remote:        Using activerecord 4.1.8
+remote:        Using actionmailer 4.1.8
+remote:        Using railties 4.1.8
+remote:        Using sprockets-rails 2.2.2
+remote:        Using activerecord-jdbc-adapter 1.3.14
+remote:        Using coffee-rails 4.0.1
+remote:        Using jquery-rails 3.1.2
+remote:        Using rails 4.1.8
+remote:        Using activerecord-jdbcpostgresql-adapter 1.3.14
+remote:        Using turbolinks 2.5.2
+remote:        Using sass-rails 4.0.5
+remote:        Bundle complete! 14 Gemfile dependencies, 49 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Bundle completed (10.35s)
+remote:        Cleaning up the bundler cache.
+remote:        Warning: the running version of Bundler is older than the version that created the lockfile. We suggest you upgrade to the latest version of Bund
+ler by running `gem install bundler`.
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        Asset precompilation completed (14.87s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake, worker
+remote:
+remote: -----> Compressing...
+remote:        Done: 89.6M
+remote: -----> Launching...
+remote:        Released v11
+remote:        https://tranquil-castle-80063.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-castle-80063.git
+   a795af5..4e0be8d  master -> master
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku open
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>

@@ -1,0 +1,20 @@
+MINGW64 /e/Working/Ruby/Ruby On Rails/Rails-Project-blog-Application/WIP/blog
+$ bin/rails console
+Loading development environment (Rails 5.0.0.1)
+Switch to inspect mode.
+"day".pluralize(2)
+"days"
+helper.pluralize(2, 'day')
+helper.pluralize(2, 'day')
+"2 days"
+include ActionView::Helpers::TextHelper
+include ActionView::Helpers::TextHelper
+Object
+pluralize(2, 'person')
+pluralize(2, 'person')
+"2 people"
+exit
+exit
+
+MINGW64 /e/Working/Ruby/Ruby On Rails/Rails-Project-blog-Application/WIP/blog
+$

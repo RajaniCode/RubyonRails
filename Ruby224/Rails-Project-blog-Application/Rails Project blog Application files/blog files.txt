@@ -1,0 +1,48 @@
+## 7 Controllers $ bin/rails generate controller (Welcome index/Articles/Comments)
+
+# app/controllers/application_controller.rb #
+# app/controllers/welcome_controller.rb
+# app/controllers/articles_controller.rb
+# app/controllers/comments_controller.rb
+
+# test/controllers/welcome_controller_test.rb
+# test/controllers/articles_controller_test.rb
+# test/controllers/comments_controller_test.rb
+
+
+## 5 Models $ bin/rails generate model (Article title:string text:text/Comment commenter:string body:text article:references)
+# app/models/application_record.rb
+# app/models/article.rb
+# app/models/comment.rb
+
+# test/models/article_test.rb
+# test/models/comment_test.rb
+
+
+## 2 Migrate $ bin/rails generate model (Article title:string text:text/Comment commenter:string body:text article:references)
+# db/migrate/YYYYMMDDHHMMSS_create_articles.rb
+# db/migrate/YYYYMMDDHHMMSS_create_comments.rb
+
+
+## Views
+1
+# app/views/welcome/index.html.erb
+5
+# app/views/articles/index.html.erb
+# app/views/articles/new.html.erb
+# app/views/articles/show.html.erb
+# app/views/articles/edit.html.erb
+# app/views/articles/_form.html.erb
+2
+# app/views/comments/_comment.html.erb
+# app/views/comments/_form.html.erb
+1
+# app/views/layouts/application.html.erb
+
+## 2 Config
+# config/routes.rb
+# config/locales/en.yml
+
+## 2 Database
+# db/schema.rb
+# db/development.sqlite3 # script

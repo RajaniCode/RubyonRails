@@ -1,0 +1,18 @@
+Block comment in yaml
+
+YAML supports inline comments, but does not support block comments.
+
+
+Comments begin with the number sign ( # ), can start anywhere on a line, and continue until the end of the line
+
+The syntax differences are subtle and seldom arise in practice: JSON allows extended charactersets like UTF-32, YAML requires a space after separators like comma, equals, and colon while JSON does not, and some non-standard implementations of JSON extend the grammar to include Javascript's /* ... */ comments. Handling such edge cases may require light pre-processing of the JSON before parsing as in-line YAML.
+# If you want to write
+# a block-commented Haiku
+# you'll need three pound signs
+
+
+File extensions do not have any bearing or impact on the content of the file. You can hold YAML content in files with any extension: .yml, .yaml or indeed anything else.
+
+The (rather sparse) YAML FAQ recommends that you use .yaml in preference to .yml, but for historic reasons many Windows programmers are still scared of using extensions with more than three characters and so opt to use .yml instead.
+
+So, what really matters is what is inside the file, rather than what its extension is.

@@ -1,0 +1,29 @@
+Stating "private"/"protected" in Ruby?
+
+What is actually occurring when private/protected is stated within a Ruby class definition? They are not keywords, so that implies they must be method calls, but I cannot find where they are defined. They do not appear to be documented. Are the two different ways of declaring private/protected methods (shown below) implemented differently? (The second way is obviously a method call, but this is not so apparent in the first way.)
+
+class Foo
+  private
+  def i_am_private; end
+  def so_am_i; end
+end
+
+class Foo
+  def i_am_private; end
+  def so_am_i; end
+  private :i_am_private, :so_am_i
+end
+
+Both are method calls.
+
+Each function can be used in two different ways.
+
+1. If used with no arguments, the three functions set the default access control of subsequently defined methods.
+2. With arguments, the functions set the access control of the named methods and constants.
+
+See documentation here:
+
+1. Module.private
+2. Access Control
+
+You were looking for how the Module.private method comes into existence. Here is where that happens. And here is some more information about it. You would have to read more into it, starting from rb_define_private_method defined in class.c.

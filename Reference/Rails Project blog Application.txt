@@ -1,0 +1,425 @@
+## Controllers
+
+# app/controllers/application_controller.rb #
+class ApplicationController < ActionController::Base
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
+end
+
+$ bin/rails generate controller Welcome index
+# app/controllers/welcome_controller.rb
+class WelcomeController < ApplicationController
+  def index
+  end
+end
+
+$ bin/rails generate controller Articles
+# app/controllers/articles_controller.rb
+class ArticlesController < ApplicationController
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]  
+  def index
+    @articles = Article.all
+  end
+  def new
+    @article = Article.new
+  end
+  def show
+    @article = Article.find(params[:id])
+  end 
+  def edit
+    @article = Article.find(params[:id])
+  end  
+  def create
+    @article = Article.new(article_params)       
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
+    end
+  end  
+  def update
+    @article = Article.find(params[:id])  
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy   
+    redirect_to articles_path
+  end  
+  private
+    def article_params
+      params.require(:article).permit(:title, :text)
+    end
+end
+
+$ bin/rails generate controller Comments
+# app/controllers/comments_controller.rb
+class CommentsController < ApplicationController
+  def create
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.create(comment_params)
+    redirect_to article_path(@article)
+  end 
+  def destroy
+    @article = Article.find(params[:article_id])
+    @comment = @article.comments.find(params[:id])
+    @comment.destroy
+    redirect_to article_path(@article)
+  end 
+  private
+    def comment_params
+      params.require(:comment).permit(:commenter, :body)
+    end
+end
+
+$ bin/rails generate controller Welcome index
+# test/controllers/welcome_controller_test.rb
+require 'test_helper'
+class WelcomeControllerTest < ActionController::TestCase
+  test "should get index" do
+    get :index
+    assert_response :success
+  end
+end
+
+$ bin/rails generate controller Articles
+# test/controllers/articles_controller_test.rb
+require 'test_helper'
+class ArticlesControllerTest < ActionController::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
+
+$ bin/rails generate controller Comments
+# test/controllers/comments_controller_test.rb
+require 'test_helper'
+class CommentsControllerTest < ActionController::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
+
+
+## Models
+# app/models/application_record.rb
+class ApplicationRecord < ActiveRecord::Base
+  self.abstract_class = true
+end
+
+$ bin/rails generate model Article title:string text:text
+# app/models/article.rb
+class Article < ActiveRecord::Base
+  has_many :comments, dependent: :destroy
+  validates :title, presence: true,
+                    length: { minimum: 5 }
+end
+
+$ bin/rails generate model Comment commenter:string body:text article:references
+# app/models/comment.rb
+class Comment < ActiveRecord::Base
+  belongs_to :article
+end
+
+$ bin/rails generate model Article title:string text:text
+# test/models/article_test.rb
+require 'test_helper'
+class ArticleTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
+
+$ bin/rails generate model Comment commenter:string body:text article:references
+# test/models/comment_test.rb
+require 'test_helper'
+class CommentTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+end
+
+
+## Migrate 
+$ bin/rails generate model Article title:string text:text
+# db/migrate/YYYYMMDDHHMMSS_create_articles.rb
+class CreateArticles < ActiveRecord::Migration
+  def change
+    create_table :articles do |t|
+      t.string :title
+      t.text :text
+      t.timestamps null: false
+    end
+  end
+end
+# Note
+$ bin/rails generate model Article name:string, title:string text:text
+class CreateArticles < ActiveRecord::Migration[5.0]
+  def change
+    create_table :articles, {:id => false} do |t|
+      t.string :name, primary_key: true
+      t.string :title
+      t.text :text      
+      t.timestamps null: false
+    end
+  end
+end
+
+$ bin/rails generate model Comment commenter:string body:text article:references
+# db/migrate/YYYYMMDDHHMMSS_create_comments.rb
+class CreateComments < ActiveRecord::Migration
+  def change
+    create_table :comments do |t|
+      t.string :commenter
+      t.text :body
+      t.references :article, index: true, foreign_key: true
+      t.timestamps null: false
+    end
+  end
+end
+
+
+## Views
+$ bin/rails generate controller Welcome index
+# app/views/welcome/index.html.erb
+<h1>Hello, Rails!</h1>
+<%= link_to 'My Blog', controller: 'articles' %>
+
+# app/views/articles/index.html.erb
+<h1>Listing Articles</h1>
+<%= link_to 'New article', new_article_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr> 
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td><%= link_to 'Show', article_path(article) %></td>
+      <td><%= link_to 'Edit', edit_article_path(article) %></td>
+      <td><%= link_to 'Destroy', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+# app/views/articles/new.html.erb
+<h1>New article</h1>
+<%= render 'form' %>
+<%= link_to 'Back', articles_path %>
+
+# app/views/articles/show.html.erb
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+<h2>Comments</h2>
+<%= render @article.comments %>
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
+
+# app/views/articles/edit.html.erb
+<h1>Edit article</h1>
+<%= render 'form' %>
+<%= link_to 'Back', articles_path %>
+
+# app/views/articles/_form.html.erb
+<%= form_for @article do |f| %> 
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %> 
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p> 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p> 
+  <p>
+    <%= f.submit %>
+  </p> 
+<% end %>
+
+# app/views/comments/_comment.html.erb
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p> 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+ 
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+
+# app/views/comments/_form.html.erb
+<%= form_for([@article, @article.comments.build]) do |f| %>
+  <p>    
+    <%= f.label :commenter %><br>    
+    <%= f.text_field :commenter %>
+    <%# Note: comment line -%>
+    <% if false %>
+    Note: comment block
+    <%= f.text_field :commenter, :required => true, maxlength: 5 %>
+    <%= label_tag :dummy, nil %><br>
+    <%= email_field_tag :dummy_email, nil, :required => true, :placeholder => "dummy@example.com" %>
+    <%= text_field_tag :dummy_text, nil, :required => true, :placeholder => "dummy@example.com", :pattern => "^.+@.+$" %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+# app/views/layouts/application.html.erb
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>
+
+
+## Config
+# config/routes.rb
+Rails.application.routes.draw do
+  get 'welcome/index'
+
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
+  # You can have the root of your site routed with "root"
+
+  resources :articles do
+    resources :comments
+  end
+
+  root 'welcome#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+
+  # Example of named route that can be invoked with purchase_url(id: product.id)
+  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Example resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Example resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Example resource route with more complex sub-resources:
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', on: :collection
+  #     end
+  #   end
+
+  # Example resource route with concerns:
+  #   concern :toggleable do
+  #     post 'toggle'
+  #   end
+  #   resources :posts, concerns: :toggleable
+  #   resources :photos, concerns: :toggleable
+
+  # Example resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+end
+
+# config/locales/en.yml
+# Custom Submit Button Text
+en:
+ helpers:
+  submit:
+   create: "Create %{model}"
+   update: "Update %{model}"
+
+
+## Database
+# SQLite
+# db/schema.rb
+# auto-generated from the current state of the database
+ActiveRecord::Schema.define(version: 20160505140034) do
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  create_table "comments", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+  add_index "comments", ["article_id"], name: "index_comments_on_article_id"
+end
+
+# db/development.sqlite3
+# articles
+CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+# comments
+CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+# schema_migrations
+CREATE TABLE "schema_migrations" ("version" varchar NOT NULL)

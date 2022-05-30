@@ -1,0 +1,18 @@
+bundle update and bundle install
+
+bundle update and bundle install can all install the gems you specified in Gemfile but missing in gems.
+
+But bundle update does one thing more to upgrade:
+
+1. If the gems specified in Gemfile don't have version, it will upgrade to whatever latest.
+2. If the gems specified in Gemfile have version controlled with ~>, it will upgrade to the latest at the final digit, the patch version.
+
+For example, if you have a gem in Gemfile
+
+'foo_gem', '~> 2.1.0'
+bundle update will check if newer version of 2.1.x is available in cloud. Say your current version is 2.1.2 and what's latest in cloud is 2.1.5, it will install 2.1.5. But if 2.2.6 is the newest, it won't do anything.
+
+Suggested better practice
+
+1. Always add version to critical gems like rails.
+2. Stick to bundle install(or bundle which is default to install) in most cases. Only do bundle update when it's really necessary and you are fully prepared for the result.

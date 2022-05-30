@@ -1,0 +1,1 @@
+Dir['**/*'].each { |f| puts f }

@@ -1,0 +1,12 @@
+.yaml or .yml
+
+The nature and even existence of file extensions is platform-dependent (some obscure platforms don't even have them, remember) -- in other systems they're only conventional (UNIX and its ilk), while in still others they have definite semantics and in some cases specific limits on length or character content (Windows, etc.).
+
+Since the maintainers have asked that you use ".yaml", that's as close to an "official" ruling as you can get, but the habit of 8.3 is hard to get out of (and, appallingly, still occasionally relevant in 2013).
+
+
+File extensions do not have any bearing or impact on the content of the file. You can hold YAML content in files with any extension: .yml, .yaml or indeed anything else.
+
+The (rather sparse) YAML FAQ recommends that you use .yaml in preference to .yml, but for historic reasons many Windows programmers are still scared of using extensions with more than three characters and so opt to use .yml instead.
+
+So, what really matters is what is inside the file, rather than what its extension is.

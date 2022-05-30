@@ -1,0 +1,20 @@
+C:\Users\Aspire>heroku --version
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+heroku/toolbelt/3.43.12 (i386-mingw32) ruby/2.1.7
+heroku-cli/5.4.6-02f2268 (windows-386) go1.7.1
+You have no installed plugins.
+
+C:\Users\Aspire>heroku login
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Enter your Heroku credentials.
+Email: *****@gmail.com
+Password (typing will be hidden):
+Logged in as *****@gmail.com
+
+C:\Users\Aspire>

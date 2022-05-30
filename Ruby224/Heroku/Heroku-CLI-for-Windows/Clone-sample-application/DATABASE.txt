@@ -1,0 +1,87 @@
+postgres://olguhqraaancbe:psXJNTseFxfr1aUGSsfbdbMo4J@ec2-54-235-125-38.compute-1.amazonaws.com:5432/dbdci5agjlcg5h
+postgres://olguhqraaancbe:psXJNTseFxfr1aUGSsfbdbMo4J@ec2-54-235-125-38.compute-1.amazonaws.com:5432/dbdci5agjlcg5h
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+Add-on                                       Plan       Price  State
+-------------------------------------------  ---------  -----  -------
+heroku-postgresql (postgresql-fluffy-61859)  hobby-dev  free   created
+ +- as DATABASE
+
+papertrail (papertrail-rigid-20084)          choklad    free   created
+ +- as PAPERTRAIL
+
+The table above shows add-ons and the attachments to the current app (tranquil-castle-80063) or other apps.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku config
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+=== tranquil-castle-80063 Config Vars
+DATABASE_URL:         postgres://olguhqraaancbe:psXJNTseFxfr1aUGSsfbdbMo4J@ec2-54-235-125-38.compute-1.amazonaws.com:5432/dbdci5agjlcg5h
+JAVA_OPTS:            -Xss512k -XX:+UseCompressedOops -Dfile.encoding=UTF-8
+JRUBY_OPTS:           -Xcompile.invokedynamic=false
+LANG:                 en_US.UTF-8
+PAPERTRAIL_API_TOKEN: ek41Ukn5wxV4BgR7qIi
+RACK_ENV:             production
+RAILS_ENV:            production
+SECRET_KEY_BASE:      5356ff5114c12906f72b97eb5afb4d737712ccced488750c1cc891ab55c2e78a3c74063f0dd4350d57dd1faf5c7f7736f38e77c661b3224335ae31bcf35305b2
+TIMES:                10
+
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku pg
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+=== DATABASE_URL
+Plan:        Hobby-dev
+Status:      Available
+Connections: 1/20
+PG Version:  9.5.4
+Created:     2016-10-19 13:28 UTC
+Data Size:   7.5 MB
+Tables:      2
+Rows:        2/10000 (In compliance)
+Fork/Follow: Unsupported
+Rollback:    Unsupported
+Add-on:      postgresql-fluffy-61859
+
+
+# heroku pg:info --app app_name
+heroku pg:info --app tranquil-castle-80063
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku pg:info --app tranquil-castle-80063
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+=== DATABASE_URL
+Plan:        Hobby-dev
+Status:      Available
+Connections: 1/20
+PG Version:  9.5.4
+Created:     2016-10-19 13:28 UTC
+Data Size:   7.5 MB
+Tables:      2
+Rows:        0/10000 (In compliance)
+Fork/Follow: Unsupported
+Rollback:    Unsupported
+Add-on:      postgresql-fluffy-61859
+
+
+# Git Bash
+$ heroku pg:psql --app tranquil-castle-80063 DATABASE
+DL is deprecated, please use Fiddle
+select * from widgets;
+ id |     name      |          description           | stock |       created_at        |       updated_at
+----+---------------+--------------------------------+-------+-------------------------+-------------------------
+  1 | Heroku Widget | Tranquil Castle Heroku Widget  |    10 | 2016-10-20 11:39:31.348 | 2016-10-20 11:39:31.348
+(1 row)
+
+\q

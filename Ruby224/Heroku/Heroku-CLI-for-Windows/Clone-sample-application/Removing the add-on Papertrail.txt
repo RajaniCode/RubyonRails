@@ -1,0 +1,60 @@
+## https://devcenter.heroku.com/articles/managing-add-ons
+
+## https://devcenter.heroku.com/articles/managing-add-ons#destroying-an-add-on
+## Removing the add-on
+# Papertrail can be removed via the CLI.
+# This will destroy all associated data and cannot be undone!
+
+# $ heroku addons:destroy papertrail
+# -----> Removing papertrail from sharp-mountain-4005... done, v20 (free)
+# Before removing Papertrail, a data export can be performed by downloading logs from the Archives page.
+
+# https://dashboard.heroku.com/apps/tranquil-castle-80063/resources
+
+$ heroku addons:destroy papertrail-rigid-20084
+
+$ heroku addons:destroy papertrail-rigid-20084 --confirm tranquil-castle-80063
+
+# Git CMD
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+Add-on                                       Plan       Price  State
+-------------------------------------------  ---------  -----  -------
+heroku-postgresql (postgresql-fluffy-61859)  hobby-dev  free   created
+ +- as DATABASE
+
+papertrail (papertrail-rigid-20084)          choklad    free   created
+ +- as PAPERTRAIL
+
+The table above shows add-ons and the attachments to the current app (tranquil-castle-80063) or other apps.
+
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons:destroy papertrail-rigid-20084
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+ !    WARNING: Destructive Action
+ !    This command will affect the app tranquil-castle-80063
+ !    To proceed, type tranquil-castle-80063 or re-run this command with --confirm tranquil-castle-80063
+
+> tranquil-castle-80063
+Destroying papertrail-rigid-20084 on tranquil-castle-80063... done
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+Add-on                                       Plan       Price  State
+-------------------------------------------  ---------  -----  -------
+heroku-postgresql (postgresql-fluffy-61859)  hobby-dev  free   created
+ +- as DATABASE
+
+The table above shows add-ons and the attachments to the current app (tranquil-castle-80063) or other apps.

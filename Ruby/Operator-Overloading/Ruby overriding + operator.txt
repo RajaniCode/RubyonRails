@@ -1,0 +1,36 @@
+Overriding + operator in ruby
+
+You should not mutate object when implementing + operator. Instead return a new Point Object
+
+class Point
+    attr_accessor :x, :y
+
+    def initialize(x,y)
+        @x, @y = x, y
+    end
+
+
+    def +(other)
+      Point.new(@x + other.x, @y + other.y)
+    end
+
+
+    def to_s
+        "(#{@x}, #{@y})"
+    end
+end
+
+ruby-1.8.7-p302 > p1 = Point.new(1,2)
+ => #<Point:0x10031f870 @y=2, @x=1> 
+ruby-1.8.7-p302 > p2 = Point.new(3, 4)
+ => #<Point:0x1001bb718 @y=4, @x=3> 
+ruby-1.8.7-p302 > p1 + p2
+ => #<Point:0x1001a44c8 @y=6, @x=4> 
+ruby-1.8.7-p302 > p3 = p1 + p2
+ => #<Point:0x1001911e8 @y=6, @x=4> 
+ruby-1.8.7-p302 > p3
+ => #<Point:0x1001911e8 @y=6, @x=4> 
+ruby-1.8.7-p302 > p1 += p2
+ => #<Point:0x1001877b0 @y=6, @x=4> 
+ruby-1.8.7-p302 > p1
+ => #<Point:0x1001877b0 @y=6, @x=4> 

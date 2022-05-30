@@ -1,0 +1,19 @@
+https://c9.io/rajaniruby
+
+rajaniruby:~/workspace/hello_app 
+$ ruby --version
+ruby 2.3.0p0 (2015-12-25 revision 53290) [x86_64-linux]
+rajaniruby:~/workspace/hello_app 
+$ gem --version                                                                                                                
+2.5.1
+rajaniruby:~/workspace/hello_app 
+$ rake --version
+rake, version 11.3.0
+rajaniruby:~/workspace/hello_app 
+$ rails --version
+Rails 5.0.0.1
+rajaniruby:~/workspace/hello_app 
+$ bundler --version
+Bundler version 1.13.5
+rajaniruby:~/workspace/hello_app
+$ rails server -b $IP -p $PORT

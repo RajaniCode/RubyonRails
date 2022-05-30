@@ -1,0 +1,29 @@
+rails generate scaffold (when the model already exists)
+
+Even though you already have a model, you can still generate the necessary controller and migration files by using the rails generate option. If you run rails generate -h you can see all of the options available to you.
+
+Rails:
+  controller
+  generator
+  helper
+  integration_test
+  mailer
+  migration
+  model
+  observer
+  performance_test
+  plugin
+  resource
+  scaffold
+  scaffold_controller
+  session_migration
+  stylesheets
+
+If you'd like to generate a controller scaffold for your model, see scaffold_controller. Just for clarity, here's the description on that:
+
+Stubs out a scaffolded controller and its views. Pass the model name, either CamelCased or under_scored, and a list of views as arguments. The controller name is retrieved as a pluralized version of the model name.
+
+To create a controller within a module, specify the model name as a path like 'parent_module/controller_name'.
+
+This generates a controller class in app/controllers and invokes helper, template engine and test framework generators.
+To create your resource, you'd use the resource generator, and to create a migration, you can also see the migration generator (see, there's a pattern to all of this madness). These provide options to create the missing files to build a resource. Alternatively you can just run rails generate scaffold with the --skip option to skip any files which exist.

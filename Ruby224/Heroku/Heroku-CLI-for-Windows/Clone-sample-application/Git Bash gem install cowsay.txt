@@ -1,0 +1,48 @@
+
+Aspire@Acer MINGW64 ~
+$ gem install cowsay
+Successfully installed cowsay-0.3.0
+Parsing documentation for cowsay-0.3.0
+Installing ri documentation for cowsay-0.3.0
+Done installing documentation for cowsay after 1 seconds
+1 gem installed
+
+Aspire@Acer MINGW64 ~
+$ gem list cowsay
+cowsay (0.3.0)
+
+Aspire@Acer MINGW64 ~
+$ irb
+Switch to inspect mode.
+require 'cowsay'
+require 'cowsay'
+true
+puts Cowsay.say("Hellow World!", "ghostbusters")
+puts Cowsay.say("Hellow World!", "ghostbusters")
+ _______________
+| Hellow World! |
+ ---------------
+          \
+           \
+            \          __---__
+                    _-       /--______
+               __--( /     \ )XXXXXXXXXXX\v.
+             .-XXX(   O   O  )XXXXXXXXXXXXXXX-
+            /XXX(       U     )        XXXXXXX\
+          /XXXXX(              )--_  XXXXXXXXXXX\
+         /XXXXX/ (      O     )   XXXXXX   \XXXXX\
+         XXXXX/   /            XXXXXX   \__ \XXXXX
+         XXXXXX__/          XXXXXX         \__---->
+ ---___  XXX__/          XXXXXX      \__         /
+   \-  --__/   ___/\  XXXXXX            /  ___--/=
+    \-\    ___/    XXXXXX              '--- XXXXXX
+       \-\/XXX\ XXXXXX                      /XXXXX
+         \XXXXXXXXX   \                    /XXXXX/
+          \XXXXXX      >                 _/XXXXX/
+            \XXXXX--__/              __-- XXXX/
+             -XXXXXXXX---------------  XXXXXX-
+                \XXXXXXXXXXXXXXXXXXXXXXXXXX/
+                  ""VXXXXXXXXXXXXXXXXXXV""
+nil
+exit
+exit

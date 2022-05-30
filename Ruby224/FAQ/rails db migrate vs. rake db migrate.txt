@@ -1,0 +1,11 @@
+rails db migrate vs. rake db migrate
+
+Rails core team decided to have consistency by enabling rails command to support everything that rake does.
+
+For example in Rails 5 commands like db:migrate, setup, test etc which are part of rake command in Rails 4 are now being supported by rails command. However you can still choose to use rake to run those commands similar to how they were run in Rails 4. This is because Rails community has introduced Rake Proxy instead of completely moving the command options from rake to rails.
+
+What happens internally is that when rails db:migrate command is executed, Rails checks if db:migrate is something that rails natively supports or not. In this case db:migrate is not natively supported by rails, so Rails delegates the execution to Rake via Rake Proxy.
+
+If you want to see all the commands that is supported by rails in Rails 5 then you can get a long list of options by executing rails --help.
+
+if you want to know more about rails 5 than click here [http://blog.bigbinary.com/2016/01/14/rails-5-supports-rake-commands-using-rails.html]

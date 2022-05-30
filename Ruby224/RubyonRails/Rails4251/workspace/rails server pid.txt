@@ -1,0 +1,8 @@
+cat tmp/pids/server.pid
+
+kill -INT $(cat tmp/pids/server.pid)
+
+kill -9 $(cat tmp/pids/server.pid)
+
+delete server.pid
+

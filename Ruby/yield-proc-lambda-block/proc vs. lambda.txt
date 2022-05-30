@@ -1,0 +1,44 @@
+When to use lambda, when to use Proc.new?
+
+Another important but subtle difference is in the way procs created with lambda and procs created with Proc.new handle the return statement:
+
+In a lambda-created proc, the return statement returns only from the proc itself
+In a Proc.new-created proc, the return statement is a little more surprising: it returns control not just from the proc, but also from the method enclosing the proc!
+Here's lambda-created proc's return in action. It behaves in a way that you probably expect:
+
+def whowouldwin
+
+  mylambda = lambda {return "Freddy"}
+  mylambda.call
+
+  # mylambda gets called and returns "Freddy", and execution
+  # continues on the next line
+
+  return "Jason"
+
+end
+
+
+whowouldwin
+=> "Jason"
+
+Now here's a Proc.new-created proc's return doing the same thing. You're about to see one of those cases where Ruby breaks the much-vaunted Principle of Least Surprise:
+
+def whowouldwin2
+
+  myproc = Proc.new {return "Freddy"}
+  myproc.call
+
+  # myproc gets called and returns "Freddy", 
+  # but also returns control from whowhouldwin2!
+  # The line below *never* gets executed.
+
+  return "Jason"
+
+end
+
+
+whowouldwin2         
+=> "Freddy"
+
+Thanks to this surprising behaviour (as well as less typing), I tend to favour using lambda over Proc.new when making procs.

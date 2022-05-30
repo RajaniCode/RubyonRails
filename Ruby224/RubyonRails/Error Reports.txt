@@ -1,0 +1,6 @@
+Error Reports
+
+# hello_app/config/environments/development.rb
+# Show full error reports.
+# config.consider_all_requests_local = true
+config.consider_all_requests_local = false

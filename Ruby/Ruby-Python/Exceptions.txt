@@ -1,0 +1,21 @@
+# Python: teef
+try:    
+    # raise RuntimeError, "To Force Issue" # Only in Python 2.7
+    raise RuntimeError("To Force Issue")
+except:
+    return 1
+else:
+    return 2
+finally:
+    return 3
+
+# Ruby: bree(e)
+begin
+ raise RuntimeError, "To Force Issue"
+rescue
+ return 1
+else
+ return 2
+ensure
+ return 3
+end

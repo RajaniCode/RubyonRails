@@ -1,0 +1,33 @@
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ heroku local web -f Procfile.windows
+[OKAY] Loaded ENV .env File as KEY=VALUE Format
+10:27:54 PM web.1 |  The signal USR2 is in use by the JVM and will not work correctly on this platform
+10:27:58 PM web.1 |  Puma starting in single mode...
+10:27:58 PM web.1 |  * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+10:27:58 PM web.1 |  * Min threads: 5, max threads: 5
+10:27:58 PM web.1 |  * Environment: development
+10:27:58 PM web.1 |  The signal USR1 is in use by the JVM and will not work correctly on this platform
+10:27:58 PM web.1 |  The signal HUP is in use by the JVM and will not work correctly on this platform
+10:29:21 PM web.1 |  * Listening on tcp://0.0.0.0:5000
+10:29:22 PM web.1 |  Use Ctrl-C to stop
+10:30:54 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:53] "GET / HTTP/1.1" 200 - 36.0510
+10:30:54 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:54] "GET /scaffolds.css?body=1 HTTP/1.1" 200 2991 0.1700
+10:30:54 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:54] "GET /widgets.css?body=1 HTTP/1.1" 200 - 0.2450
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /welcome.css?body=1 HTTP/1.1" 200 - 0.5470
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /turbolinks.js?body=1 HTTP/1.1" 200 24847 0.5490
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /jquery_ujs.js?body=1 HTTP/1.1" 200 17510 0.6530
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /jquery.js?body=1 HTTP/1.1" 200 282767 0.7570
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /welcome.js?body=1 HTTP/1.1" 200 31 0.6100
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /widgets.js?body=1 HTTP/1.1" 200 31 0.3210
+10:30:55 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:55] "GET /application.js?body=1 HTTP/1.1" 200 586 0.4190
+10:30:56 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:30:56] "GET /application.css?body=1 HTTP/1.1" 200 650 0.3580
+10:31:08 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:08] "GET %2Ffavicon.ico HTTP/1.1" 200 - 0.0190
+10:31:24 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:24] "GET /widgets HTTP/1.1" 200 - 2.2500
+10:31:35 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:35] "GET /widgets/1/edit HTTP/1.1" 200 - 3.7730
+10:31:40 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:40] "GET /widgets HTTP/1.1" 304 - 1.0960
+10:31:42 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:42] "GET /widgets/1 HTTP/1.1" 200 - 0.3450
+10:31:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [20/Oct/2016 22:31:45] "GET /widgets HTTP/1.1" 304 - 0.7660
