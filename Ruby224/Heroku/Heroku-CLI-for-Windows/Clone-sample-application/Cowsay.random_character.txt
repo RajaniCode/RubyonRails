@@ -1,0 +1,372 @@
+require 'cowsay'
+require 'active_support/core_ext/string/inflections
+puts Cowsay.say("Hi", Cowsay.random_character().class.name.split("::")[2])
+
+require 'cowsay'
+for i in 0..100; puts Cowsay.say("Hi", Cowsay.random_character().class.name.split("::")[2]); end
+
+require 'cowsay'
+for i in 0..100; x = Cowsay.random_character().class.name.split("::")[2]; puts Cowsay.say(x, x); end
+
+require 'cowsay'
+require 'active_support/core_ext/string/inflections'
+hsh = {}
+for i in 0..99; x = Cowsay.random_character().class.name.demodulize; hsh[x] = x; end;
+hsh.length
+hsh
+hsh.each { |key, value| puts Cowsay.say(key, value)}
+exit
+
+require 'cowsay'
+require 'active_support/core_ext/string/inflections'
+arr = []
+for i in 0..99; x = Cowsay.random_character().class.name.demodulize; arr.push(x); end;
+arr.length
+arr
+arr.uniq!
+arr.length
+arr
+arr.sort_by!(&:to_s)
+arr.length
+arr
+arr.each { |x| puts Cowsay.say(x, x)}
+exit
+
+Aspire@Acer MINGW64 /
+$ irb
+Switch to inspect mode.
+require 'cowsay'
+require 'active_support/core_ext/string/inflections'
+arr = []
+for i in 0..99; x = Cowsay.random_character().class.name.demodulize; arr.push(x); end;
+arr.length
+arr
+arr.uniq!
+arr.length
+arr
+arr.sort_by!(&:to_s)
+arr.length
+arr
+arr.each { |x| puts Cowsay.say(x, x)}
+exit
+require 'cowsay'
+true
+require 'active_support/core_ext/string/inflections'
+true
+arr = []
+[]
+for i in 0..99; x = Cowsay.random_character().class.name.demodulize; arr.push(x); end;
+arr.length
+100
+arr
+["Turkey", "Ghostbusters", "Turtle", "Beavis", "Sheep", "Tux", "Frogs", "Bunny", "Koala", "Turkey", "Turtle", "Frogs", "Frogs", "Kitty", "Beavis", "Cheese", "Stegosaurus", "Sheep", "Moose", "Stegosaurus", "Bunny", "Frogs", "Stegosaurus", "Dragon", "Daemon", "Sheep", "Koala", "Koala", "Elephant", "Turtle", "Stegosaurus", "Turtle", "Ghostbusters", "Turtle", "Moose", "Kitty", "Moose", "Elephant", "Cow", "Stimpy", "Ghostbusters", "Ren", "Ren", "Stegosaurus", "Ghostbusters", "Tux", "Dragon", "Elephant", "Stegosaurus", "Stimpy", "Kitty", "Elephant", "Ghostbusters", "Tux", "Cheese", "Moose", "Moose", "Sheep", "Daemon", "Kitty", "Stegosaurus", "Bunny", "Koala", "Daemon", "Kitty", "Dragon", "Daemon", "Tux", "Turtle", "Ren", "Stegosaurus", "Dragon", "Bunny", "Stimpy", "Kitty", "Bunny", "Koala", "Koala", "Sheep", "Bunny", "Dragon", "Dragon", "Frogs", "Moose", "Ren", "Cow", "Sheep", "Beavis", "Koala", "Stimpy", "Sheep", "Frogs", "Bunny", "Frogs", "Moose", "Bunny", "Stegosaurus", "Ren", "Turkey", "Cheese"]
+arr.uniq!
+["Turkey", "Ghostbusters", "Turtle", "Beavis", "Sheep", "Tux", "Frogs", "Bunny", "Koala", "Kitty", "Cheese", "Stegosaurus", "Moose", "Dragon", "Daemon", "Elephant", "Cow", "Stimpy", "Ren"]
+arr.length
+19
+arr
+["Turkey", "Ghostbusters", "Turtle", "Beavis", "Sheep", "Tux", "Frogs", "Bunny", "Koala", "Kitty", "Cheese", "Stegosaurus", "Moose", "Dragon", "Daemon", "Elephant", "Cow", "Stimpy", "Ren"]
+arr.sort_by!(&:to_s)
+["Beavis", "Bunny", "Cheese", "Cow", "Daemon", "Dragon", "Elephant", "Frogs", "Ghostbusters", "Kitty", "Koala", "Moose", "Ren", "Sheep", "Stegosaurus", "Stimpy", "Turkey", "Turtle", "Tux"]
+arr.length
+19
+arr
+["Beavis", "Bunny", "Cheese", "Cow", "Daemon", "Dragon", "Elephant", "Frogs", "Ghostbusters", "Kitty", "Koala", "Moose", "Ren", "Sheep", "Stegosaurus", "Stimpy", "Turkey", "Turtle", "Tux"]
+arr.each { |x| puts Cowsay.say(x, x)}
+ ________
+| Beavis |
+ --------
+   \         __------~~-,
+    \      ,'            ,
+          /               \
+         /                :
+        |                  '
+        |                  |
+        |                  |
+         |   _--           |
+         _| =-.     .-.   ||
+         o|/o/       _.   |
+         /  ~          \ |
+       (____@)  ___~    |
+          |_===~~~.`    |
+       _______.--~     |
+       \________       |
+                \      |
+              __/-___-- -__
+             /            _ \
+
+ _______
+| Bunny |
+ -------
+  \
+   \   \
+        \ /\
+        ( )
+      .( o ).
+ ________
+| Cheese |
+ --------
+   \
+    \
+      _____   _________
+     /     \_/         |
+    |                 ||
+    |                 ||
+   |    ###\  /###   | |
+   |     0  \/  0    | |
+  /|                 | |
+ / |        <        |\ \
+| /|                 | | |
+| |     \_______/   |  | |
+| |                 | / /
+/||                 /|||
+   ----------------|
+        | |    | |
+        ***    ***
+       /___\  /___\
+ _____
+| Cow |
+ -----
+      \   ^__^
+       \  (oo)\_______
+          (__)\       )\/\
+              ||----w |
+              ||     ||
+ ________
+| Daemon |
+ --------
+   \         ,        ,
+    \       /(        )`
+     \      \ \___   / |
+            /- _  `-/  '
+           (/\/ \ \   /\
+           / /   | `    \
+           O O   ) /    |
+           `-^--'`<     '
+          (_.)  _  )   /
+           `.___/`    /
+             `-----' /
+<----.     __ / __   \
+<----|====O)))==) \) /====
+<----'    `--' `.__,' \
+             |        |
+              \       /
+        ______( (_  / \______
+      ,'  ,-----'   |        \
+      `--{__________)        \/
+ ________
+| Dragon |
+ --------
+      \                    / \  //\
+       \    |\___/|      /   \//  \\
+            /0  0  \__  /    //  | \ \
+           /     /  \/_/    //   |  \  \
+           @_^_@'/   \/_   //    |   \   \
+           //_^_/     \/_ //     |    \    \
+        ( //) |        \///      |     \     \
+      ( / /) _|_ /   )  //       |      \     _\
+    ( // /) '/,_ _ _/  ( ; -.    |    _ _\.-~        .-~~~^-.
+  (( / / )) ,-{        _      `-.|.-~-.           .~         `.
+ (( // / ))  '/\      /                 ~-. _ .-~      .-~^-.  \
+ (( /// ))      `.   {            }                   /      \  \
+  (( / ))     .----~-.\        \-'                 .~         \  `. \^-.
+             ///.----..>        \             _ -~             `.  ^-`  ^-_
+               ///-._ _ _ _ _ _ _}^ - - - - ~                     ~-- ,.-~
+ __________
+| Elephant |
+ ----------
+ \     /\  ___  /\
+  \   // \/   \/ \\
+     ((    O O    ))
+      \\ /     \ //
+       \/  | |  \/
+        |  | |  |
+        |  | |  |
+        |   o   |
+        | |   | |
+        |m|   |m|
+ _______
+| Frogs |
+ -------
+     \
+      \
+          oO)-.                       .-(Oo
+         /__  _\                     /_  __\
+         \  \(  |     ()~()         |  )/  /
+          \__|\ |    (-___-)        | /|__/
+          '  '--'    ==`-'==        '--'  '
+ ______________
+| Ghostbusters |
+ --------------
+          \
+           \
+            \          __---__
+                    _-       /--______
+               __--( /     \ )XXXXXXXXXXX\v.
+             .-XXX(   O   O  )XXXXXXXXXXXXXXX-
+            /XXX(       U     )        XXXXXXX\
+          /XXXXX(              )--_  XXXXXXXXXXX\
+         /XXXXX/ (      O     )   XXXXXX   \XXXXX\
+         XXXXX/   /            XXXXXX   \__ \XXXXX
+         XXXXXX__/          XXXXXX         \__---->
+ ---___  XXX__/          XXXXXX      \__         /
+   \-  --__/   ___/\  XXXXXX            /  ___--/=
+    \-\    ___/    XXXXXX              '--- XXXXXX
+       \-\/XXX\ XXXXXX                      /XXXXX
+         \XXXXXXXXX   \                    /XXXXX/
+          \XXXXXX      >                 _/XXXXX/
+            \XXXXX--__/              __-- XXXX/
+             -XXXXXXXX---------------  XXXXXX-
+                \XXXXXXXXXXXXXXXXXXXXXXXXXX/
+                  ""VXXXXXXXXXXXXXXXXXXV""
+ _______
+| Kitty |
+ -------
+     \
+      \
+       ("`-'  '-/") .___..--' ' "`-._
+         ` *_ *  )    `-.   (      ) .`-.__. `)
+         (_Y_.) ' ._   )   `._` ;  `` -. .-'
+      _.. `--'_..-_/   /--' _ .' ,4
+   ( i l ),-''  ( l i),'  ( ( ! .-'
+ _______
+| Koala |
+ -------
+  \
+   \
+       ___
+     {~._.~}
+      ( Y )
+     ()~*~()
+     (_)-(_)
+ _______
+| Moose |
+ -------
+  \
+   \   \_\_    _/_/
+    \      \__/
+           (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||
+ _____
+| Ren |
+ -----
+   \
+    \
+    ____
+   /# /_\_
+  |  |/o\o\
+  |  \\_/_/
+ / |_   |
+|  ||\_ ~|
+|  ||| \/
+|  |||_
+ \//  |
+  ||  |
+  ||_  \
+  \_|  o|
+  /\___/
+ /  ||||__
+    (___)_)
+ _______
+| Sheep |
+ -------
+  \
+   \
+       __
+      UooU\.'@@@@@@`.
+      \__/(@@@@@@@@@@)
+           (@@@@@@@@)
+           `YY~~~~YY'
+            ||    ||
+ _____________
+| Stegosaurus |
+ -------------
+\                             .       .
+ \                           / `.   .' "
+  \                  .---.  <    > <    >  .---.
+   \                 |    \  \ - ~ ~ - /  /    |
+         _____          ..-~             ~-..-~
+        |     |   \~~~\.'                    `./~~~/
+       ---------   \__/                        \__/
+      .'  O    \     /               /       \  "
+     (_____,    `._.'               |         }  \/~~~/
+      `----.          /       }     |        /    \__/
+            `-.      |       /      |       /      `. ,~~|
+                ~-.__|      /_ - ~ ^|      /- _      `..-'
+                     |     /        |     /     ~-.     `-. _  _  _
+                     |_____|        |_____|         ~ - . _ _ _ _ _>
+ ________
+| Stimpy |
+ --------
+  \     .    _  .
+   \    |\_|/__/|
+       / / \/ \  \
+      /__|O||O|__ \
+     |/_ \_/\_/ _\ |
+     | | (____) | ||
+     \/\___/\__/  //
+     (_/         ||
+      |          ||
+      |          ||\
+       \        //_/
+        \______//
+       __ || __||
+      (____(____)
+ ________
+| Turkey |
+ --------
+  \                                  ,+*^^*+___+++_
+   \                           ,*^^^^              )
+    \                       _+*                     ^**+_
+     \                    +^       _ _++*+_+++_,         )
+              _+^^*+_    (     ,+*^ ^          \+_        )
+             {       )  (    ,(    ,_+--+--,      ^)      ^\
+            { (@)    } f   ,(  ,+-^ __*_*_  ^^\_   ^\       )
+           {:;-/    (_+*-+^^^^^+*+*<_ _++_)_    )    )      /
+          ( /  (    (        ,___    ^*+_+* )   <    <      \
+           U _/     )    *--<  ) ^\-----++__)   )    )       )
+            (      )  _(^)^^))  )  )\^^^^^))^*+/    /       /
+          (      /  (_))_^)) )  )  ))^^^^^))^^^)__/     +^^
+         (     ,/    (^))^))  )  ) ))^^^^^^^))^^)       _)
+          *+__+*       (_))^)  ) ) ))^^^^^^))^^^^^)____*^
+          \             \_)^)_)) ))^^^^^^^^^^))^^^^)
+           (_             ^\__^^^^^^^^^^^^))^^^^^^^)
+             ^\___            ^\__^^^^^^))^^^^^^^^)\\
+                  ^^^^^\uuu/^^\uuu/^^^^\^\^\^\^\^\^\^\
+                     ___) >____) >___   ^\_\_\_\_\_\_\)
+                    ^^^//\\_^^//\\_^       ^(\_\_\_\)
+                      ^^^ ^^ ^^^ ^
+ ________
+| Turtle |
+ --------
+    \                                  ___-------___
+     \                             _-~~             ~~-_
+      \                         _-~                    /~-_
+             /^\__/^\         /~  \                   /    \
+           /|  O|| O|        /      \_______________/        \
+          | |___||__|      /       /                \          \
+          |          \    /      /                    \          \
+          |   (_______) /______/                        \_________ \
+          |         / /         \                      /            \
+           \         \^\\         \                  /               \     /
+             \         ||           \______________/      _-_       //\__//
+               \       ||------_-~~-_ ------------- \ --/~   ~\    || __/
+                 ~-----||====/~     |==================|       |/~~~~~
+                  (_(__/  ./     /                    \_\      \.
+                         (_(___/                         \_____)_)
+ _____
+| Tux |
+ -----
+   \
+    \
+        .--.
+       |o_o |
+       |:_/ |
+      //   \ \
+     (|     | )
+    /'\_   _/`\
+    \___)=(___/
+["Beavis", "Bunny", "Cheese", "Cow", "Daemon", "Dragon", "Elephant", "Frogs", "Ghostbusters", "Kitty", "Koala", "Moose", "Ren", "Sheep", "Stegosaurus", "Stimpy", "Turkey", "Turtle", "Tux"]
+exit

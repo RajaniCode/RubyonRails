@@ -1,0 +1,10 @@
+-- db/development.sqlite3
+
+-- articles
+CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+
+-- comments
+CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "commenter" varchar, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)
+
+-- schema_migrations
+CREATE TABLE "schema_migrations" ("version" varchar NOT NULL)

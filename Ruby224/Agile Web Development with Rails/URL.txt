@@ -1,0 +1,3 @@
+Source Code for Agile Web Development with Rails (3rd edition)
+
+https://pragprog.com/titles/rails3/source_code

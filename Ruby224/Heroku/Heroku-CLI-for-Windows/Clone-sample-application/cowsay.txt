@@ -1,0 +1,46 @@
+$ gem install cowsay
+
+# app/views/welcome/index.erb
+# Modify app/views/welcome/index.erb so that it uses this gem. Your final code should look like this:
+<h1>Getting Started with Ruby</h1>
+
+<p>
+  Welcome!
+</p>
+
+<pre>
+<%= Cowsay.say("Hello World!", "ghostbusters") %>
+</pre>
+
+$ heroku local web -f Procfile.windows
+
+http://localhost:5000/
+Getting Started with Ruby
+
+Welcome!
+
+ ______________ 
+| Hello World! |
+ -------------- 
+          \
+           \
+            \          __---__
+                    _-       /--______
+               __--( /     \ )XXXXXXXXXXX\v.
+             .-XXX(   O   O  )XXXXXXXXXXXXXXX-
+            /XXX(       U     )        XXXXXXX\
+          /XXXXX(              )--_  XXXXXXXXXXX\
+         /XXXXX/ (      O     )   XXXXXX   \XXXXX\
+         XXXXX/   /            XXXXXX   \__ \XXXXX
+         XXXXXX__/          XXXXXX         \__---->
+ ---___  XXX__/          XXXXXX      \__         /
+   \-  --__/   ___/\  XXXXXX            /  ___--/=
+    \-\    ___/    XXXXXX              '--- XXXXXX
+       \-\/XXX\ XXXXXX                      /XXXXX
+         \XXXXXXXXX   \                    /XXXXX/
+          \XXXXXX      >                 _/XXXXX/
+            \XXXXX--__/              __-- XXXX/
+             -XXXXXXXX---------------  XXXXXX-
+                \XXXXXXXXXXXXXXXXXXXXXXXXXX/
+                  ""VXXXXXXXXXXXXXXXXXXV""
+

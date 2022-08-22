@@ -1,0 +1,23 @@
+Make sure that your classes implement what they ought to implement.
+
+Part of the reason is that Ruby classes can be reopened, and Ruby supports loading arbitrary code at runtime, so we can't know whether a class implements a certain interface until we try to call it.
+
+Supposing an Animal must have an eat method, and I do the following:
+
+class Cat < Animal
+  def talk
+    puts "meow"
+  end
+end
+
+class Cat
+  def eat
+    puts "om nom nom"
+  end
+end
+
+By the end of that file, the Cat will have its eat definition, because Ruby classes can reopened and modified multiple times. Should the code error out after the first definition because eat wasn't defined yet? That implementation would hurt more than it would help, since reopening classes is common, even if this example is contrived. Should it error out once the eat method is called and does not exist, so we can be certain that it's defined once we need it? Well, if the method were missing, that would happen, anyway. The interpreter can never know if another class definition is on the way, so it can never cut you off until the method is actually called.
+
+In short, superclasses simply cannot possibly require a method to be defined in Ruby, because the dynamic nature of classes contradict such a goal.
+
+Sorry! This is a place where unit testing might come in handy, though, to ensure that your subclasses do what they're supposed to be doing, anyway.

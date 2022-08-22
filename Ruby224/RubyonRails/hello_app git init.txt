@@ -1,0 +1,332 @@
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Learn-Web-Development-with-Rails\Fourth-Edition\workspace\hello_app"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app
+$ ls app/controllers/*_controller.rb
+app/controllers/application_controller.rb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app
+$ git init
+Initialized empty Git repository in E:/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app/.git/
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git add -A
+warning: LF will be replaced by CRLF in .gitignore.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Gemfile.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Gemfile.lock.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in README.md.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in Rakefile.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/assets/config/manifest.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/assets/javascripts/application.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/assets/javascripts/cable.js.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/assets/stylesheets/application.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/channels/application_cable/channel.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/channels/application_cable/connection.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/controllers/application_controller.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/helpers/application_helper.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/jobs/application_job.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/mailers/application_mailer.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/models/application_record.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/views/layouts/application.html.erb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/views/layouts/mailer.html.erb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in app/views/layouts/mailer.text.erb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in bin/bundle.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in bin/rails.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in bin/rake.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in bin/setup.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in bin/update.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config.ru.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/application.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/boot.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/cable.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/database.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/environment.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/environments/development.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/environments/production.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/environments/test.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/application_controller_renderer.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/assets.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/backtrace_silencers.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/cookies_serializer.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/filter_parameter_logging.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/inflections.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/mime_types.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/new_framework_defaults.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/session_store.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/initializers/wrap_parameters.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/locales/en.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/puma.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/routes.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in config/secrets.yml.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in db/seeds.rb.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in public/404.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in public/422.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in public/500.html.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in public/robots.txt.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in test/test_helper.rb.
+The file will have its original line endings in your working directory.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   .gitignore
+        new file:   Gemfile
+        new file:   Gemfile.lock
+        new file:   README.md
+        new file:   Rakefile
+        new file:   app/assets/config/manifest.js
+        new file:   app/assets/images/.keep
+        new file:   app/assets/javascripts/application.js
+        new file:   app/assets/javascripts/cable.js
+        new file:   app/assets/javascripts/channels/.keep
+        new file:   app/assets/stylesheets/application.css
+        new file:   app/channels/application_cable/channel.rb
+        new file:   app/channels/application_cable/connection.rb
+        new file:   app/controllers/application_controller.rb
+        new file:   app/controllers/concerns/.keep
+        new file:   app/helpers/application_helper.rb
+        new file:   app/jobs/application_job.rb
+        new file:   app/mailers/application_mailer.rb
+        new file:   app/models/application_record.rb
+        new file:   app/models/concerns/.keep
+        new file:   app/views/layouts/application.html.erb
+        new file:   app/views/layouts/mailer.html.erb
+        new file:   app/views/layouts/mailer.text.erb
+        new file:   bin/bundle
+        new file:   bin/rails
+        new file:   bin/rake
+        new file:   bin/setup
+        new file:   bin/update
+        new file:   config.ru
+        new file:   config/application.rb
+        new file:   config/boot.rb
+        new file:   config/cable.yml
+        new file:   config/database.yml
+        new file:   config/environment.rb
+        new file:   config/environments/development.rb
+        new file:   config/environments/production.rb
+        new file:   config/environments/test.rb
+        new file:   config/initializers/application_controller_renderer.rb
+        new file:   config/initializers/assets.rb
+        new file:   config/initializers/backtrace_silencers.rb
+        new file:   config/initializers/cookies_serializer.rb
+        new file:   config/initializers/filter_parameter_logging.rb
+        new file:   config/initializers/inflections.rb
+        new file:   config/initializers/mime_types.rb
+        new file:   config/initializers/new_framework_defaults.rb
+        new file:   config/initializers/session_store.rb
+        new file:   config/initializers/wrap_parameters.rb
+        new file:   config/locales/en.yml
+        new file:   config/puma.rb
+        new file:   config/routes.rb
+        new file:   config/secrets.yml
+        new file:   db/seeds.rb
+        new file:   lib/assets/.keep
+        new file:   lib/tasks/.keep
+        new file:   log/.keep
+        new file:   public/404.html
+        new file:   public/422.html
+        new file:   public/500.html
+        new file:   public/apple-touch-icon-precomposed.png
+        new file:   public/apple-touch-icon.png
+        new file:   public/favicon.ico
+        new file:   public/robots.txt
+        new file:   test/controllers/.keep
+        new file:   test/fixtures/.keep
+        new file:   test/fixtures/files/.keep
+        new file:   test/helpers/.keep
+        new file:   test/integration/.keep
+        new file:   test/mailers/.keep
+        new file:   test/models/.keep
+        new file:   test/test_helper.rb
+        new file:   tmp/.keep
+        new file:   vendor/assets/javascripts/.keep
+        new file:   vendor/assets/stylesheets/.keep
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git commit -m "Initialize repository"
+[master (root-commit) a963a09] Initialize repository
+ 73 files changed, 1085 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 Gemfile
+ create mode 100644 Gemfile.lock
+ create mode 100644 README.md
+ create mode 100644 Rakefile
+ create mode 100644 app/assets/config/manifest.js
+ create mode 100644 app/assets/images/.keep
+ create mode 100644 app/assets/javascripts/application.js
+ create mode 100644 app/assets/javascripts/cable.js
+ create mode 100644 app/assets/javascripts/channels/.keep
+ create mode 100644 app/assets/stylesheets/application.css
+ create mode 100644 app/channels/application_cable/channel.rb
+ create mode 100644 app/channels/application_cable/connection.rb
+ create mode 100644 app/controllers/application_controller.rb
+ create mode 100644 app/controllers/concerns/.keep
+ create mode 100644 app/helpers/application_helper.rb
+ create mode 100644 app/jobs/application_job.rb
+ create mode 100644 app/mailers/application_mailer.rb
+ create mode 100644 app/models/application_record.rb
+ create mode 100644 app/models/concerns/.keep
+ create mode 100644 app/views/layouts/application.html.erb
+ create mode 100644 app/views/layouts/mailer.html.erb
+ create mode 100644 app/views/layouts/mailer.text.erb
+ create mode 100644 bin/bundle
+ create mode 100644 bin/rails
+ create mode 100644 bin/rake
+ create mode 100644 bin/setup
+ create mode 100644 bin/update
+ create mode 100644 config.ru
+ create mode 100644 config/application.rb
+ create mode 100644 config/boot.rb
+ create mode 100644 config/cable.yml
+ create mode 100644 config/database.yml
+ create mode 100644 config/environment.rb
+ create mode 100644 config/environments/development.rb
+ create mode 100644 config/environments/production.rb
+ create mode 100644 config/environments/test.rb
+ create mode 100644 config/initializers/application_controller_renderer.rb
+ create mode 100644 config/initializers/assets.rb
+ create mode 100644 config/initializers/backtrace_silencers.rb
+ create mode 100644 config/initializers/cookies_serializer.rb
+ create mode 100644 config/initializers/filter_parameter_logging.rb
+ create mode 100644 config/initializers/inflections.rb
+ create mode 100644 config/initializers/mime_types.rb
+ create mode 100644 config/initializers/new_framework_defaults.rb
+ create mode 100644 config/initializers/session_store.rb
+ create mode 100644 config/initializers/wrap_parameters.rb
+ create mode 100644 config/locales/en.yml
+ create mode 100644 config/puma.rb
+ create mode 100644 config/routes.rb
+ create mode 100644 config/secrets.yml
+ create mode 100644 db/seeds.rb
+ create mode 100644 lib/assets/.keep
+ create mode 100644 lib/tasks/.keep
+ create mode 100644 log/.keep
+ create mode 100644 public/404.html
+ create mode 100644 public/422.html
+ create mode 100644 public/500.html
+ create mode 100644 public/apple-touch-icon-precomposed.png
+ create mode 100644 public/apple-touch-icon.png
+ create mode 100644 public/favicon.ico
+ create mode 100644 public/robots.txt
+ create mode 100644 test/controllers/.keep
+ create mode 100644 test/fixtures/.keep
+ create mode 100644 test/fixtures/files/.keep
+ create mode 100644 test/helpers/.keep
+ create mode 100644 test/integration/.keep
+ create mode 100644 test/mailers/.keep
+ create mode 100644 test/models/.keep
+ create mode 100644 test/test_helper.rb
+ create mode 100644 tmp/.keep
+ create mode 100644 vendor/assets/javascripts/.keep
+ create mode 100644 vendor/assets/stylesheets/.keep
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ log
+bash: log: command not found
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git log
+commit a963a092d3c275135c28b61c8339989bbffc0b68
+Author: ##### <#####@gmail.com>
+Date:   Wed Oct 19 12:38:46 2016 +0530
+
+    Initialize repository
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ ls app/controllers/
+application_controller.rb  concerns/
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ rm -rf app/controllers/
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ ls app/controllers/
+ls: cannot access 'app/controllers/': No such file or directory
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    app/controllers/application_controller.rb
+        deleted:    app/controllers/concerns/.keep
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git checkout -f
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ ls app/controllers/
+application_controller.rb  concerns/
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$

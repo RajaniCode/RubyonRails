@@ -1,0 +1,163 @@
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#introduction
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#provision-add-ons
+## Provision add-ons
+# Provisioning an add-on requires account verification
+# If the account has not been verified, it will be directed to visit the verification site
+
+# Provision the papertrail logging add-on:
+> heroku addons:create papertrail
+Adding papertrail on polar-inlet-4930... done, v11 (free)
+Welcome to Papertrail. Questions and ideas are welcome (support@papertrailapp.com).  Happy logging!
+Use `heroku addons:docs papertrail` to view documentation.
+
+# The add-on is now deployed and configured for your application. 
+# List add-ons for your app like so:
+> heroku addons
+To see this particular add-on in action, visit the application's Heroku URL a few times
+# Each visit will generate more log messages, which will get routed to the papertrail add-on
+# Visit the papertrail console to see the log messages:
+> heroku addons:open papertrail
+# The browser will open up a Papertrail web console, showing the latest log events. The interface lets you search and set up alerts.
+
+https://papertrailapp.com/systems/tranquil-castle-80063/events
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#define-config-vars
+## Define config vars
+# Heroku lets externalize configuration - storing data such as encryption keys or external resource addresses in config vars
+# At runtime, config vars are exposed as environment variables to the application 
+# For example, modify app/views/welcome/index.erb so that the method repeats an action depending on the value of the TIMES environment variable
+# app/views/welcome/index.erb
+<h1>Getting Started with Ruby</h1>
+
+<p>
+  Welcome!
+</p>
+
+<% for i in 0..(ENV['TIMES'] ? ENV['TIMES'].to_i : 2) do %>
+  <p>Hello World #<%= i %>!</p>
+<% end %>
+
+# heroku local will automatically set up the environment based on the contents of the .env file in the local directory
+# In the top-level directory of the project there is already a .env file that has the following contents:
+# .env
+TIMES=10
+
+# Run the app with heroku local to see "Hello World" ten times
+# To set the config var on Heroku, type the following:
+> heroku config:set TIMES=10
+
+# View the config vars that are set using heroku config:
+> heroku config
+== polar-inlet-4930 Config Vars
+PAPERTRAIL_API_TOKEN: erdKhPeeeehIcdfY7ne
+TIMES: 10
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#use-a-database
+## Use a database
+# The add-on marketplace has a large number of data stores, from Redis and MongoDB providers, to Postgres and MySQL
+# In this step, learn about the free Heroku Postgres add-on that is provisioned automatically on all Rails app deploys
+# A database is an add-on, and so you can find out more about the database provisioned for your app using the heroku addons command in the CLI:
+> heroku addons
+=== polar-inlet-4930 Configured Add-ons
+heroku-postgresql:hobby-dev  HEROKU_POSTGRESQL_BROWN
+papertrail:choklad
+
+# Listing the config vars for your app will display the URL that your app is using to connect to the database, DATABASE_URL:
+> heroku config
+=== polar-inlet-4930 Config Vars
+DATABASE_URL:                postgres://xx:yyy@host:5432/d8slm9t7b5mjnd
+HEROKU_POSTGRESQL_BROWN_URL: postgres://xx:yyy@host:5432/d8slm9t7b5mjnd
+...
+
+# Heroku also provides a heroku pg command that shows a lot more:
+> heroku pg
+=== HEROKU_POSTGRESQL_BROWN_URL (DATABASE_URL)
+Plan:        Hobby-dev
+Status:      Available
+Connections: 0
+PG Version:  9.3.3
+Created:     2014-07-07 11:30 UTC
+Data Size:   6.6 MB
+Tables:      2
+Rows:        1/10000 (In compliance)
+Fork/Follow: Unsupported
+Rollback:    Unsupported
+
+# This indicates the hobby database (free), running Postgres 9.3.3, with a single row of data
+# The example app you deployed already has database functionality
+# It has a controller and database model for widgets, should be reachable by visiting your app's URL and appending /widgets
+# If you visit the URL, you'll see an error page appear
+# View the error message by using heroku logs
+# In Papertrail, see something like this:
+2014-07-08T14:52:37.884178+00:00 app[web.1]: Started GET "/widgets" for 94.174.204.242 at 2014-07-08 14:52:37 +0000
+2014-07-08T14:52:38.162312+00:00 heroku[router]: at=info method=GET path="/widgets" host=fox828228.herokuapp.com request_id=3755bb46-4de2-4434-a13a-26ec73e53694 fwd="94.174.204.242" dyno=web.1 connect=0 service=294 status=500 bytes=955
+2014-07-08T14:52:38.078295+00:00 app[web.1]: Processing by WidgetsController#index as HTML
+....
+2014-07-08T14:52:38.146062+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "widgets" does not exist
+
+# Created widgets earlier # Heroku Sample Application Deployed 
+# No ERROR: relation "widgets" 
+# Check migrating again 
+# heroku run rake db:migrate:status
+[
+https://tranquil-castle-80063.herokuapp.com/widgets
+
+http://localhost:5000/widgets
+
+# Visit the URL, to see an error page appear
+# View the error message by using heroku logs
+# In Papertrail, see something like this:
+2014-07-08T14:52:37.884178+00:00 app[web.1]: Started GET "/widgets" for 94.174.204.242 at 2014-07-08 14:52:37 +0000
+2014-07-08T14:52:38.162312+00:00 heroku[router]: at=info method=GET path="/widgets" host=fox828228.herokuapp.com request_id=3755bb46-4de2-4434-a13a-26ec73e53694 fwd="94.174.204.242" dyno=web.1 connect=0 service=294 status=500 bytes=955
+2014-07-08T14:52:38.078295+00:00 app[web.1]: Processing by WidgetsController#index as HTML
+....
+2014-07-08T14:52:38.146062+00:00 app[web.1]: PG::UndefinedTable: ERROR:  relation "widgets" does not exist
+
+
+# This indicates that while the database can be connected, the necessary table wasn't found
+# In Rails, fix that by running rake db:migrate. 
+# To execute this command on Heroku, run it in a one-off dyno like this:
+> heroku run rake db:migrate
+Running `rake db:migrate` attached to terminal... up, run.3559
+Migrating to CreateWidgets (20140707111715)
+== 20140707111715 CreateWidgets: migrating ====================================
+-- create_table(:widgets)
+   -> 0.0244s
+== 20140707111715 CreateWidgets: migrated (0.0247s) ===========================
+
+]
+
+# Just like the web process type runs in a dyno, so too did this rake command
+# Heroku boots a new dyno, adds in your prepared app, and then executes the command in that context - and afterwards removes the dyno.
+# Now visit the /widgets page of the app again, to list and create Widget records
+# Also interact directly with the database if Postgres is installed locally
+# For example, here's how to connect to the database using psql and execute a query:
+> heroku pg:psql
+
+d8slm9t7b5mjnd=> select * from widgets;
+ id |   name    | description  | stock |         created_at         |         updated_at
+----+-----------+--------------+-------+----------------------------+----------------------------
+  1 | My Widget | It's amazing |   100 | 2014-07-08 15:05:13.330566 | 2014-07-08 15:05:13.330566
+(1 row)
+
+
+# Git Bash
+$ heroku pg:psql --app tranquil-castle-80063 DATABASE
+DL is deprecated, please use Fiddle
+select * from widgets;
+ id |     name      |          description           | stock |       created_at        |       updated_at
+----+---------------+--------------------------------+-------+-------------------------+-------------------------
+  1 | Heroku Widget | Tranquil Castle Heroku Widget  |    10 | 2016-10-20 11:39:31.348 | 2016-10-20 11:39:31.348
+(1 row)
+
+\q
+
+
+# Note
+
+https://devcenter.heroku.com/articles/heroku-postgresql
+
+https://devcenter.heroku.com/articles/how-heroku-works
+
+https://devcenter.heroku.com/categories/ruby

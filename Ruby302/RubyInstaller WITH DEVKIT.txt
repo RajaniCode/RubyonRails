@@ -1,0 +1,3 @@
+https://rubyinstaller.org/downloads
+
+rubyinstaller-devkit-3.0.2-1-x64.exe

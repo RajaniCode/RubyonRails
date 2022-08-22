@@ -1,0 +1,370 @@
+# Note # Directory renamed
+
+Aspire@Acer MINGW64 ~
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 ~
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 ~
+$ rake --version
+rake, version 10.4.2
+
+Aspire@Acer MINGW64 ~
+$ rails --version
+Rails 4.2.5.1
+
+Aspire@Acer MINGW64 ~
+$ gem install bundler
+Successfully installed bundler-1.13.5
+Parsing documentation for bundler-1.13.5
+Installing ri documentation for bundler-1.13.5
+Done installing documentation for bundler after 29 seconds
+1 gem installed
+
+Aspire@Acer MINGW64 ~
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 ~
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 ~
+$ rake --version
+rake, version 10.4.2
+
+Aspire@Acer MINGW64 ~
+$ rails --version
+Rails 4.2.5.1
+
+Aspire@Acer MINGW64 ~
+$ bundler --version
+Bundler version 1.13.5
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Learn-Web-Development-with-Rails\Third-Edition\workspace\sample_app"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ bundle show
+Could not find gem 'simplecov (~> 0.12.0) x86-mingw32' in any of the gem sources
+listed in your Gemfile or available on this machine.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ gem list
+actionmailer (4.2.5.1)
+actionpack (4.2.5.1)
+actionview (4.2.5.1)
+activejob (4.2.5.1)
+activemodel (4.2.5.1)
+activerecord (4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (4.2.5.1)
+arel (6.0.3)
+bigdecimal (default: 1.2.6)
+builder (3.2.2)
+bundler (1.13.5, 1.11.2)
+coffee-rails (4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.10.0)
+concurrent-ruby (1.0.0)
+erubis (2.7.0)
+execjs (2.6.0)
+globalid (0.3.6)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jquery-rails (4.1.0)
+json (default: 1.8.1)
+loofah (2.0.3)
+mail (2.6.3)
+mime-types (2.99)
+mini_portile (0.6.2)
+mini_portile2 (2.0.0)
+minitest (5.4.3)
+nokogiri (1.6.7.2 x86-mingw32)
+pg (0.18.4 x86-mingw32)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+rack (1.6.4)
+rack-test (0.6.3)
+rails (4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (4.2.5.1)
+rake (default: 10.4.2)
+rb-readline (0.5.3)
+rdoc (default: 4.2.0)
+rubyzip (1.1.7)
+sass (3.4.21)
+sass-rails (5.0.4)
+sprockets (3.5.2)
+sprockets-rails (3.0.1)
+sqlite3 (1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+tzinfo (1.2.2)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ bundle install
+Fetching gem metadata from https://rubygems.org/..............
+Fetching version metadata from https://rubygems.org/...
+Fetching dependency metadata from https://rubygems.org/..
+Resolving dependencies...
+Installing rake 11.3.0
+Using i18n 0.7.0
+Installing json 1.8.3 with native extensions
+Installing minitest 5.9.1
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Installing mini_portile2 2.1.0
+Installing pkg-config 1.1.7
+Using rack 1.6.4
+Installing mime-types-data 3.2016.0521
+Using arel 6.0.3
+Installing execjs 2.7.0
+Installing bcrypt 3.1.11
+Installing debug_inspector 0.0.2 with native extensions
+Installing sass 3.4.22
+Installing will_paginate 3.1.3
+Using bundler 1.13.5
+Installing byebug 9.0.5 with native extensions
+Using coffee-script-source 1.10.0
+Using thor 0.19.1
+Installing concurrent-ruby 1.0.2
+Installing docile 1.1.5
+Installing multi_json 1.12.1
+Installing tilt 2.0.5
+Installing simplecov-html 0.10.0
+Using sqlite3 1.3.11
+Installing turbolinks-source 5.0.0
+Installing faker 1.6.6
+Installing rdoc 4.2.2
+Using tzinfo 1.2.2
+Installing nokogiri 1.6.8
+Using rack-test 0.6.3
+Installing mime-types 3.1
+Installing autoprefixer-rails 6.5.0
+Installing uglifier 3.0.2
+Installing binding_of_caller 0.7.2 with native extensions
+Installing bootstrap-will_paginate 0.0.10
+Using coffee-script 2.4.1
+Installing sprockets 3.7.0
+Installing simplecov 0.12.0
+Installing turbolinks 5.0.1
+Installing sdoc 0.4.1
+Using activesupport 4.2.5.1
+Installing tzinfo-data 1.2016.6
+Using loofah 2.0.3
+Installing mail 2.6.4
+Installing bootstrap-sass 3.3.7
+Using rails-deprecated_sanitizer 1.0.3
+Installing globalid 0.3.7
+Using activemodel 4.2.5.1
+Installing jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.5.1
+Using activerecord 4.2.5.1
+Using actionview 4.2.5.1
+Using actionpack 4.2.5.1
+Using actionmailer 4.2.5.1
+Using railties 4.2.5.1
+Installing sprockets-rails 3.2.0
+Using coffee-rails 4.1.1
+Installing jquery-rails 4.2.1
+Using rails 4.2.5.1
+Installing sass-rails 5.0.6
+Installing web-console 2.3.0
+Bundle complete! 18 Gemfile dependencies, 66 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Post-install message from nokogiri:
+Nokogiri is built with the packaged libraries: libxml2-2.9.4, libxslt-1.1.29, zlib-1.2.8, libiconv-1.14.
+Post-install message from rdoc:
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ bundle show
+Gems included by the bundle:
+  * actionmailer (4.2.5.1)
+  * actionpack (4.2.5.1)
+  * actionview (4.2.5.1)
+  * activejob (4.2.5.1)
+  * activemodel (4.2.5.1)
+  * activerecord (4.2.5.1)
+  * activesupport (4.2.5.1)
+  * arel (6.0.3)
+  * autoprefixer-rails (6.5.0)
+  * bcrypt (3.1.11)
+  * binding_of_caller (0.7.2)
+  * bootstrap-sass (3.3.7)
+  * bootstrap-will_paginate (0.0.10)
+  * builder (3.2.2)
+  * bundler (1.13.5)
+  * byebug (9.0.5)
+  * coffee-rails (4.1.1)
+  * coffee-script (2.4.1)
+  * coffee-script-source (1.10.0)
+  * concurrent-ruby (1.0.2)
+  * debug_inspector (0.0.2)
+  * docile (1.1.5)
+  * erubis (2.7.0)
+  * execjs (2.7.0)
+  * faker (1.6.6)
+  * globalid (0.3.7)
+  * i18n (0.7.0)
+  * jbuilder (2.6.0)
+  * jquery-rails (4.2.1)
+  * json (1.8.3)
+  * loofah (2.0.3)
+  * mail (2.6.4)
+  * mime-types (3.1)
+  * mime-types-data (3.2016.0521)
+  * mini_portile2 (2.1.0)
+  * minitest (5.9.1)
+  * multi_json (1.12.1)
+  * nokogiri (1.6.8)
+  * pkg-config (1.1.7)
+  * rack (1.6.4)
+  * rack-test (0.6.3)
+  * rails (4.2.5.1)
+  * rails-deprecated_sanitizer (1.0.3)
+  * rails-dom-testing (1.0.7)
+  * rails-html-sanitizer (1.0.3)
+  * railties (4.2.5.1)
+  * rake (11.3.0)
+  * rdoc (4.2.2)
+  * sass (3.4.22)
+  * sass-rails (5.0.6)
+  * sdoc (0.4.1)
+  * simplecov (0.12.0)
+  * simplecov-html (0.10.0)
+  * sprockets (3.7.0)
+  * sprockets-rails (3.2.0)
+  * sqlite3 (1.3.11)
+  * thor (0.19.1)
+  * thread_safe (0.3.5)
+  * tilt (2.0.5)
+  * turbolinks (5.0.1)
+  * turbolinks-source (5.0.0)
+  * tzinfo (1.2.2)
+  * tzinfo-data (1.2016.6)
+  * uglifier (3.0.2)
+  * web-console (2.3.0)
+  * will_paginate (3.1.3)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ gem list
+actionmailer (4.2.5.1)
+actionpack (4.2.5.1)
+actionview (4.2.5.1)
+activejob (4.2.5.1)
+activemodel (4.2.5.1)
+activerecord (4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (4.2.5.1)
+arel (6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coffee-rails (4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.10.0)
+concurrent-ruby (1.0.2, 1.0.0)
+debug_inspector (0.0.2)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+globalid (0.3.7, 0.3.6)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.0)
+jquery-rails (4.2.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.9.1, 5.4.3)
+multi_json (1.12.1)
+nokogiri (1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+rack (1.6.4)
+rack-test (0.6.3)
+rails (4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (4.2.5.1)
+rake (11.3.0, default: 10.4.2)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rubyzip (1.1.7)
+sass (3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sprockets (3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.6)
+uglifier (3.0.2)
+web-console (2.3.0)
+will_paginate (3.1.3)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ rake --version
+rake, version 11.3.0
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ rails --version
+Rails 4.2.5.1
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$ bundler --version
+Bundler version 1.13.5
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Third-Edition/workspace/sample_app
+$

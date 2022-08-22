@@ -1,0 +1,105 @@
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Learn-Web-Development-with-Rails\Fourth-Edition"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ rake --version
+rake, version 11.3.0
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ rails --version
+Rails 4.2.5.1
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ bundler --version
+Bundler version 1.13.5
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ gem install rails -v 5.0.0.1
+Successfully installed activesupport-5.0.0.1
+Successfully installed rails-dom-testing-2.0.1
+Successfully installed actionview-5.0.0.1
+Successfully installed rack-2.0.1
+Successfully installed actionpack-5.0.0.1
+Successfully installed method_source-0.8.2
+Successfully installed railties-5.0.0.1
+Successfully installed websocket-extensions-0.1.2
+Temporarily enhancing PATH to include DevKit...
+Building native extensions.  This could take a while...
+Successfully installed websocket-driver-0.6.4
+Building native extensions.  This could take a while...
+Successfully installed nio4r-1.2.1
+Successfully installed actioncable-5.0.0.1
+Successfully installed activejob-5.0.0.1
+Successfully installed actionmailer-5.0.0.1
+Successfully installed arel-7.1.4
+Successfully installed activemodel-5.0.0.1
+Successfully installed activerecord-5.0.0.1
+Successfully installed rails-5.0.0.1
+Parsing documentation for activesupport-5.0.0.1
+Installing ri documentation for activesupport-5.0.0.1
+Parsing documentation for rails-dom-testing-2.0.1
+Installing ri documentation for rails-dom-testing-2.0.1
+Parsing documentation for actionview-5.0.0.1
+Installing ri documentation for actionview-5.0.0.1
+Parsing documentation for rack-2.0.1
+Installing ri documentation for rack-2.0.1
+Parsing documentation for actionpack-5.0.0.1
+Installing ri documentation for actionpack-5.0.0.1
+Parsing documentation for method_source-0.8.2
+Installing ri documentation for method_source-0.8.2
+Parsing documentation for railties-5.0.0.1
+Installing ri documentation for railties-5.0.0.1
+Parsing documentation for websocket-extensions-0.1.2
+Installing ri documentation for websocket-extensions-0.1.2
+Parsing documentation for websocket-driver-0.6.4
+Installing ri documentation for websocket-driver-0.6.4
+Parsing documentation for nio4r-1.2.1
+Installing ri documentation for nio4r-1.2.1
+Parsing documentation for actioncable-5.0.0.1
+Installing ri documentation for actioncable-5.0.0.1
+Parsing documentation for activejob-5.0.0.1
+Installing ri documentation for activejob-5.0.0.1
+Parsing documentation for actionmailer-5.0.0.1
+Installing ri documentation for actionmailer-5.0.0.1
+Parsing documentation for arel-7.1.4
+Installing ri documentation for arel-7.1.4
+Parsing documentation for activemodel-5.0.0.1
+Installing ri documentation for activemodel-5.0.0.1
+Parsing documentation for activerecord-5.0.0.1
+Installing ri documentation for activerecord-5.0.0.1
+Parsing documentation for rails-5.0.0.1
+Installing ri documentation for rails-5.0.0.1
+Done installing documentation for activesupport, rails-dom-testing, actionview, rack, actionpack, method_source, railties, websocket-extensions, websocket-driver, nio4r, actioncable, activejob, actionmailer, arel, activemodel, activerecord, rails after 81 seconds
+17 gems installed
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ rake --version
+rake, version 11.3.0
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ rails --version
+Rails 5.0.0.1
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$ bundler --version
+Bundler version 1.13.5
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition
+$

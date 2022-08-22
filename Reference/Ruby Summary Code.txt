@@ -1,0 +1,1884 @@
+#Options Hash Argument
+def new_game(name, options = {})
+  {
+    name: name,
+    year:  options[:year],
+    system:  options[:system]
+  }
+end
+game = new_game("Street Figher II", :system => "SNES", :year => 1992)
+
+
+#raise Error
+class InvalidGameError < StandardError; end
+def new_game(name, options={}) raise InvalidGameError.new unless !name.nil?
+{
+  name: name,
+  year: options[:year],
+  system: options[:system]
+}
+end
+begin
+  game = new_game(nil)
+rescue InvalidGameError => e
+  puts "There was a problem creating your new game: #{e.message}"
+end
+
+
+#Splat Arguments
+def describe_favorites(*games)
+  for game in games
+    puts "Favorite Game: #{games.join(' ')}#{game}"
+  end  
+end
+describe_favorites('Mario', 'Contra', 'Metroid')
+
+
+#Inheritance
+#super in initialize
+class Base
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+class Derived < Base
+  attr_accessor :weight
+  def initialize(name, options = {})
+    super
+    self.weight = options[:weight]
+  end
+end
+
+
+#Inheritance
+#super in method
+class Base
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    self.created_at = Time.now
+  end
+ 
+  def to_s
+    self.name
+  end
+end
+class Derived < Base
+  def to_s
+    string = super
+    "#{string} is on : '#{self.system}'"
+  end
+end
+
+
+#Array
+array = [0, 1, 2, 3, 4, 5, 6]
+array.from(4)          #[4, 5, 6]
+array.to(2)            #[[0, 1, 2], [3, 4, 5], [6, nil, nil]]
+array.in_groups_of(3)  #[[0, 1], [3, 4, 5, 6]] 
+array.split(2)         #[[0, 1], [3, 4, 5, 6]]
+
+
+#yield
+##seed.rb
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+##example.rb
+library = Library.new(GAMES)
+library.each_on_system("SNES") { puts "Found a Super Nintendo game" }
+##game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)
+    games.each do |game|      
+      yield if game.system == system
+    end
+  end
+end
+#Note: 
+<<-DOC
+def each_on_system(system)
+  games.each do |game|      
+    yield if game.system == system
+  end
+end
+DOC
+
+
+#yield
+##seed.rb
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+##example.rb
+library = Library.new(GAMES)
+library.each_on_system("SNES") { |game| puts game.name }
+##game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)
+    games.each {|game| yield game if game.system == system}
+  end
+end
+#Note:
+<<-DOC
+def each_on_system(system)
+  games.each {|game| yield game if game.system == system}
+end
+DOC
+
+
+#yiled block
+##seed.rb
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+##example.rb
+library = Library.new(GAMES)
+library.list { |game| "#{game.name} (#{game.system}) - #{game.year}" }
+##game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def list
+    games.each do |game|
+      puts yield game
+    end
+  end
+end
+#Note:
+<<-DOC
+def list
+  games.each do |game|
+    puts yield game
+  end
+end
+DOC
+
+
+##yield block
+#include Enumerable
+##seed.rb
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+##example.rb
+library = Library.new(GAMES)
+library.select { |game| game.year == 1986 }
+library.collect { |game| game.system }
+##game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each
+    games.each{|game| yield game}
+  end
+  include Enumerable
+end
+#Note:
+<<-DOC
+def each
+  games.each {|game| yield game}
+end
+include Enumerable
+DOC
+
+
+#yield
+##emulator.rb
+class Emulator
+  def initialize(system)
+    # Creates an emulator for the given system
+  end
+ 
+  def play(game)
+    # Runs the given game in the emulator
+  end
+ 
+  def start(game)
+    # Loads the given game but doesn't run it
+  end
+ 
+  def screenshot
+    # Returns a screenshot of the currently loaded game
+  end
+end
+##game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+
+  def play
+    emulate do |emulator|
+      emulator.play(self)
+    end
+  end
+
+  def screenshot
+    emulate do |emulator|
+      emulator.start(self)
+      emulator.screenshot
+    end
+  end
+  
+  private
+  def emulate
+    begin
+      emulator = Emulator.new(system)
+      yield emulator
+    rescue Exception => e
+      puts "Emulator failed: #{e}"
+    end
+  end
+end
+#Note:
+<<-DOC
+def play
+  emulate do |emulator|
+    emulator.play(self)
+  end
+end
+
+def screenshot
+  emulate do |emulator|
+    emulator.start(self)
+    emulator.screenshot
+  end
+end
+  
+private
+def emulate
+  begin
+    emulator = Emulator.new(system)
+    yield emulator
+  rescue Exception => e
+    puts "Emulator failed: #{e}"
+  end
+end
+DOC
+
+
+#yield block
+<<-DOC
+def each_on_system(system)
+  games.each do |game|      
+    yield if game.system == system
+  end
+end
+DOC
+
+<<-DOC
+def each_on_system(system)
+  games.each {|game| yield game if game.system == system}
+end
+DOC
+
+<<-DOC
+def list
+  games.each do |game|
+    puts yield game
+  end
+end
+DOC
+
+<<-DOC
+def each
+  games.each {|game| yield game}
+end
+include Enumerable
+DOC
+
+
+<<-DOC
+def each
+  games.each {|game| yield game}
+end
+include Enumerable
+DOC
+
+
+<<-DOC
+def play
+  emulate do |emulator|
+    emulator.play(self)
+  end
+end
+
+def screenshot
+  emulate do |emulator|
+    emulator.start(self)
+    emulator.screenshot
+  end
+end
+  
+private
+def emulate
+  begin
+    emulator = Emulator.new(system)
+    yield emulator
+  rescue Exception => e
+    puts "Emulator failed: #{e}"
+  end
+end
+DOC
+
+
+#Symbol#to_proc
+##game.rb
+class Game 
+  attr_accessor :name
+
+  def initialize(name, options)
+    @name = name
+    @year = options[:year]
+    @system = options[:system]
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games)
+    @games = games
+  end
+  
+  <<-DOC
+  def names
+    games.map { |game| game.name }
+  end
+  DOC	
+
+  def names
+    games.map(&:name)
+  end
+end
+#Note: games.map(&:name)
+
+
+#block_given?
+##game.rb
+class Game 
+  attr_accessor :name
+
+  def initialize(name, options)
+    @name = name
+    @year = options[:year]
+    @system = options[:system]
+  end
+end
+##library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games)
+    @games = games
+  end
+
+  def list
+    if block_given?
+      games.each{|game| puts yield game}
+  	else
+      games.each{|game| puts game.name}
+    end
+  end
+end
+
+
+#Struct
+Note: Game = Struct.new(:name, :year, :system)
+<<-DOC
+class Game
+  attr_accessor :name, :year, :system
+
+  def initialize(name, year, system)
+    self.name = name
+    self.year = year
+    self.system = system
+  end
+end
+DOC
+
+Game = Struct.new(:name, :year, :system)
+
+
+#alias_method
+#Note: alias_method :each_game, :each
+class Library
+  attr_accessor :games
+
+  def each(&block)
+    games.each(&block)
+  end
+  
+  alias_method :each_game, :each
+end
+
+
+#define_method
+#Note: define_method status do
+<<-DOC
+class Tweet
+  def draft
+    @status = :draft
+  end
+
+  def posted
+    @status = :posted
+  end
+
+  def deleted
+    @status = :deleted
+  end
+end
+DOC
+
+class Tweet
+  states = [:draft, :posted, :deleted]
+  states.each do |status|
+    define_method status do
+      @status = status
+    end
+  end
+end
+
+
+#define method
+class Game
+  SYSTEMS = ['SNES', 'PS1', 'Genesis']
+  SYSTEMS.each do |system|
+    define_method "runs_on_#{system.downcase}?" do
+      self.system = system.downcase
+    end
+  end 
+  attr_accessor :name, :year, :system
+
+  <<-DOC
+  def runs_on_snes?
+    self.system == 'SNES'
+  end
+
+  def runs_on_ps1?
+    self.system == 'PS1'
+  end
+
+  def runs_on_genesis?
+    self.system == 'Genesis'
+  end
+  DOC
+end
+
+
+#define_method
+class Library
+  attr_accessor :games
+  [:each, :map, :select].each do |method|
+    define_method(method) do |&block|
+      games.send(method, &block)
+    end
+  end
+  
+  <<-DOC
+  def each(&block)
+    games.each(&block)
+  end
+
+  def map(&block)
+    games.map(&block)
+  end
+
+  def select(&block)
+    games.select(&block)
+  end
+  DOC
+end
+
+
+#send [can call private or proected]
+library = Library.new(GAMES)
+#library.list
+library.send(:list)
+#library.emulate("Contra")
+library.send(:emulate, "Contra")
+#game = library.find("Contra")
+game = library.send(:find, "Contra")
+
+
+#public_send [prevents running private or protected methods]
+[Calling private or protected methods by public_send will raise an error, hence the corresponding called method should be private or protected]
+library = Library.new(GAMES)
+library.public_send(:list)
+library.public_send(:emulate, "Contra")
+game = library.public_send(:find, "Contra")
+
+
+#Looking Up Methods
+#Refactored code to look up Method objects for the 'list' and 'emulate' methods, and to call them.
+library = Library.new(GAMES)
+#library.list
+list = library.method(:list)
+list.call
+#library.emulate("Contra")
+emulate = library.method(:emulate)
+emulate.call("Contra")
+
+
+#define_method, self.class.class_eval, and send
+class Library
+  SYSTEMS = ['arcade', 'atari', 'pc']
+
+  attr_accessor :games
+
+  def method_missing(name, *args)
+    system = name.to_s
+    if SYSTEMS.include?(system)
+      self.class.class_eval do
+        define_method(system) do
+          find_by_system(system)
+        end
+      end
+      send(system)
+    else
+      super
+    end
+  end
+
+  private
+  def find_by_system(system)
+    games.select { |game| game.system == system }
+  end
+end
+
+
+#respond_to?
+class Library
+  SYSTEMS = ['arcade', 'atari', 'pc']
+
+  attr_accessor :games
+
+  def method_missing(name, *args)
+    system = name.to_s
+    if SYSTEMS.include?(system)
+      self.class.class_eval do
+        define_method(system) do
+          find_by_system(system)
+        end
+      end
+      send(system)
+    else
+      super
+    end
+  end
+  
+  def respond_to?(method)
+    SYSTEMS.include?(method.to_s)
+  end
+    
+  private
+
+  def find_by_system(system)
+    games.select { |game| game.system == system }
+  end
+end
+
+
+#self
+class Game
+  def self.find_by_title
+  end
+end
+
+
+#sef
+##game_override.rb
+Game.class_eval do
+  def self.find_by_owner(name)
+  end
+end
+
+#self and klass.class_eval #klass is by convention
+class LibraryManager
+  def self.make_available(klass, user)
+    klass.class_eval do
+      define_method("lend_to_#{user}") do
+      end
+    end
+  end
+end
+
+
+#instance_eval
+contra_game = Game.new('Contra')
+contra_game.instance_eval do
+  self.owner = 'Alice'
+end
+
+
+#instance_eval(&block) if block_given?
+class Game
+  def initialize(&block)
+    instance_eval(&block) if block_given?
+  end
+
+  def owner(name=nil)
+    if name
+      @owner = name
+    else
+      @owner
+    end
+  end
+end
+
+
+#instance_eval
+##library.rb
+class Library
+  def initialize
+    @games = []
+  end
+ 
+  def add_game(game)
+    @games << game
+  end
+end
+##game.rb
+class Game
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+    @year = nil
+    @system = nil
+  end
+
+  # Add methods to store year and system
+  def system(name)
+    @system = name
+  end
+  
+  def year(value)
+    @year = value
+  end 
+end
+##game_dsl.rb
+LIBRARY = Library.new
+def add_game(name, &block)
+  game = Game.new(name)
+  # Capture the block and call it here
+  game.instance_eval(&block)
+  LIBRARY.add_game(game)
+end
+
+
+#instance_eval
+##example.rb
+add_game "Civilization" do
+  system "PC"
+  year 1991
+end
+with_game "Civilization" do
+  # We'll add some code to operate on the game later
+end
+##game.rb
+class Game
+  attr_reader :name
+ 
+  def initialize(name)
+    @name = name
+    @year = nil
+    @system = nil
+  end
+ 
+  def year(value)
+    @year = value
+  end
+ 
+  def system(value)
+    @system = value
+  end
+end
+##game_dsl.rb
+LIBRARY = Library.new
+
+def add_game(name, &block)
+  game = Game.new(name)
+  game.instance_eval(&block)
+  LIBRARY.add_game(game)
+end
+
+# Implement the with_game method here
+def with_game(name, &block)
+  game = LIBRARY.find_by_name(name)
+  game.instance_eval(&block)
+end
+
+
+#method_missing
+class Library
+  def method_missing(name, *args)
+    puts name, args
+  end
+end
+
+
+#delegate method_missing
+class Library
+  def initialize(console)
+    @manager = console
+  end
+
+  def method_missing(name, *args)
+    @manager.send(name, *args)
+  end
+end
+
+
+#string 
+#Note: if name.to_s =~ /atari/
+class Library
+  def initialize(console)
+    @manager = console
+  end
+
+  def method_missing(name, *args)
+    if name.to_s =~ /atari/
+      @manager.send(name, *args)
+    elsif
+      super
+    end
+  end
+end
+
+
+#SimpleDelegator
+require 'delegate'
+class Library < SimpleDelegator
+  def initialize(console)   
+    @manager = console
+    super(console)
+  end
+  
+  <<-DOC
+  def method_missing(name, *args)
+    @manager.send(name, *args)
+  end
+  DOC
+end
+
+
+#Optional Parameters
+#Note: def add_game(name, system = nil, year = nil, &block)
+#Array Parameter using Splat * operator
+#Note: def with_game(*names, &block)
+##game.rb
+class Game
+  attr_reader :name
+ 
+  def initialize(name)
+    @name = name
+    @year = nil
+    @system = nil
+  end
+ 
+  def year(value)
+    @year = value
+  end
+ 
+  def system(value)
+    @system = value
+  end
+ 
+  def print_details
+    puts "#{@name} - #{@year} (#{@system})"
+  end
+ 
+  def play
+  end
+ 
+  def capture_screenshot
+  end
+end
+##library.rb
+class Library
+  def initialize
+    @games = []
+  end
+ 
+  def add_game(game)
+    @games << game
+  end
+ 
+  def find_by_name(name)
+    @games.detect { |game| game.name == name }
+  end
+end
+##game_dsl.rb
+LIBRARY = Library.new
+
+def add_game(name, system = nil, year = nil, &block)
+  game = Game.new(name)
+  game.system(system) if system
+  game.year(year) if year
+  game.instance_eval(&block) if block_given?
+  LIBRARY.add_game(game)
+end
+
+def with_game(*names, &block)
+  names.each do |name|
+    game = LIBRARY.find_by_name(name)
+    game.instance_eval(&block)
+  end
+  self
+end
+
+
+#DSL Domain Specific Language
+game_dsl.rb
+LIBRARY = Library.new
+ 
+def add_game(name, &block)
+  game = Game.new(name)
+  game.instance_eval(&block)
+  LIBRARY.add_game(game)
+end
+ 
+def with_game(name, &block)
+  game = LIBRARY.find_by_name(name)
+  game.instance_eval(&block)
+end
+##game.rb
+class Game
+  attr_reader :name
+ 
+  def initialize(name)
+    @name = name
+    @year = nil
+    @system = nil
+  end
+ 
+  def year(value)
+    @year = value
+  end
+ 
+  def system(value)
+    @system = value
+  end
+ 
+  def print_details
+    puts "#{@name} - #{@year} (#{@system})"
+  end
+ 
+  def play
+  end
+ 
+  def capture_screenshot
+  end
+end
+##library.rb
+class Library
+  def initialize
+    @games = []
+  end
+ 
+  def add_game(game)
+    @games << game
+  end
+ 
+  def find_by_name(name)
+    @games.detect { |game| game.name == name }
+  end
+end
+##example.rb
+add_game "Civilization" do
+  system "PC"
+  year 1991
+end
+add_game "Contra" do
+  system "NES"
+  year 1987 
+end
+with_game "Contra" do 
+  game = LIBRARY.find_by_name("Contra")
+  game.print_details
+  game.play
+  game.capture_screenshot
+end
+
+
+#DSL Domain Specific Language
+#Note: DSL Complete
+##library.rb
+class Library
+  def initialize
+    @games = []
+  end
+ 
+  def add_game(game)
+    @games << game
+  end
+ 
+  def find_by_name(name)
+    @games.detect { |game| game.name == name }
+  end
+ 
+  def find_by_tag(tag)
+    @games.select { |game| game.tags.include?(tag) }
+  end
+end
+##game.rb
+class Game
+  attr_reader :name, :tags
+ 
+  def initialize(name)
+    @name = name
+    @tags = []
+  end
+ 
+  def year(value)
+    @year = value
+  end
+ 
+  def system(value)
+    @system = value
+  end
+ 
+  def print_details
+    puts "#{@name} - #{@year} (#{@system})"
+  end
+ 
+  def capture_screenshot
+    puts "Grabbing a screenshot for #{@name}"
+  end
+ 
+  def play
+    if @system == "SNES"
+      raise "No emulator for SNES games"
+    else
+      puts "Starting #{@name}"
+    end
+  end
+ 
+  def method_missing(method_name, *args)
+    @tags << method_name.to_s
+  end
+end
+##game_dsl.rb
+LIBRARY = Library.new 
+def add_game(name, system = nil, year = nil, &block)
+  game = Game.new(name)
+  game.system(system) if system
+  game.year(year) if year
+  game.instance_eval(&block) if block_given?
+  LIBRARY.add_game(game)
+end 
+def with_game(*names, &block)
+  names.each do |name|
+    game = LIBRARY.find_by_name(name)
+    game.instance_eval(&block)
+  end
+end 
+def with_games_tagged(tag, &block)
+  games = LIBRARY.find_by_tag(tag)
+  games.each do |game|
+    game.instance_eval(&block)
+  end
+end
+##example.rb
+add_game("Civilization", "PC", 1991) { strategy turn_based }
+add_game("Contra", "NES", 1987) { strategy turn_based }
+
+add_game("The Legend of Zelda", "NES", 1986) { action rpg }
+add_game("Mega Man X2", "SNES", 1995) { action }
+
+add_game("Super Metroid", "SNES", 1994) { adventure platformer }
+add_game("Sim City 2000", "PC", 1993) { strategy simulation }
+add_game("Starcraft", "PC", 1998) { realtime strategy }
+
+with_games_tagged "action" do
+  print_details
+end
+
+with_game "Contra" do
+  capture_screenshot
+end
+
+with_game "Sim City 2000" do
+  capture_screenshot
+end
+
+with_game "Starcraft" do
+  play
+end
+
+
+
+
+#Input
+print "What?"
+input = gets.chomp
+input.capitalize!
+puts "Your input is #{input}"
+#Output:
+#What? Ruby
+#Your input is Ruby
+
+
+#if elsif else
+print "What?"
+input = gets.chomp
+if input.capitalize! == "Ruby" #capitalize! with Bang
+ puts "==== No Colon, Optional Space(Standard Two spaces), elsif, and end"
+elsif input.capitalize == "Python" #capitalize without Bang
+ puts "== Colon, Tab Indent, elif, and No end"
+else
+ puts "MongoDB"
+end
+#Output:
+#What? NoSQL
+#MongoDB
+
+
+#capitalize and capitalize!
+variable = "jOSHua"
+variable.capitalize
+puts variable #jOSHua
+var = "jOSHua"
+var.capitalize!
+puts var #Joshua
+#Output:
+#jOSHua
+#Joshua
+
+
+#Alphabets
+"A".upto("Z"){|x| print "#{x} " }
+"A".upto("Z"){|x| print "#{x.ord} "} #ASCII
+puts ('a'..'z').to_a
+puts ('A'..'Z').to_a
+
+#unless
+unless false
+ false
+else
+ true
+#Output:
+#false
+
+
+#Random
+r = Random.new.rand(20..30)
+#String Format
+puts "Random number: %s" % r
+
+
+#String
+print "Enter input"
+user_input = gets.chomp
+if user_input.include? "s"
+  user_input.gsub!(/s/, "th")
+else
+  print "There are no \"s\"s in the string."
+end
+puts "Your string is: #{user_input}"
+#Output:
+#Enter input Super
+#Your string is: thuper
+
+
+#String 
+#.object_id method gets the ID of an objectóit's how Ruby knows whether two objects are the exact same object.
+#See that the two "strings" are actually different objects, whereas the :symbol or :sym is the same object listed twice.
+puts "string".object_id
+puts "string".object_id
+puts :sym.object_id
+puts :sym.object_id
+#Output:
+#9293400
+#9293180
+#320008
+#320008
+
+
+#while
+i = 1
+while i < 11
+  print "#{i} "
+  i += 1
+end
+#Output: 
+#1 2 3 4 5 6 7 8 9 10
+
+
+#until
+i = 1
+until i == 11
+  print "#{i} "
+  i += 1
+end
+#Output: 
+#1 2 3 4 5 6 7 8 9 10
+
+
+#for Inclusive
+for i in 1..10
+  print "#{i} "
+end
+#Output: 
+#1 2 3 4 5 6 7 8 9 10
+
+
+#for Exclusive 
+for i in 0...11
+  print "#{i} "
+end
+#Output: 
+#1 2 3 4 5 6 7 8 9 10
+
+
+#for Exclusive 
+lst = ["Alpha", "Beta", "Gamma"]
+for i in 0...(lst.length)
+  puts lst[i]
+end
+#Output:
+#Alpha
+#Beta
+#Gamma
+
+
+#loop
+i = 11
+loop do
+ i -= 1 
+ print "#{i} " 
+ break if i <= 1
+end
+#Output:
+#10 9 8 7 6 5 4 3 2 1
+
+
+#loop next
+i = 10
+loop do
+  i -= 1
+  next if i % 2 != 0
+  print "#{i} "
+  break if i <= 0
+end
+#Output:
+#8 6 4 2 0
+
+
+#while
+i = 0
+while i < 11 do
+ print "#{i} "
+ i += 1
+end
+#Output
+#1 2 3 4 5 6 7 8 9 10
+
+
+#times
+i = 1
+10.times do  
+    print "#{i} "  
+    i += 1
+end
+#Output:
+#1 2 3 4 5 6 7 8 9 10
+
+
+#times
+10.times {|i| print "#{i} "}
+#Output:
+#0 1 2 3 4 5 6 7 8 9
+
+
+#times
+10.times {print "Ruby "}
+#Output: Ruby Ruby Ruby Ruby Ruby Ruby Ruby Ruby Ruby Ruby
+
+
+#upto
+1.upto(10) {|i|  print "#{i} "}
+#Output:1 2 3 4 5 6 7 8 9 10
+
+
+#upto
+1.upto(10) {|i|  print "#{i} "}
+#Output:1 2 3 4 5 6 7 8 9 10
+
+
+#upto
+i = 1
+1.upto(10) do
+    print "#{i} "
+    i += 1
+end
+#Output:1 2 3 4 5 6 7 8 9 10
+
+
+#downto
+10.downto(1) {|i|  print "#{i} "}
+#Output: 10 9 8 7 6 5 4 3 2 1
+
+
+#downto
+i = 10
+10.downto(1) do
+    print "#{i} "
+    i -= 1
+end
+#Output: 10 9 8 7 6 5 4 3 2 1
+
+
+#Array
+array = [1,2,3,4,5]
+
+array.each do |x|
+  print "#{x} "
+end
+#Output:
+#1 2 3 4 5
+
+
+#Array
+[1,2,3,4,5].each do |x|
+  print "#{x} "
+end
+#Output:
+#1 2 3 4 5
+
+
+#Array of arrays
+array = [["R"], ["Ruby"]]
+
+
+#Array Sum
+array = [1, 2, 3, 4, 5]
+result = 0
+array.each do |x|
+  result += x
+end
+puts result
+puts array.inject{|sum, x| sum + x}
+#Output:
+#15
+#15
+
+
+#Array Reverse and Combined Comparison Operator
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+fruits.sort! {|x, y| y <=> x}
+#Output:
+#["pear", "orange", "grapes", "banana", "apple"]
+
+
+#push into Array
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+symbols = []
+strings.each{|s| symbols.push(s.to_sym)}
+strings.each{|s| print "#{s} "}
+strings.each{|s| symbols.push(s.intern)}
+strings.each{|s| print "#{s} "}
+#Output:
+#HTML CSS JavaScript Python Ruby
+#HTML CSS JavaScript Python Ruby
+
+
+#Nested each on multi-dimensional arrays
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+s.each {|x| puts x.each {|y| y}}
+
+#Output:
+#ham
+#swiss
+#turkey
+#cheddar
+#roast beef
+#gruyere
+
+
+#Array
+array = [0, 1, 2, 3, 4, 5, 6]
+array.from(4)          #[4, 5, 6]
+array.to(2)            #[[0, 1, 2], [3, 4, 5], [6, nil, nil]]
+array.in_groups_of(3)  #[[0, 1], [3, 4, 5, 6]] 
+array.split(2)         #[[0, 1], [3, 4, 5, 6]]
+
+
+#hash
+language = { 
+  "name" => "Ruby",
+  "Really?" => true
+}
+puts language["name"]
+puts language["Really?"]
+#Output:
+#Ruby
+true
+
+
+#hash
+language = { 
+  :name => "Ruby",
+  :Really? => true
+}
+puts language[:name]
+puts language[:Really?]
+#Output:
+#Ruby
+true
+
+#new 1.9 hash syntax rather than the old hash rocket syntax :name => "Ruby", :Really? => true
+language = { 
+  name: "Ruby",
+  Really?: true
+}
+puts language[:name]
+puts language[:Really?]
+#Output:
+#Ruby
+true
+
+
+#Hash
+pets = Hash.new
+pets["R"] = "Ruby"
+puts pets["R"]
+#Output:
+#Ruby
+
+
+#select on hash
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+good_movies = movie_ratings.select{|x, y| y > 3}
+good_movies.each{|x, y| puts "#{x} "}
+#Output:
+#primer 
+#the_matrix 
+#truman_show 
+#skyfall 
+#lion_king 
+
+
+#Date
+require 'date' #Some modules, like Math, are already present in the interpreter.
+puts Date.today
+Output:
+#2015-07-12
+
+
+#Time
+require 'time' #Some modules, like Math, are already present in the interpreter.
+puts Time.now
+#Output:
+#2015-07-10 23:14:30 +0000
+
+
+#Time
+puts Time.now.strftime("%d/%m/%Y %H:%M")
+#Output:
+#10/07/2015 23:13
+
+
+#Time
+puts Time.now.strftime("%d/%m/%Y")
+#Output:
+#10/07/2015
+
+
+#Time
+puts Time.now.strftime("%H:%M")
+#Output:
+#23:13
+
+
+#sort_by
+colors = {"blue" => 3, "green" => 1, "red" => 2}
+colors = colors.sort_by do |color, count|
+  count
+end
+colors.reverse!
+#Output:
+#[["blue", 3], ["red", 2], ["green", 1]]
+
+
+#Ternary or Conditional
+def by_three?(number)
+ #return number % 3 == 0 ? true : false
+ return number % 3 == 0 
+end
+puts by_three?(7)
+puts by_three?(9)
+#Output:
+false
+true
+
+
+#implicit return 
+def multiple_of_three(n)
+  n % 3 == 0 ? "True" : "False"
+end
+#Output:
+false
+
+
+#Ternary or Conditional
+puts Random.new.rand(1..100) % 2 == 0 ? true : false
+#Output:
+#true
+
+#Ternary or Conditional
+puts 1 < 2 ? "One is less than two!" : "One is not less than two."
+#Output:
+#One is less than two!
+
+
+#conditional assignment
+def my_method(optional_param)
+  optional_param ||= 3
+  puts optional_param
+end
+
+puts my_method
+#Output:
+#3
+
+
+#Method returns last line
+def sum(x,y)
+  #optional return x + y
+  x + y
+end
+puts sum(1, 2)
+#Output:
+#3
+
+
+#Combined comparison operator
+book_1 = "A Wrinkle in Time"
+book_2 = "A Brief History of Time"
+book_1 <=> book_2
+
+
+#Call and Response
+age.respond_to?(:next)
+age = 26
+#Output:
+#true
+#Output:
+#1
+
+
+#Combined Comparison Operator
+# returns 1 if first operand is greater than the second, and -1 if the first operand is less than the second
+x = "Alpha"
+y = "Beta"
+puts x <=> y
+puts y <=> x
+#Output:
+#-1
+#1
+
+
+#Combined Comparison Operator
+# returns 1 if first operand is greater than the second, and -1 if the first operand is less than the second
+x = 1
+y = 2
+puts x <=> y
+puts y <=> x
+#Output:
+#-1
+#1
+
+
+#case
+puts "Please enter add, update, display, or delete"
+choice = gets.chomp
+case choice
+when "add"
+  puts "Added!"
+when "update"
+  puts "Updated!"
+when "display"
+  puts "Movies!"
+when "delete"
+  puts "Deleted!"
+else
+  puts "Error!"
+end
+#Output:
+#Please enter add, update, display, or delete
+# add
+#Added!
+
+
+#Conditinal 
+puts favorite_language ||= "Haskell"
+#Output:
+#Haskell
+
+
+#concatenation operator (also known as "the shovel!")
+alphabet = ["a", "b", "c"]
+#alphabet.push("d") # Update me!
+alphabet << ("d") # Update me!
+alphabet.each{|x| puts x}
+caption = "A giraffe surrounded by "
+#caption += "weezards!" # Me, t
+caption << "weezards!" #Me, too!
+puts caption
+#Output:
+#a
+#b
+#c
+#d
+#A giraffe surrounded by weezards!
+
+
+#single-line if, unless, and times
+<<-DOC
+unless n.is_a? Integer
+  return "n must be an integer."
+end
+DOC
+
+"n must be an integer." unless n.is_a? Integer
+
+<<-DOC
+if n <= 0
+  return "n must be greater than 0."
+end
+DOC
+
+"n must be greater than 0." if n <= 0
+
+
+<<-DOC
+require 'prime'
+
+prime_array ||= []  
+prime = Prime.new
+for num in (1..n)
+prime_array.push(prime.next)
+end
+DOC
+
+require 'prime'
+prime_array ||= []  
+prime = Prime.new
+n.times{prime_array << prime.next}
+
+
+#prime class
+require 'prime'
+def first_n_primes(n)
+  # Check for correct input!
+  "n must be an integer" unless n.is_a? Integer
+  "n must be greater than 0" if n <= 0
+  # The Ruby 1.9 Prime class makes the array automatically!
+  prime = Prime.instance
+  prime.first n
+end
+first_n_primes(10)
+#Output:
+#[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+
+
+#yield
+def block_test
+  puts "We're in the method!"
+  puts "Yielding to the block..."
+  yield
+  puts "We're back in the method!"
+end
+block_test { puts ">>> We're in the block!" }
+#Output:
+#We're in the method!
+#Yielding to the block...
+#>>> We're in the block!
+#We're back in the method!
+
+
+#yield
+def double(parameter)
+  yield parameter * 2
+end
+double(10) {|x| puts x}
+#Output:
+#20
+
+
+#&
+convert symbols to procs using that handy little &
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+strings = numbers.collect(&:to_s)
+#OR
+strings = numbers.map(&:to_s)
+
+
+#Proc and yield
+def greeter
+  yield
+end
+phrase = Proc.new{ puts "Hello there!" }
+#OR
+phrase = Proc.new do puts "Hello there!" end
+greeter(&phrase)
+#Output:
+#Hello there!
+
+
+#Proc vs Lambda
+def _proc
+  victor = Proc.new { return "proc returns immediately" }
+  victor.call
+  "proc will ignore unexpected arguments and assign nil to any that are missing"
+end
+
+puts _proc
+
+def _lambda
+  victor = lambda { return "lambda returns control back to the calling method" }
+  victor.call
+  "lambda will throw an error if you pass it the wrong number of arguments"
+end
+
+puts _lambda
+
+#Output:
+#proc returns immediately
+#lambda will throw an error if you pass it the wrong number of arguments
+
+
+#class
+class Person
+  def initialize(name)
+      @name = name
+  end
+end
+
+$var = Person.new("Ruby")
+
+$, @, or @@ mark global, instance, and class variables (respectively)
+
+class ApplicationError
+  def display_error
+    puts "Error! Error!"
+  end
+end
+
+class SuperBadError < ApplicationError #inheritance
+end
+
+err = SuperBadError.new 
+err.display_error #accessed via inheritance
+
+
+#attr_reader
+#attr_writer
+class Person
+    attr_reader :readonly 
+    attr_writer :writeonly
+    attr_accessor :readwrite
+  def initialize(name, job)
+    @name = name
+    @job = job
+  end 
+end
+
+
+#Math
+puts Math::PI
+#Output: 3.141592653589793
+
+
+#include
+#Some modules, like Math, are already present in the interpreter.
+class Angle
+  include Math
+  def cosine(n)
+    cos(n) #Math::cos
+  end
+end
+
+
+#extend mixes a module's methods at the class level. This means that class itself can use the methods, as opposed to instances of the class.
+#include mixes a module's methods in at the instance level (allowing instances of a particular class to use the methods)
+#ThePresent has a .now method that we'll extend to TheHereAnd
+module ThePresent
+  def now
+    puts "It's #{Time.new.hour > 12 ? Time.new.hour - 12 : Time.new.hour}:#{Time.new.min} #{Time.new.hour > 12 ? 'PM' : 'AM'} (GMT)."
+  end
+end
+class TheHereAnd
+  extend ThePresent
+end
+class ThereAnd
+  include ThePresent
+end
+# class level
+TheHereAnd.now
+# instance level
+ThereAnd.new.now
+#Output:
+#It's 7:29 PM (GMT).
+#It's 7:29 PM (GMT).
+
+
+#public
+class Application
+  attr_accessor :status
+  def initialize; end
+  # Add your method here!
+  public
+  def print_status; puts "All systems go!" end
+end
+
+
+#public
+class Application
+  attr_accessor :status
+  def initialize; end
+  # Add your method here!
+  public
+  def print_status
+    puts "All systems go!"  
+  end
+end
+
+
+#private
+class Application
+  attr_accessor :status
+  def initialize; end
+  # Add your method here!
+  public
+  def print_status; puts "All systems go!" end
+  private
+  def password; 12345 end
+end
+
+
+#Version
+"#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"
+#Output:
+#"1.9.3-p0"

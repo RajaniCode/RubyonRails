@@ -1,0 +1,1193 @@
+C:\Users\Aspire>cd E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application>heroku --version
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+heroku/toolbelt/3.43.12 (i386-mingw32) ruby/2.1.7
+heroku-cli/5.4.6-02f2268 (windows-386) go1.7.1
+You have no installed plugins.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application>heroku login
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Enter your Heroku credentials.
+Email: *****@gmail.com
+Password (typing will be hidden):
+Logged in as *****@gmail.com
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application>git clone https://github.com/heroku/jruby-getting-started.git
+Cloning into 'jruby-getting-started'...
+remote: Counting objects: 238, done.
+Receiving objects:  78% (186/238)   0 (delta 0), pack-reused 238 eceiving objects:  75% (179/238)
+Receiving objects: 100% (238/238), 38.71 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (83/83), done.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application>cd jruby-getting-started
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku create
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Creating app... done, tranquil-castle-80063
+https://tranquil-castle-80063.herokuapp.com/ | https://git.heroku.com/tranquil-castle-80063.git
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git push heroku master
+Counting objects: 238, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (139/139), done.
+Writing objects: 100% (238/238), 38.71 KiB | 0 bytes/s, done.
+Total 238 (delta 83), reused 238 (delta 83)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.3.1-jruby-9.1.5.0
+remote: -----> Installing JVM: openjdk-8
+remote: -----> Installing dependencies using bundler 1.11.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Fetching gem metadata from https://rubygems.org/...........
+remote:        Fetching version metadata from https://rubygems.org/...
+remote:        Fetching dependency metadata from https://rubygems.org/..
+remote:        Installing i18n 0.6.11
+remote:        Installing json 1.8.1
+remote:        Installing rake 10.4.0
+remote:        Installing minitest 5.4.3
+remote:        Installing thread_safe 0.3.4
+remote:        Installing builder 3.2.2
+remote:        Installing erubis 2.7.0
+remote:        Installing rack 1.5.2
+remote:        Installing mime-types 2.4.3
+remote:        Installing arel 5.0.1.20140414130214
+remote:        Installing coffee-script-source 1.8.0
+remote:        Installing execjs 2.2.2
+remote:        Installing jdbc-postgres 9.3.1102
+remote:        Installing thor 0.19.1
+remote:        Installing hike 1.2.3
+remote:        Using bundler 1.11.2
+remote:        Installing multi_json 1.10.1
+remote:        Installing tilt 1.4.1
+remote:        Installing rails_serve_static_assets 0.0.2
+remote:        Installing rails_stdout_logging 0.0.3
+remote:        Installing sass 3.2.19
+remote:        Installing tzinfo 1.2.2
+remote:        Installing rdoc 4.1.2
+remote:        Installing mail 2.6.3
+remote:        Installing rack-test 0.6.2
+remote:        Installing coffee-script 2.3.0
+remote:        Installing uglifier 2.5.3
+remote:        Installing puma 2.9.1
+remote:        Installing sprockets 2.12.3
+remote:        Installing rails_12factor 0.0.3
+remote:        Installing activesupport 4.1.8
+remote:        Installing sdoc 0.4.1
+remote:        Installing tzinfo-data 1.2015.1
+remote:        Installing activemodel 4.1.8
+remote:        Installing actionview 4.1.8
+remote:        Installing jbuilder 2.2.5
+remote:        Installing activerecord 4.1.8
+remote:        Installing actionpack 4.1.8
+remote:        Installing actionmailer 4.1.8
+remote:        Installing railties 4.1.8
+remote:        Installing sprockets-rails 2.2.2
+remote:        Installing activerecord-jdbc-adapter 1.3.14
+remote:        Installing coffee-rails 4.0.1
+remote:        Installing jquery-rails 3.1.2
+remote:        Installing sass-rails 4.0.5
+remote:        Installing activerecord-jdbcpostgresql-adapter 1.3.14
+remote:        Installing turbolinks 2.5.2
+remote:        Installing rails 4.1.8
+remote:        Bundle complete! 13 Gemfile dependencies, 48 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Post-install message from rdoc:
+remote:        Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+remote:        <= 1.8.6 : unsupported
+remote:        = 1.8.7 : gem install rdoc-data; rdoc-data --install
+remote:        = 1.9.1 : gem install rdoc-data; rdoc-data --install
+remote:        >= 1.9.2 : nothing to do! Yay!
+remote:        Bundle completed (33.56s)
+remote:        Cleaning up the bundler cache.
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        I, [2016-10-19T13:27:47.113000 #671]  INFO -- : Writing /tmp/build_562364aa5c1a91a2c7c2929957b239f6/public/assets/application-16da03a5233f3ec1a05
+955a4a83d2720.js
+remote:        I, [2016-10-19T13:27:48.010000 #671]  INFO -- : Writing /tmp/build_562364aa5c1a91a2c7c2929957b239f6/public/assets/application-9c38d010c5f7a158e79
+66b7934e43f5e.css
+remote:        Asset precompilation completed (18.89s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake, worker
+remote:
+remote: -----> Compressing...
+remote:        Done: 89.5M
+remote: -----> Launching...
+remote:        Released v5
+remote:        https://tranquil-castle-80063.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-castle-80063.git
+ * [new branch]      master -> master
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku ps:scale web=1
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Scaling dynos... done, now running web at 1:Free
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku open
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku logs --tail
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+2016-10-19T13:25:35.370110+00:00 heroku[api]: Enable Logplex by *****@gmail.com
+2016-10-19T13:25:35.370110+00:00 heroku[api]: Release v2 created by *****@gmail.com
+2016-10-19T13:28:15.191721+00:00 heroku[api]: Set JAVA_OPTS, JRUBY_OPTS, LANG, RACK_ENV, RAILS_ENV, SECRET_KEY_BASE config vars by *****@gmail.com
+2016-10-19T13:28:15.191770+00:00 heroku[api]: Release v3 created by *****@gmail.com
+2016-10-19T13:28:16.077638+00:00 heroku[api]: Attach DATABASE (@ref:postgresql-fluffy-61859) by *****@gmail.com
+2016-10-19T13:28:16.077692+00:00 heroku[api]: Release v4 created by *****@gmail.com
+2016-10-19T13:28:16.683195+00:00 heroku[api]: Scale to web=1 by *****@gmail.com
+2016-10-19T13:28:16.683840+00:00 heroku[api]: Deploy 75f3e1e by *****@gmail.com
+2016-10-19T13:28:16.683879+00:00 heroku[api]: Release v5 created by *****@gmail.com
+2016-10-19T13:28:17.254478+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-19T13:28:17.254487+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-19T13:28:22.337055+00:00 heroku[web.1]: Starting process with command `puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2016-10-19T13:28:43.638782+00:00 app[web.1]: The signal USR1 is in use by the JVM and will not work correctly on this platform
+2016-10-19T13:28:43.639469+00:00 app[web.1]: Puma starting in single mode...
+2016-10-19T13:28:43.639663+00:00 app[web.1]: * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+2016-10-19T13:28:43.639801+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2016-10-19T13:28:43.639928+00:00 app[web.1]: * Environment: production
+2016-10-19T13:28:51.813732+00:00 app[web.1]: * Listening on tcp://0.0.0.0:25582
+2016-10-19T13:28:51.855138+00:00 app[web.1]: Use Ctrl-C to stop
+2016-10-19T13:28:51.969081+00:00 heroku[web.1]: State changed from starting to up
+2016-10-19T13:30:12.276676+00:00 app[web.1]: Started GET "/" for 223.227.102.187 at 2016-10-19 13:30:12 +0000
+2016-10-19T13:30:12.863184+00:00 app[web.1]: Processing by WelcomeController#index as HTML
+2016-10-19T13:30:13.063886+00:00 app[web.1]:   Rendered welcome/index.erb within layouts/application (8.0ms)
+2016-10-19T13:30:13.097045+00:00 app[web.1]: Completed 200 OK in 230ms (Views: 80.5ms | ActiveRecord: 0.0ms)
+2016-10-19T13:30:13.271237+00:00 heroku[router]: at=info method=GET path="/" host=tranquil-castle-80063.herokuapp.com request_id=cbbd5259-573b-497b-86d1-e47159c
+22ecb fwd="223.227.102.187" dyno=web.1 connect=0ms service=1085ms status=200 bytes=1269
+2016-10-19T13:30:13.687413+00:00 heroku[router]: at=info method=GET path="/assets/application-9c38d010c5f7a158e7966b7934e43f5e.css" host=tranquil-castle-80063.h
+erokuapp.com request_id=e38382fd-14c5-4742-a746-b4b9861308af fwd="223.227.102.187" dyno=web.1 connect=0ms service=72ms status=200 bytes=940
+2016-10-19T13:30:13.688324+00:00 heroku[router]: at=info method=GET path="/assets/application-16da03a5233f3ec1a05955a4a83d2720.js" host=tranquil-castle-80063.he
+rokuapp.com request_id=b35b1c10-3f27-4ba8-90e5-2ddc93eedac6 fwd="223.227.102.187" dyno=web.1 connect=0ms service=61ms status=200 bytes=116762
+2016-10-19T13:30:15.581528+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=tranquil-castle-80063.herokuapp.com request_id=6a7e846a-6d6f-49d7-9
+7d7-10f7eadac616 fwd="223.227.102.187" dyno=web.1 connect=0ms service=6ms status=200 bytes=143
+^CTerminate batch job (Y/N)? Y
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>type Procfile
+web: puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku ps
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Free dyno hours quota remaining this month: 550h 0m (100%)
+For more information on dyno sleeping and how to upgrade, see:
+https://devcenter.heroku.com/articles/dyno-sleeping
+
+=== web (Free): puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development} (1)
+web.1: up 2016/10/19 18:58:51 +0530 (~ 8m ago)
+
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku ps:scale web=0
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Scaling dynos... done, now running web at 0:Free
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku ps:scale web=1
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Scaling dynos... done, now running web at 1:Free
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>jruby -S bundle install --binstubs
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies....................
+Installing rake 10.4.0
+Installing i18n 0.6.11
+Installing json 1.8.1
+Installing minitest 5.4.3
+Installing thread_safe 0.3.4
+Installing builder 3.2.2
+Installing erubis 2.7.0
+Installing rack 1.5.2
+Installing mime-types 2.4.3
+Installing arel 5.0.1.20140414130214
+Installing jdbc-postgres 9.3.1102
+Using bundler 1.13.5
+Installing coffee-script-source 1.8.0
+Installing execjs 2.2.2
+Installing thor 0.19.1
+Installing hike 1.2.3
+Installing multi_json 1.10.1
+Installing tilt 1.4.1
+Installing rails_serve_static_assets 0.0.2
+Installing rails_stdout_logging 0.0.3
+Installing sass 3.2.19
+Installing spring 1.2.0
+Installing rdoc 4.1.2
+Installing tzinfo 1.2.2
+Installing rack-test 0.6.2
+Installing puma 2.9.1
+Installing mail 2.6.3
+Installing coffee-script 2.3.0
+Installing uglifier 2.5.3
+Installing sprockets 2.12.3
+Installing rails_12factor 0.0.3
+Installing sdoc 0.4.1
+Installing activesupport 4.1.8
+Installing tzinfo-data 1.2015.1
+Installing actionview 4.1.8
+Installing activemodel 4.1.8
+Installing jbuilder 2.2.5
+Installing actionpack 4.1.8
+Installing activerecord 4.1.8
+Installing actionmailer 4.1.8
+Installing railties 4.1.8
+Installing sprockets-rails 2.2.2
+Installing activerecord-jdbc-adapter 1.3.14
+Installing coffee-rails 4.0.1
+Installing jquery-rails 3.1.2
+Installing rails 4.1.8
+Installing sass-rails 4.0.5
+Installing activerecord-jdbcpostgresql-adapter 1.3.14
+Installing turbolinks 2.5.2
+Bundle complete! 13 Gemfile dependencies, 49 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Post-install message from rdoc:
+Depending on your version of ruby, you may need to install ruby rdoc/ri data:
+
+<= 1.8.6 : unsupported
+ = 1.8.7 : gem install rdoc-data; rdoc-data --install
+ = 1.9.1 : gem install rdoc-data; rdoc-data --install
+>= 1.9.2 : nothing to do! Yay!
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>bundle show
+Your Ruby engine is ruby, but your Gemfile specified jruby
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>gem list
+
+*** LOCAL GEMS ***
+
+actioncable (5.0.0.1)
+actionmailer (5.0.0.1, 4.2.5.1)
+actionpack (5.0.0.1, 4.2.5.1)
+actionview (5.0.0.1, 4.2.5.1)
+activejob (5.0.0.1, 4.2.5.1)
+activemodel (5.0.0.1, 4.2.5.1)
+activerecord (5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.0.1, 4.2.5.1)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.10.0)
+concurrent-ruby (1.0.2, 1.0.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.0, 2.4.1)
+jquery-rails (4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.9.1, 5.4.3)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.0, 3.4.0)
+rack (2.0.1, 1.6.4)
+rack-test (0.6.3)
+rails (5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.0.1, 4.2.5.1)
+rake (11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+rubyzip (1.1.7)
+sass (3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.7, 1.2016.6)
+uglifier (3.0.2, 3.0.0)
+web-console (3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>jruby -S bin\rake db:create db:migrate
+org.postgresql.util.PSQLException: The server requested password-based authentication, but no password was provided.
+arjdbc/jdbc/RubyJdbcConnection.java:453:in `init_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/jdbc/connection.rb:15:in `initialize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/jdbc/adapter.rb:68:in `initialize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/postgresql/adapter.rb:1347:in `initialize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/jdbc/connection_methods.rb:12:in `jdbc_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/postgresql/connection_methods.rb:45:in `postgresql_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:435:in `new_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:445:in `checkout_new_connection'
+
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:416:in `acquire_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:351:in `block in checkout'
+C:/jruby-9.1.5.0/lib/ruby/stdlib/monitor.rb:214:in `mon_synchronize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:350:in `checkout'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:265:in `block in connection'
+C:/jruby-9.1.5.0/lib/ruby/stdlib/monitor.rb:214:in `mon_synchronize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:264:in `connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:541:in `retrieve_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_handling.rb:113:in `retrieve_connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/connection_handling.rb:87:in `connection'
+C:17:in `connection'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/tasks/postgresql_database_tasks.rb:17:in `create'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/tasks/database_tasks.rb:88:in `create'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/tasks/database_tasks.rb:102:in `block in create_current'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/tasks/databases4.rake:12:in `block in each_current_configuration'
+org/jruby/RubyArray.java:1734:in `each'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-jdbc-adapter-1.3.14/lib/arjdbc/tasks/databases4.rake:11:in `each_current_configuration'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/tasks/database_tasks.rb:101:in `create_current'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/activerecord-4.1.8/lib/active_record/railties/databases.rake:17:in `block in (root)'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/task.rb:240:in `block in execute'
+org/jruby/RubyArray.java:1734:in `each'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/task.rb:235:in `execute'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/task.rb:179:in `block in invoke_with_call_chain'
+C:/jruby-9.1.5.0/lib/ruby/stdlib/monitor.rb:214:in `mon_synchronize'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/task.rb:172:in `invoke_with_call_chain'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/task.rb:165:in `invoke'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:156:in `invoke_task'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:112:in `block in top_level'
+org/jruby/RubyArray.java:1734:in `each'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:112:in `block in top_level'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:121:in `run_with_threads'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:106:in `top_level'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:84:in `block in run'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:182:in `standard_exception_handling'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/lib/rake/application.rb:79:in `run'
+C:/jruby-9.1.5.0/lib/ruby/gems/shared/gems/rake-10.4.0/bin/rake:33:in `<main>'
+org/jruby/RubyKernel.java:974:in `load'
+bin\rake:17:in `<main>'
+Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "pool"=>5, "database"=>"ruby-getting-started_test"}
+== 20140707111715 CreateWidgets: migrating ====================================
+-- create_table(:widgets)
+   -> 0.1139s
+== 20140707111715 CreateWidgets: migrated (0.1183s) ===========================
+
+
+# Git Bash
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started"
+
+Aspire@Acer MINGW64 ~/e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ heroku local web -f Procfile.windows
+[OKAY] Loaded ENV .env File as KEY=VALUE Format
+7:51:09 PM web.1 |  The signal USR2 is in use by the JVM and will not work correctly on this platform
+7:51:09 PM web.1 |  Puma starting in single mode...
+7:51:09 PM web.1 |  * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+7:51:09 PM web.1 |  * Min threads: 5, max threads: 5
+7:51:09 PM web.1 |  * Environment: development
+7:51:09 PM web.1 |  The signal USR1 is in use by the JVM and will not work correctly on this platform
+7:51:09 PM web.1 |  The signal HUP is in use by the JVM and will not work correctly on this platform
+7:51:27 PM web.1 |  * Listening on tcp://0.0.0.0:5000
+7:51:27 PM web.1 |  Use Ctrl-C to stop
+7:51:43 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:43] "GET / HTTP/1.1" 200 - 14.5210
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET / HTTP/1.1" 200 - 11.5290
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /scaffolds.css?body=1 HTTP/1.1" 200 2991 0.1420
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /turbolinks.js?body=1 HTTP/1.1" 200 24847 0.1100
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /welcome.css?body=1 HTTP/1.1" 200 - 0.3410
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /widgets.css?body=1 HTTP/1.1" 200 - 0.4350
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /application.js?body=1 HTTP/1.1" 200 586 0.3340
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /application.css?body=1 HTTP/1.1" 200 650 0.9380
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /jquery.js?body=1 HTTP/1.1" 200 282767 1.1700
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /welcome.js?body=1 HTTP/1.1" 200 31 1.0940
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /widgets.js?body=1 HTTP/1.1" 200 31 1.1430
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /jquery_ujs.js?body=1 HTTP/1.1" 200 17510 0.5510
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET %2Ffavicon.ico HTTP/1.1" 200 - 0.0090
+
+Aspire@Acer MINGW64 ~/e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ jruby -S bundle install
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies........................................................................
+Using rake 10.4.0
+Using i18n 0.6.11
+Using json 1.8.1
+Using minitest 5.4.3
+Using thread_safe 0.3.4
+Using builder 3.2.2
+Using erubis 2.7.0
+Using rack 1.5.2
+Using mime-types 2.4.3
+Using arel 5.0.1.20140414130214
+Using jdbc-postgres 9.3.1102
+Using bundler 1.13.5
+Using coffee-script-source 1.8.0
+Using execjs 2.2.2
+Using thor 0.19.1
+Installing cowsay 0.3.0
+Using hike 1.2.3
+Using multi_json 1.10.1
+Using tilt 1.4.1
+Using rails_serve_static_assets 0.0.2
+Using rails_stdout_logging 0.0.3
+Using sass 3.2.19
+Using spring 1.2.0
+Using rdoc 4.1.2
+Using tzinfo 1.2.2
+Using rack-test 0.6.2
+Using puma 2.9.1
+Using mail 2.6.3
+Using coffee-script 2.3.0
+Using uglifier 2.5.3
+Using sprockets 2.12.3
+Using rails_12factor 0.0.3
+Using sdoc 0.4.1
+Using activesupport 4.1.8
+Using tzinfo-data 1.2015.1
+Using actionview 4.1.8
+Using activemodel 4.1.8
+Using jbuilder 2.2.5
+Using actionpack 4.1.8
+Using activerecord 4.1.8
+Using actionmailer 4.1.8
+Using railties 4.1.8
+Using sprockets-rails 2.2.2
+Using activerecord-jdbc-adapter 1.3.14
+Using coffee-rails 4.0.1
+Using jquery-rails 3.1.2
+Using rails 4.1.8
+Using sass-rails 4.0.5
+Using activerecord-jdbcpostgresql-adapter 1.3.14
+Using turbolinks 2.5.2
+Bundle complete! 14 Gemfile dependencies, 50 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 ~/e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ bundle show
+Your Ruby engine is ruby, but your Gemfile specified jruby
+
+Aspire@Acer MINGW64 ~/e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ gem list
+actioncable (5.0.0.1)
+actionmailer (5.0.0.1, 4.2.5.1)
+actionpack (5.0.0.1, 4.2.5.1)
+actionview (5.0.0.1, 4.2.5.1)
+activejob (5.0.0.1, 4.2.5.1)
+activemodel (5.0.0.1, 4.2.5.1)
+activerecord (5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.0.1, 4.2.5.1)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.10.0)
+concurrent-ruby (1.0.2, 1.0.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.0, 2.4.1)
+jquery-rails (4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.9.1, 5.4.3)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.0, 3.4.0)
+rack (2.0.1, 1.6.4)
+rack-test (0.6.3)
+rails (5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.0.1, 4.2.5.1)
+rake (11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+rubyzip (1.1.7)
+sass (3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.7, 1.2016.6)
+uglifier (3.0.2, 3.0.0)
+web-console (3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+
+Aspire@Acer MINGW64 ~/e/Working/Ruby/Ruby-on-Rails/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ heroku local web -f Procfile.windows
+[OKAY] Loaded ENV .env File as KEY=VALUE Format
+8:08:39 PM web.1 |  The signal USR2 is in use by the JVM and will not work correctly on this platform
+8:08:39 PM web.1 |  Puma starting in single mode...
+8:08:39 PM web.1 |  * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+8:08:39 PM web.1 |  * Min threads: 5, max threads: 5
+8:08:39 PM web.1 |  * Environment: development
+8:08:39 PM web.1 |  The signal USR1 is in use by the JVM and will not work correctly on this platform
+8:08:39 PM web.1 |  The signal HUP is in use by the JVM and will not work correctly on this platform
+8:08:57 PM web.1 |  * Listening on tcp://0.0.0.0:5000
+8:08:57 PM web.1 |  Use Ctrl-C to stop
+8:09:15 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:09:15] "GET / HTTP/1.1" 500 22035 5.0510
+8:09:16 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:09:16] "GET %2Ffavicon.ico HTTP/1.1" 304 - 0.0290
+8:10:15 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:10:15] "GET / HTTP/1.1" 500 22034 0.7430
+8:11:33 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:11:33] "GET / HTTP/1.1" 500 22035 0.6860
+8:16:08 PM web.1 |  No cow file found for World!. Use the -l flag to see a list of available cow files.
+8:16:09 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:09] "GET / HTTP/1.1" 200 - 1.6800
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /scaffolds.css?body=1 HTTP/1.1" 304 - 0.1660
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /welcome.css?body=1 HTTP/1.1" 304 - 0.4500
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /widgets.css?body=1 HTTP/1.1" 304 - 0.4690
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /application.css?body=1 HTTP/1.1" 304 - 0.6210
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /jquery.js?body=1 HTTP/1.1" 304 - 0.8250
+8:16:10 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:10] "GET /turbolinks.js?body=1 HTTP/1.1" 304 - 0.8120
+8:16:11 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:11] "GET /welcome.js?body=1 HTTP/1.1" 304 - 0.6370
+8:16:11 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:11] "GET /widgets.js?body=1 HTTP/1.1" 304 - 0.6310
+8:16:11 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:11] "GET /application.js?body=1 HTTP/1.1" 304 - 0.6600
+8:16:11 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:11] "GET /jquery_ujs.js?body=1 HTTP/1.1" 304 - 0.3420
+8:16:43 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:16:43] "GET / HTTP/1.1" 500 22038 0.4620
+8:19:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:19:34] "GET / HTTP/1.1" 500 21962 0.6710
+8:19:35 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:19:35] "GET %2Ffavicon.ico HTTP/1.1" 304 - 0.0110
+8:29:33 PM web.1 |  No cow file found for World!. Use the -l flag to see a list of available cow files.
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET / HTTP/1.1" 200 - 0.5780
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /scaffolds.css?body=1 HTTP/1.1" 304 - 0.0420
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /welcome.css?body=1 HTTP/1.1" 304 - 0.0630
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /welcome.js?body=1 HTTP/1.1" 304 - 0.0630
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /widgets.css?body=1 HTTP/1.1" 304 - 0.1470
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /application.css?body=1 HTTP/1.1" 304 - 0.1940
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /jquery.js?body=1 HTTP/1.1" 304 - 0.2290
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /jquery_ujs.js?body=1 HTTP/1.1" 304 - 0.2610
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /widgets.js?body=1 HTTP/1.1" 304 - 0.3040
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /application.js?body=1 HTTP/1.1" 304 - 0.3130
+8:29:34 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:34] "GET /turbolinks.js?body=1 HTTP/1.1" 304 - 0.0980
+8:29:35 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:29:35] "GET %2Ffavicon.ico HTTP/1.1" 304 - 0.0120
+8:30:11 PM web.1 |  No cow file found for World!. Use the -l flag to see a list of available cow files.
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET / HTTP/1.1" 200 - 0.4730
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /scaffolds.css?body=1 HTTP/1.1" 200 2991 0.0510
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /welcome.css?body=1 HTTP/1.1" 200 - 0.0710
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /application.css?body=1 HTTP/1.1" 200 650 0.1060
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /jquery_ujs.js?body=1 HTTP/1.1" 200 17510 0.1340
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /widgets.css?body=1 HTTP/1.1" 200 - 0.1740
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /turbolinks.js?body=1 HTTP/1.1" 200 24847 0.1970
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /welcome.js?body=1 HTTP/1.1" 200 31 0.1870
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /widgets.js?body=1 HTTP/1.1" 200 31 0.1820
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /application.js?body=1 HTTP/1.1" 200 586 0.2060
+8:30:12 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:12] "GET /jquery.js?body=1 HTTP/1.1" 200 282767 0.0410
+8:30:13 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 20:30:13] "GET %2Ffavicon.ico HTTP/1.1" 200 - 0.0100
+
+
+# Git CMD
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git add .
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git commit -m "Demo"
+[master d833f7d] Demo
+ 4 files changed, 16 insertions(+), 4 deletions(-)
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>git push heroku master
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 998 bytes | 0 bytes/s, done.
+Total 10 (delta 6), reused 0 (delta 0)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.3.1-jruby-9.1.5.0
+remote: -----> Installing JVM: openjdk-8
+remote: -----> Installing dependencies using bundler 1.11.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler is older than the version that created the lockfile. We suggest you upgrade to the latest version of Bund
+ler by running `gem install bundler`.
+remote:        Fetching gem metadata from https://rubygems.org/...........
+remote:        Fetching version metadata from https://rubygems.org/...
+remote:        Fetching dependency metadata from https://rubygems.org/..
+remote:        Using i18n 0.6.11
+remote:        Using rake 10.4.0
+remote:        Using json 1.8.1
+remote:        Using thread_safe 0.3.4
+remote:        Using minitest 5.4.3
+remote:        Using builder 3.2.2
+remote:        Using erubis 2.7.0
+remote:        Using rack 1.5.2
+remote:        Using mime-types 2.4.3
+remote:        Using arel 5.0.1.20140414130214
+remote:        Using jdbc-postgres 9.3.1102
+remote:        Using coffee-script-source 1.8.0
+remote:        Using execjs 2.2.2
+remote:        Using thor 0.19.1
+remote:        Using hike 1.2.3
+remote:        Using multi_json 1.10.1
+remote:        Using bundler 1.11.2
+remote:        Using tilt 1.4.1
+remote:        Using rails_serve_static_assets 0.0.2
+remote:        Using rails_stdout_logging 0.0.3
+remote:        Using sass 3.2.19
+remote:        Using rdoc 4.1.2
+remote:        Using tzinfo 1.2.2
+remote:        Using mail 2.6.3
+remote:        Using rack-test 0.6.2
+remote:        Using puma 2.9.1
+remote:        Using uglifier 2.5.3
+remote:        Using coffee-script 2.3.0
+remote:        Using sprockets 2.12.3
+remote:        Using rails_12factor 0.0.3
+remote:        Using sdoc 0.4.1
+remote:        Using activesupport 4.1.8
+remote:        Using tzinfo-data 1.2015.1
+remote:        Using activemodel 4.1.8
+remote:        Using actionview 4.1.8
+remote:        Using jbuilder 2.2.5
+remote:        Using activerecord 4.1.8
+remote:        Using actionpack 4.1.8
+remote:        Using activerecord-jdbc-adapter 1.3.14
+remote:        Using actionmailer 4.1.8
+remote:        Using sprockets-rails 2.2.2
+remote:        Using railties 4.1.8
+remote:        Using activerecord-jdbcpostgresql-adapter 1.3.14
+remote:        Using coffee-rails 4.0.1
+remote:        Using jquery-rails 3.1.2
+remote:        Using rails 4.1.8
+remote:        Using sass-rails 4.0.5
+remote:        Using turbolinks 2.5.2
+remote:        Installing cowsay 0.3.0
+remote:        Bundle complete! 14 Gemfile dependencies, 49 gems now installed.
+remote:        Gems in the groups development and test were not installed.
+remote:        Bundled gems are installed into ./vendor/bundle.
+remote:        Bundle completed (17.82s)
+remote:        Cleaning up the bundler cache.
+remote:        Warning: the running version of Bundler is older than the version that created the lockfile. We suggest you upgrade to the latest version of Bund
+ler by running `gem install bundler`.
+remote: -----> Preparing app for Rails asset pipeline
+remote:        Running: rake assets:precompile
+remote:        Asset precompilation completed (15.30s)
+remote:        Cleaning assets
+remote:        Running: rake assets:clean
+remote:
+remote: -----> Discovering process types
+remote:        Procfile declares types     -> web
+remote:        Default types for buildpack -> console, rake, worker
+remote:
+remote: -----> Compressing...
+remote:        Done: 89.6M
+remote: -----> Launching...
+remote:        Released v6
+remote:        https://tranquil-castle-80063.herokuapp.com/ deployed to Heroku
+remote:
+remote: Verifying deploy... done.
+To https://git.heroku.com/tranquil-castle-80063.git
+   75f3e1e..d833f7d  master -> master
+
+
+
+[
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons:create papertrail
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Creating papertrail on tranquil-castle-80063... !
+ !    Please verify your account to install this add-on plan (please enter a credit card) For more information, see
+ !    https://devcenter.heroku.com/categories/billing Verify now at https://heroku.com/verify
+]
+
+
+# Verification # https://heroku.com/verify
+# https://devcenter.heroku.com/articles/getting-started-with-ruby#provision-add-ons
+# Provision add-ons
+# Provisioning an add-on requires account verification
+# If the account has not been verified, it will be directed to visit the verification site
+# Provision the papertrail logging add-on:
+> heroku addons:create papertrail
+# Adding papertrail on polar-inlet-4930... done, v11 (free)
+# Welcome to Papertrail. Questions and ideas are welcome (support@papertrailapp.com).  Happy logging!
+# Use `heroku addons:docs papertrail` to view documentation.
+
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+Add-on                                       Plan       Price  State
+-------------------------------------------  ---------  -----  -------
+heroku-postgresql (postgresql-fluffy-61859)  hobby-dev  free   created
+ +- as DATABASE
+
+papertrail (papertrail-rigid-20084)          choklad    free   created
+ +- as PAPERTRAIL
+
+The table above shows add-ons and the attachments to the current app (tranquil-castle-80063) or other apps.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons:open papertrail
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Opening https://addons-sso.heroku.com/apps/b353148e-6d24-4ec3-ad27-c72a8d0c6d44/addons/dec861b1-0b42-4e1a-b36d-9ae4f2cce169...
+
+# Note
+https://papertrailapp.com/systems/tranquil-castle-80063/events
+
+# Note # Error # puts Cowsay.say("hi")
+[
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run jirb
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running jirb on tranquil-castle-80063... up, run.3127 (Free)
+irb(main):001:0> require 'cowsay'
+=> true
+irb(main):002:0> puts Cowsay.say("hi")
+ArgumentError: wrong number of arguments (1 for 2)
+        from /app/vendor/bundle/jruby/2.3.0/gems/cowsay-0.3.0/lib/cowsay.rb:2:in `say'
+        from (irb):2:in `<eval>'
+        from org/jruby/RubyKernel.java:995:in `eval'
+        from org/jruby/RubyKernel.java:1296:in `loop'
+        from org/jruby/RubyKernel.java:1115:in `catch'
+        from org/jruby/RubyKernel.java:1115:in `catch'
+        from /app/bin/jirb:13:in `<main>'
+irb(main):005:0> puts Cowsay.say("Hello ","World!")
+No cow file found for World!. Use the -l flag to see a list of available cow files.
+
+=> nil
+irb(main):010:0> exit
+]
+
+# Note # Error Fix # puts Cowsay.say("Hellow World!", "ghostbusters")
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run jirb
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running jirb on tranquil-castle-80063... up, run.4874 (Free)
+irb(main):001:0> require 'cowsay'
+=> true
+irb(main):002:0> puts Cowsay.say("Hellow World!", "ghostbusters")
+ _______________
+| Hellow World! |
+ ---------------
+          \
+           \
+            \          __---__
+                    _-       /--______
+               __--( /     \ )XXXXXXXXXXX\v.
+             .-XXX(   O   O  )XXXXXXXXXXXXXXX-
+            /XXX(       U     )        XXXXXXX\
+          /XXXXX(              )--_  XXXXXXXXXXX\
+         /XXXXX/ (      O     )   XXXXXX   \XXXXX\
+         XXXXX/   /            XXXXXX   \__ \XXXXX
+         XXXXXX__/          XXXXXX         \__---->
+ ---___  XXX__/          XXXXXX      \__         /
+   \-  --__/   ___/\  XXXXXX            /  ___--/=
+    \-\    ___/    XXXXXX              '--- XXXXXX
+       \-\/XXX\ XXXXXX                      /XXXXX
+         \XXXXXXXXX   \                    /XXXXX/
+          \XXXXXX      >                 _/XXXXX/
+            \XXXXX--__/              __-- XXXX/
+             -XXXXXXXX---------------  XXXXXX-
+                \XXXXXXXXXXXXXXXXXXXXXXXXXX/
+                  ""VXXXXXXXXXXXXXXXXXXV""
+=> nil
+irb(main):003:0> exit
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run bash
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running bash on tranquil-castle-80063... up, run.1375 (Free)
+~ $ ls
+app  bin  config  config.ru  db  Gemfile  Gemfile.lock  lib  log  Procfile  Procfile.windows  public  Rakefile  README.md  test  tmp  vendor
+~ $ exit
+exit
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku config:set TIMES=10
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Setting TIMES and restarting tranquil-castle-80063... done, v7
+TIMES: 10
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku config
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+=== tranquil-castle-80063 Config Vars
+DATABASE_URL:         postgres://olguhqraaancbe:psXJNTseFxfr1aUGSsfbdbMo4J@ec2-54-235-125-38.compute-1.amazonaws.com:5432/dbdci5agjlcg5h
+JAVA_OPTS:            -Xss512k -XX:+UseCompressedOops -Dfile.encoding=UTF-8
+JRUBY_OPTS:           -Xcompile.invokedynamic=false
+LANG:                 en_US.UTF-8
+PAPERTRAIL_API_TOKEN: ek41Ukn5wxV4BgR7qIi
+RACK_ENV:             production
+RAILS_ENV:            production
+SECRET_KEY_BASE:      5356ff5114c12906f72b97eb5afb4d737712ccced488750c1cc891ab55c2e78a3c74063f0dd4350d57dd1faf5c7f7736f38e77c661b3224335ae31bcf35305b2
+TIMES:                10
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku addons
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+
+Add-on                                       Plan       Price  State
+-------------------------------------------  ---------  -----  -------
+heroku-postgresql (postgresql-fluffy-61859)  hobby-dev  free   created
+ +- as DATABASE
+
+papertrail (papertrail-rigid-20084)          choklad    free   created
+ +- as PAPERTRAIL
+
+The table above shows add-ons and the attachments to the current app (tranquil-castle-80063) or other apps.
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku pg
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+=== DATABASE_URL
+Plan:        Hobby-dev
+Status:      Available
+Connections: 0/20
+PG Version:  9.5.4
+Created:     2016-10-19 13:28 UTC
+Data Size:   7.5 MB
+Tables:      2
+Rows:        0/10000 (In compliance)
+Fork/Follow: Unsupported
+Rollback:    Unsupported
+Add-on:      postgresql-fluffy-61859
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku logs
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+2016-10-20T11:36:21.133723+00:00 app[web.1]: Completed 200 OK in 278ms (Views: 167.2ms | ActiveRecord: 37.0ms)
+2016-10-20T11:36:22.033739+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=tranquil-castle-80063.herokuapp.com request_id=f715fa1f-7844-499b-8
+85a-0d993f8ac204 fwd="223.227.17.101" dyno=web.1 connect=0ms service=7ms status=304 bytes=29
+2016-10-20T11:38:12.449938+00:00 app[web.1]: Started GET "/widgets/new" for 223.227.17.101 at 2016-10-20 11:38:12 +0000
+2016-10-20T11:38:12.496650+00:00 app[web.1]: Processing by WidgetsController#new as HTML
+2016-10-20T11:38:12.810181+00:00 app[web.1]:   Rendered widgets/_form.html.erb (238.0ms)
+2016-10-20T11:38:12.840135+00:00 app[web.1]:   Rendered widgets/new.html.erb within layouts/application (241.0ms)
+2016-10-20T11:38:12.934571+00:00 app[web.1]: Completed 200 OK in 433ms (Views: 385.0ms | ActiveRecord: 0.0ms)
+2016-10-20T11:38:13.068304+00:00 heroku[router]: at=info method=GET path="/widgets/new" host=tranquil-castle-80063.herokuapp.com request_id=48e3a3c7-a856-4ece-8
+2c2-e263f8577004 fwd="223.227.17.101" dyno=web.1 connect=0ms service=617ms status=304 bytes=639
+2016-10-20T11:39:31.159052+00:00 app[web.1]: Started POST "/widgets" for 223.227.17.101 at 2016-10-20 11:39:31 +0000
+2016-10-20T11:39:31.214299+00:00 app[web.1]: Processing by WidgetsController#create as HTML
+2016-10-20T11:39:31.229821+00:00 app[web.1]:   Parameters: {"utf8"=>"?", "authenticity_token"=>"PxQZYKkT1PpzFRzAwLKueXTSfmS9GNBV5NFRdnY2m8o=", "widget"=>{"name"
+=>"Heroku Widget", "description"=>"Tranquil Castle Heroku Widget ", "stock"=>"10"}, "commit"=>"Create Widget"}
+2016-10-20T11:39:31.679188+00:00 heroku[router]: at=info method=POST path="/widgets" host=tranquil-castle-80063.herokuapp.com request_id=43d736f6-8232-480a-a64f
+-bf27e5e44b01 fwd="223.227.17.101" dyno=web.1 connect=1ms service=590ms status=302 bytes=1018
+2016-10-20T11:39:31.667663+00:00 app[web.1]: Redirected to https://tranquil-castle-80063.herokuapp.com/widgets/1
+2016-10-20T11:39:31.670012+00:00 app[web.1]: Completed 302 Found in 439ms (ActiveRecord: 8.0ms)
+2016-10-20T11:39:32.072670+00:00 app[web.1]: Started GET "/widgets/1" for 223.227.17.101 at 2016-10-20 11:39:32 +0000
+2016-10-20T11:39:32.192382+00:00 app[web.1]: Processing by WidgetsController#show as HTML
+2016-10-20T11:39:32.316767+00:00 app[web.1]:   Rendered widgets/show.html.erb within layouts/application (8.0ms)
+2016-10-20T11:39:32.221745+00:00 app[web.1]:   Parameters: {"id"=>"1"}
+2016-10-20T11:39:32.370804+00:00 heroku[router]: at=info method=GET path="/widgets/1" host=tranquil-castle-80063.herokuapp.com request_id=82011313-c7ef-4049-974
+7-6ddcafdc828b fwd="223.227.17.101" dyno=web.1 connect=1ms service=325ms status=200 bytes=1750
+2016-10-20T11:39:32.339103+00:00 app[web.1]: Completed 200 OK in 116ms (Views: 47.5ms | ActiveRecord: 17.0ms)
+2016-10-20T11:39:35.077056+00:00 app[web.1]: Started GET "/widgets" for 223.227.17.101 at 2016-10-20 11:39:35 +0000
+2016-10-20T11:39:35.101790+00:00 app[web.1]: Processing by WidgetsController#index as HTML
+2016-10-20T11:39:35.246408+00:00 app[web.1]:   Rendered widgets/index.html.erb within layouts/application (55.0ms)
+2016-10-20T11:39:35.286594+00:00 app[web.1]: Completed 200 OK in 184ms (Views: 93.8ms | ActiveRecord: 4.0ms)
+2016-10-20T11:39:35.333975+00:00 heroku[router]: at=info method=GET path="/widgets" host=tranquil-castle-80063.herokuapp.com request_id=eab9fc22-f8ef-4445-8ffb-
+7e92c4b61794 fwd="223.227.17.101" dyno=web.1 connect=1ms service=269ms status=200 bytes=1958
+2016-10-20T12:14:50.948279+00:00 heroku[web.1]: Idling
+2016-10-20T12:14:50.948753+00:00 heroku[web.1]: State changed from up to down
+2016-10-20T12:14:54.991586+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-10-20T12:14:55.929713+00:00 app[web.1]: - Goodbye!
+2016-10-20T12:14:55.929368+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2016-10-20T12:14:56.356004+00:00 heroku[web.1]: Process exited with status 0
+2016-10-20T12:24:56.053811+00:00 heroku[web.1]: Unidling
+2016-10-20T12:24:56.054092+00:00 heroku[web.1]: State changed from down to starting
+2016-10-20T12:25:02.002362+00:00 heroku[web.1]: Starting process with command `puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2016-10-20T12:25:34.099944+00:00 app[web.1]: Puma starting in single mode...
+2016-10-20T12:25:34.098762+00:00 app[web.1]: The signal USR1 is in use by the JVM and will not work correctly on this platform
+2016-10-20T12:25:34.100588+00:00 app[web.1]: * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+2016-10-20T12:25:34.100712+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2016-10-20T12:25:34.100821+00:00 app[web.1]: * Environment: production
+2016-10-20T12:25:54.396555+00:00 app[web.1]: * Listening on tcp://0.0.0.0:19533
+2016-10-20T12:25:54.486991+00:00 app[web.1]: Use Ctrl-C to stop
+2016-10-20T12:25:55.027025+00:00 heroku[web.1]: State changed from starting to up
+2016-10-20T12:25:56.350593+00:00 app[web.1]: Started GET "/" for 223.227.17.101 at 2016-10-20 12:25:56 +0000
+2016-10-20T12:25:56.316725+00:00 app[web.1]: Started GET "/widgets" for 223.227.17.101 at 2016-10-20 12:25:56 +0000
+2016-10-20T12:25:59.816698+00:00 app[web.1]: Processing by WidgetsController#index as HTML
+2016-10-20T12:25:59.846601+00:00 app[web.1]: Processing by WelcomeController#index as HTML
+2016-10-20T12:26:00.685547+00:00 app[web.1]:   Rendered welcome/index.erb within layouts/application (111.0ms)
+2016-10-20T12:26:00.782969+00:00 app[web.1]: Completed 200 OK in 918ms (Views: 494.0ms | ActiveRecord: 0.0ms)
+2016-10-20T12:26:00.905092+00:00 heroku[router]: at=info method=GET path="/" host=tranquil-castle-80063.herokuapp.com request_id=7cce43e3-427b-4ecd-a83f-5cdb27f
+1974d fwd="223.227.17.101" dyno=web.1 connect=1ms service=4860ms status=304 bytes=803
+2016-10-20T12:26:01.201062+00:00 heroku[router]: at=info method=GET path="/widgets" host=tranquil-castle-80063.herokuapp.com request_id=e43e5f4e-b7f3-4a20-bf81-
+06419c7f5c6c fwd="223.227.17.101" dyno=web.1 connect=1ms service=5006ms status=304 bytes=803
+2016-10-20T12:26:01.139515+00:00 app[web.1]:   Rendered widgets/index.html.erb within layouts/application (563.0ms)
+2016-10-20T12:26:01.144712+00:00 app[web.1]: Completed 200 OK in 1298ms (Views: 583.0ms | ActiveRecord: 114.0ms)
+2016-10-20T12:26:02.742853+00:00 app[web.1]: Started GET "/" for 223.227.17.101 at 2016-10-20 12:26:02 +0000
+2016-10-20T12:26:02.752143+00:00 app[web.1]: Processing by WelcomeController#index as HTML
+2016-10-20T12:26:02.852581+00:00 app[web.1]: Completed 200 OK in 84ms (Views: 31.5ms | ActiveRecord: 0.0ms)
+2016-10-20T12:26:02.826064+00:00 app[web.1]:   Rendered welcome/index.erb within layouts/application (4.0ms)
+2016-10-20T12:26:03.012175+00:00 heroku[router]: at=info method=GET path="/" host=tranquil-castle-80063.herokuapp.com request_id=7066f57e-4302-4e95-a2c1-eb8adca
+eb160 fwd="223.227.17.101" dyno=web.1 connect=0ms service=268ms status=304 bytes=803
+2016-10-20T12:26:03.716046+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=tranquil-castle-80063.herokuapp.com request_id=b186d67b-0242-4548-9
+542-ca4d86491876 fwd="223.227.17.101" dyno=web.1 connect=0ms service=13ms status=304 bytes=29
+2016-10-20T12:53:51.248865+00:00 heroku[api]: Release v10 created by *****@gmail.com
+2016-10-20T12:53:51.248790+00:00 heroku[api]: Deploy a795af5 by *****@gmail.com
+2016-10-20T12:53:51.461761+00:00 heroku[slug-compiler]: Slug compilation started
+2016-10-20T12:53:51.461766+00:00 heroku[slug-compiler]: Slug compilation finished
+2016-10-20T12:53:52.057789+00:00 heroku[web.1]: Restarting
+2016-10-20T12:53:52.059372+00:00 heroku[web.1]: State changed from up to starting
+2016-10-20T12:53:55.799640+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-10-20T12:53:56.858622+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2016-10-20T12:53:56.859440+00:00 app[web.1]: - Goodbye!
+2016-10-20T12:53:57.135530+00:00 heroku[web.1]: Process exited with status 0
+2016-10-20T12:53:57.371014+00:00 heroku[web.1]: Starting process with command `puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}`
+2016-10-20T12:54:11.459042+00:00 app[web.1]: The signal USR1 is in use by the JVM and will not work correctly on this platform
+2016-10-20T12:54:11.460575+00:00 app[web.1]: * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+2016-10-20T12:54:11.460911+00:00 app[web.1]: * Environment: production
+2016-10-20T12:54:11.460273+00:00 app[web.1]: Puma starting in single mode...
+2016-10-20T12:54:11.460735+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2016-10-20T12:54:24.240637+00:00 app[web.1]: * Listening on tcp://0.0.0.0:15196
+2016-10-20T12:54:24.264275+00:00 app[web.1]: Use Ctrl-C to stop
+2016-10-20T12:54:24.473142+00:00 heroku[web.1]: State changed from starting to up
+2016-10-20T13:25:01.051577+00:00 heroku[web.1]: Idling
+2016-10-20T13:25:01.052919+00:00 heroku[web.1]: State changed from up to down
+2016-10-20T13:25:05.218223+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2016-10-20T13:25:06.349561+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2016-10-20T13:25:06.349954+00:00 app[web.1]: - Goodbye!
+2016-10-20T13:25:06.533259+00:00 heroku[web.1]: Process exited with status 0
+2016-10-20T14:34:31.548774+00:00 heroku[api]: Starting process with command `jirb` by *****@gmail.com
+2016-10-20T14:34:37.987175+00:00 heroku[run.2135]: Awaiting client
+2016-10-20T14:34:38.007999+00:00 heroku[run.2135]: Starting process with command `jirb`
+2016-10-20T14:34:38.310612+00:00 heroku[run.2135]: State changed from starting to up
+2016-10-20T14:35:42.700365+00:00 heroku[run.2135]: Process exited with status 0
+2016-10-20T14:35:42.709319+00:00 heroku[run.2135]: State changed from up to complete
+2016-10-20T14:37:26.250199+00:00 heroku[api]: Starting process with command `jirb` by *****@gmail.com
+2016-10-20T14:37:33.141353+00:00 heroku[run.4874]: State changed from starting to up
+2016-10-20T14:37:33.142490+00:00 heroku[run.4874]: Awaiting client
+2016-10-20T14:37:33.252121+00:00 heroku[run.4874]: Starting process with command `jirb`
+2016-10-20T14:39:15.435008+00:00 heroku[run.4874]: State changed from up to complete
+2016-10-20T14:39:15.421030+00:00 heroku[run.4874]: Process exited with status 0
+2016-10-20T14:50:30.410430+00:00 heroku[api]: Starting process with command `bash` by *****@gmail.com
+2016-10-20T14:50:41.509798+00:00 heroku[run.1375]: Awaiting client
+2016-10-20T14:50:41.569132+00:00 heroku[run.1375]: Starting process with command `bash`
+2016-10-20T14:50:41.587673+00:00 heroku[run.1375]: State changed from starting to up
+2016-10-20T14:50:56.809412+00:00 heroku[run.1375]: Process exited with status 0
+2016-10-20T14:50:56.825197+00:00 heroku[run.1375]: State changed from up to complete
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run rake db:migrate
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running rake db:migrate on tranquil-castle-80063... up, run.6080 (Free)
+Migrating to CreateWidgets (20140707111715)
+== 20140707111715 CreateWidgets: migrating ====================================
+-- create_table(:widgets)
+   -> 0.0198s
+== 20140707111715 CreateWidgets: migrated (0.0224s) ===========================
+
+# Not needed # Migrate again
+[
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run rake db:migrate
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running rake db:migrate on tranquil-castle-80063... up, run.7670 (Free)
+]
+
+# db:migrate:status # heroku run rake db:migrate:status
+
+E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started>heroku run rake db:migrate:status
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Running rake db:migrate:status on tranquil-castle-80063... up, run.3267 (Free)
+
+database: dbdci5agjlcg5h
+
+ Status   Migration ID    Migration Name
+--------------------------------------------------
+   up     20140707111715  Create widgets
+
+
+# DATABASE Heroku # Git Bash 
+$ heroku pg:psql --app tranquil-castle-80063 DATABASE
+DL is deprecated, please use Fiddle
+select * from widgets;
+ id |     name      |          description           | stock |       created_at        |       updated_at
+----+---------------+--------------------------------+-------+-------------------------+-------------------------
+  1 | Heroku Widget | Tranquil Castle Heroku Widget  |    10 | 2016-10-20 11:39:31.348 | 2016-10-20 11:39:31.348
+(1 row)
+
+
+\q
+
+# DATABASE Local # GIT BASH 
+$ psql -U postgres
+psql (9.5.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \connect ruby-getting-started_development;
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "ruby-getting-started_development" as user "postgres".
+ruby-getting-started_development=# SELECT * FROM widgets;
+ id |     name      |  description  | stock |       created_at        |       updated_at
+----+---------------+---------------+-------+-------------------------+-------------------------
+  1 | Heroku-Widget | Local Widget  |     5 | 2016-10-20 11:37:45.938 | 2016-10-20 11:37:45.938
+(1 row)
+
+# DATABASE Local # GIT CMD 
+>psql -U postgres
+psql (9.5.4)
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+Type "help" for help.
+
+postgres=# \connect ruby-getting-started_development;
+WARNING: Console code page (437) differs from Windows code page (1252)
+         8-bit characters might not work correctly. See psql reference
+         page "Notes for Windows users" for details.
+You are now connected to database "ruby-getting-started_development" as user "postgres".
+ruby-getting-started_development=# SELECT * FROM widgets;
+ id |     name      |  description  | stock |       created_at        |       updated_at
+----+---------------+---------------+-------+-------------------------+-------------------------
+  1 | Heroku-Widget | Local Widget  |     5 | 2016-10-20 11:37:45.938 | 2016-10-20 11:37:45.938
+(1 row)
+
+
+ruby-getting-started_development=# \q

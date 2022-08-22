@@ -1,0 +1,132 @@
+E:\Working\Ruby\Ruby On Rails\Learn Web Development with Rails\Third Edition\workspace>byebug triangle.rb
+
+[1, 10] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    1: #
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+=>  4: def triangle(n)
+    5:   tri = 0
+    6:
+    7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+(byebug) step
+
+[4, 13] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+    7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+=> 12: t = triangle(3)
+   13: puts t
+(byebug)
+
+[1, 10] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    1: #
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+=>  5:   tri = 0
+    6:
+    7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+(byebug)
+
+[2, 11] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+=>  7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+(byebug)
+
+[2, 11] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+=>  7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+(byebug)
+
+[2, 11] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+=>  7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+(byebug)
+
+[2, 11] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+=>  7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+(byebug)
+
+[2, 11] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    2: # The n'th triangle number: triangle(n) = n*(n+1)/2 = 1 + 2 + ... + n
+    3: #
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+=>  7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+(byebug)
+
+[4, 13] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+    7:   0.upto(n) { |i| tri += i }
+    8:
+=>  9:   tri
+   10: end
+   11:
+   12: t = triangle(3)
+   13: puts t
+(byebug)
+
+[4, 13] in E:/Working/Ruby/Ruby On Rails/Learn Web Development with Rails/Third Edition/workspace/triangle.rb
+    4: def triangle(n)
+    5:   tri = 0
+    6:
+    7:   0.upto(n) { |i| tri += i }
+    8:
+    9:   tri
+   10: end
+   11:
+   12: t = triangle(3)
+=> 13: puts t
+(byebug)
+6

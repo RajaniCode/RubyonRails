@@ -1,0 +1,437 @@
+# Ruby version
+$ ruby -v
+
+
+# SQLite3 version
+$ sqlite3 --version
+
+
+# gem install
+# $ gem install rails
+
+
+# Rails version
+$ rails --version
+
+
+# Creating the Blog Application
+$ rails new blog
+
+
+# After you create the blog application, switch to its folder
+$ cd blog
+
+
+# Starting up the Web Server in the blog directory
+$ bin/rails server
+
+
+# 'bin/rails server' will fire up Puma, a web server distributed with Rails by default
+http://localhost:3000
+
+
+# Hello, Rails!
+To get Rails saying "Hello", you need to create at minimum a controller and a view.
+
+A controller's purpose is to receive specific requests for the application.
+Routing decides which controller receives which requests.
+Often, there is more than one route to each controller, and different routes can be served by different actions.
+Each action's purpose is to collect information to provide it to a view.
+
+A view's purpose is to display this information in a human readable format.
+An important distinction to make is that it is the controller, not the view, where information is collected.
+The view should just display that information.
+By default, view templates are written in a language called eRuby (Embedded Ruby) which is processed by the request cycle in Rails before being sent to the user.
+To create a new controller, you will need to run the "controller" generator and tell it you want a controller called "Welcome" with an action called "index":
+
+
+# Controller
+$ bin/rails generate controller Welcome index
+create  app/controllers/welcome_controller.rb
+ route  get 'welcome/index'
+invoke  erb
+create    app/views/welcome
+create    app/views/welcome/index.html.erb
+invoke  test_unit
+create    test/controllers/welcome_controller_test.rb
+invoke  helper
+create    app/helpers/welcome_helper.rb
+invoke  assets
+invoke    coffee
+create      app/assets/javascripts/welcome.coffee
+invoke    scss
+create      app/assets/stylesheets/welcome.scss
+
+
+# View
+# app/views/welcome/index.html.erb
+<h1>Hello, Rails!</h1>
+
+
+# Routes
+# Setting the Application Home Page
+# config/routes.rb
+Rails.application.routes.draw do
+ get 'welcome/index'
+ root 'welcome#index'
+end
+
+root 'welcome#index' tells Rails to map requests to the root of the application to the welcome controller's index action and get 'welcome/index' tells Rails to map requests to http://localhost:3000/welcome/index to the welcome controller's index action. 
+This was created earlier when you ran the controller generator (bin/rails generate controller Welcome index).
+
+http://localhost:3000
+Hello, Rails!
+
+
+# Routes
+# config/routes.rb
+Rails.application.routes.draw do
+ # get 'welcome/index'
+ resources :articles
+ root 'welcome#index'
+end
+
+If you run bin/rails routes, you'll see that it has defined routes for all the standard RESTful actions.
+Notice that Rails has inferred the singular form article and makes meaningful use of the distinction.
+
+
+# Routes
+$ bin/rails routes
+      Prefix Verb   URI Pattern                  Controller#Action
+    articles GET    /articles(.:format)          articles#index
+             POST   /articles(.:format)          articles#create
+ new_article GET    /articles/new(.:format)      articles#new
+edit_article GET    /articles/:id/edit(.:format) articles#edit
+     article GET    /articles/:id(.:format)      articles#show
+             PATCH  /articles/:id(.:format)      articles#update
+             PUT    /articles/:id(.:format)      articles#update
+             DELETE /articles/:id(.:format)      articles#destroy
+        root GET    /                            welcome#index
+
+Navigate to http://localhost:3000/articles/new and you'll see a routing error:
+Routing Error
+uninitialized constant ArticlesController
+
+This error occurs because the route needs to have a controller defined in order to serve the request.
+The solution to this particular problem is simple: create a controller called ArticlesController.
+You can do this by running this command:
+
+
+# Controller
+$ bin/rails generate controller Articles
+create  app/controllers/articles_controller.rb
+invoke  erb
+create    app/views/articles
+invoke  test_unit
+create    test/controllers/articles_controller_test.rb
+invoke  helper
+create    app/helpers/articles_helper.rb
+invoke    test_unit
+invoke  assets
+invoke    coffee
+create      app/assets/javascripts/articles.coffee
+invoke    scss
+create      app/assets/stylesheets/articles.scss
+
+A controller is simply a class that is defined to inherit from ApplicationController.
+It's inside this class that you'll define methods that will become the actions for this controller. 
+These actions will perform CRUD operations on the articles within our system.
+
+There are public, private and protected methods in Ruby, but only public methods can be actions for controllers.
+
+If you refresh http://localhost:3000/articles/new now, you'll get a new error: 
+Unknown action
+The action 'new' could not be found for ArticlesController
+
+This error indicates that Rails cannot find the new action inside the ArticlesController that you just generated.
+This is because when controllers are generated in Rails they are empty by default, unless you tell it your desired actions during the generation process.
+
+To manually define an action inside a controller, all you need to do is to define a new method inside the controller.
+Open app/controllers/articles_controller.rb and inside the ArticlesController class, define the new method so that your controller now looks like this:
+
+class ArticlesController < ApplicationController
+ def new
+ end
+end
+
+With the new method defined in ArticlesController, if you refresh http://localhost:3000/articles/new
+you'll see another error:
+ActionController::UnknownFormat in ArticlesController#new
+ArticlesController#new is missing a template for this request format and variant. request.formats:
+["text/html"] request.variant: [] NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen.
+Since you're loading it in a web browser, we assume that you expected to actually render a template, not… nothing, so we're showing an error to be extraclear.
+If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+
+The first part identifies which template is missing. In this case, it's the articles/new template. 
+Rails will first look for this template. If not found, then it will attempt to load a template called application/new.
+It looks for one here because the ArticlesController inherits from ApplicationController.
+
+The next part of the message contains a hash. 
+The :locale key in this hash simply indicates which spoken language template should be retrieved.
+By default, this is the English or "en" template.
+The next key, :formats specifies the format of template to be served in response.
+The default format is :html, and so Rails is looking for an HTML template. 
+The final key, :handlers, is telling us what template handlers could be used to render our template.
+:erb is most commonly used for HTML templates, :builder is used for XML templates, and :coffee uses CoffeeScript to build JavaScript templates.
+The message also contains request.formats which specifies the format of template to be served in response.
+It is set to text/html as we requested this page via browser, so Rails is looking for an HTML template.
+
+The simplest template that would work in this case would be one located at app/views/articles/new.html.erb.
+The extension of this file name is important: the first extension is the format of the template, and the second extension is the handler that will be used.
+Rails is attempting to find a template called articles/new within app/views for the application.
+The format for this template can only be html and the handler must be one of erb, builder or coffee.
+:erb is most commonly used for HTML templates, :builder is used for XML templates, and :coffee uses CoffeeScript to build JavaScript templates.
+Because you want to create a new HTML form, you will be using the ERB language which is designed to embed Ruby in HTML.
+
+
+# View
+Therefore the file should be called articles/new.html.erb and needs to be located inside the app/views directory of the application.
+Create a new file at app/views/articles/new.html.erb and write this content in it:
+<h1>New Article</h1>
+
+When you refresh http://localhost:3000/articles/new you'll now see that the page has a title.
+The route, controller, action and view are now working harmoniously!
+
+
+# Form
+# app/views/articles/new.html.erb:
+<%= form_for :article do |f| %>
+ <p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+ </p>
+ <p>
+  <%= f.label :text %><br>
+  <%= f.text_area :text %>
+ </p>
+ <p>
+  <%= f.submit %>
+ </p>
+<% end %> 
+
+If you refresh the page now, you'll see the exact same form as in the example. Building forms in Rails is really just that easy!
+
+# Edit form
+<%= form_for :article, url: articles_path do |f| %>
+ <p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title %>
+ </p>
+ <p>
+  <%= f.label :text %><br>
+  <%= f.text_area :text %>
+ </p>
+ <p>
+  <%= f.submit %>
+ </p>
+<% end %>
+
+
+# Routes
+To see what Rails will do with this, we look back at the output of bin/rails routes:
+$ bin/rails routes
+      Prefix Verb   URI Pattern                  Controller#Action
+    articles GET    /articles(.:format)          articles#index
+             POST   /articles(.:format)          articles#create
+ new_article GET    /articles/new(.:format)      articles#new
+edit_article GET    /articles/:id/edit(.:format) articles#edit
+     article GET    /articles/:id(.:format)      articles#show
+             PATCH  /articles/:id(.:format)      articles#update
+             PUT    /articles/:id(.:format)      articles#update
+             DELETE /articles/:id(.:format)      articles#destroy
+        root GET    /                            welcome#index
+
+The articles_path helper tells Rails to point the form to the URI Pattern associated with the articles prefix; and the form will (by default) send a POST request to that route.
+This is associated with the create action of the current controller, the ArticlesController.
+With the form and its associated route defined, you will be able to fill in the form and then click the submit button to begin the process of creating a new article, so go ahead and do that.
+When you submit the form, you should see a familiar error:
+Unknown action
+The action 'create' could not be found for ArticlesController
+
+
+# Action (only public methods can be actions for controllers)
+You now need to create the create action within the ArticlesController for this to work.
+To make the "Unknown action" go away, you can define a create action within the ArticlesController class in app/controllers/articles_controller.rb:
+
+# app/controllers/articles_controller.rb
+class ArticlesController < ApplicationController
+ def new
+ end
+ def create
+  render plain: params[:article].inspect
+ end
+end
+
+The render method here is taking a very simple hash with a key of :plain and value of params[:article].inspect.
+The params method is the object which represents the parameters (or fields) coming in from the form.
+The params method returns an ActionController::Parameters object, which allows you to access the keys of the hash using either strings or symbols.
+In this situation, the only parameters that matter are the ones from the form.
+
+If you resubmit the form one more time you'll now no longer get the missing template error.
+Instead, you'll see something that looks like the following:
+
+<ActionController::Parameters {"title"=>"First Article!", "text"=>"This is my first article."} permitted: false>
+
+This action is now displaying the parameters for the article that are coming in from the form.
+However, this isn't really all that helpful.
+Yes, you can see the parameters but nothing in particular is being done with them.
+
+
+# Model
+# Creating the Article model
+Models in Rails use a singular name, and their corresponding database tables use a plural name.
+Rails provides a generator for creating models, which most Rails developers tend to use when creating new models.
+To create the new model, run this command in your terminal:
+
+# Model Class Article and Migration Class CreateArticles
+$ bin/rails generate model Article title:string text:text
+invoke  active_record
+create    db/migrate/20160815121930_create_articles.rb
+create    app/models/article.rb
+invoke    test_unit
+create      test/models/article_test.rb
+create      test/fixtures/articles.yml
+# Note: Model Class Article2 and Migration Class CreateArticles2 with name:string
+bin/rails generate model Article2 name:string, title:string text:text 
+
+With that command we told Rails that we want an Article model, together with a title attribute of type string, and a text attribute of type text.
+Those attributes are automatically added to the articles table in the database and mapped to the Article model.
+
+Rails responded by creating a bunch of files including:
+app/models/article.rb
+db/migrate/YYYYMMDDHHMMSS_create_articles.rb - responsible for creating the database structure
+
+
+# Migration
+
+'bin/rails generate model' command created a database migration file inside the db/migrate directory. 
+Migrations are Ruby classes that are designed to make it simple to create and modify database tables. 
+Rails uses rake commands to run migrations, and it's possible to undo a migration after it's been applied to your database.
+Migration filenames include a timestamp to ensure that they're processed in the order that they were created.
+
+#Migration Class CreateArticles
+# db/migrate/YYYYMMDDHHMMSS_create_articles.rb - responsible for creating the database structure
+class CreateArticles < ActiveRecord::Migration[5.0]
+ def change
+  create_table :articles do |t|
+   t.string :title
+   t.text :text
+   t.timestamps
+  end
+ end
+end
+
+The above migration creates a method named change which will be called when you run this migration. 
+The action defined in this method is also reversible, which means Rails knows how to reverse the change made by this migration, in case you want to reverse it later.
+When you run this migration it will create an articles table with one string column and a text column. It also creates two timestamp fields to allow Rails to track article creation and update times.
+
+# Database Table Articles based on Migration Class CreateArticles
+# At this point, you can use a bin/rails command to run the migration
+$ bin/rails db:migrate
+== 20160815121930 CreateArticles: migrating ===================================
+-- create_table(:articles)
+   -> 0.0036s
+== 20160815121930 CreateArticles: migrated (0.0039s) ==========================
+
+
+Because you're working in the development environment by default, this command will apply to the database defined in the development section of your config/database.yml file.
+If you would like to execute migrations in another environment, for instance in production, you must explicitly pass it when invoking the command: bin/rails db:migrate RAILS_ENV=production.
+
+# To define a custom primary key, pass { id: false } to create_table
+# Migration Class CreateArticle2s with {:id => false} string :name, primary_key: true
+class CreateArticle2s < ActiveRecord::Migration[5.0]
+  def change
+    create_table :article2s, {:id => false} do |t|
+      t.string :name, primary_key: true
+      t.string :title
+      t.text :text      
+      t.timestamps
+    end
+  end
+end
+
+# Save # Show
+# app/controllers/articles_controller.rb
+class ArticlesController < ApplicationController
+ def show
+  @article = Article.find(params[:id])
+ end
+ def create
+  @article = Article.new(article_params)
+  @article.save
+  redirect_to @article
+ end 
+ private
+  def article_params
+  params.require(:article).permit(:title, :text)
+ end
+end
+
+
+# Show
+# app/views/articles/show.html.erb
+<p>
+ <strong>Title:</strong>
+ <%= @article.title %>
+</p>
+<p>
+ <strong>Text:</strong>
+ <%= @article.text %>
+</p>
+
+
+http://localhost:3000/articles/new
+
+
+# Routes
+# Listing all articles
+$ bin/rails routes
+      Prefix Verb   URI Pattern                  Controller#Action
+    articles GET    /articles(.:format)          articles#index
+             POST   /articles(.:format)          articles#create
+ new_article GET    /articles/new(.:format)      articles#new
+edit_article GET    /articles/:id/edit(.:format) articles#edit
+     article GET    /articles/:id(.:format)      articles#show
+             PATCH  /articles/:id(.:format)      articles#update
+             PUT    /articles/:id(.:format)      articles#update
+             DELETE /articles/:id(.:format)      articles#destroy
+        root GET    /                            welcome#index
+
+# app/controllers/articles_controller.rb
+class ArticlesController < ApplicationController
+ def index
+  @articles = Article.all
+ end
+ def show
+  @article = Article.find(params[:id])
+ end
+ def new
+ end
+ def create
+  @article = Article.new(article_params)
+  @article.save
+  redirect_to @article
+ end 
+ private
+  def article_params
+  params.require(:article).permit(:title, :text)
+ end
+end
+
+# app/views/articles/index.html.erb
+<h1>Listing articles</h1>
+<table>
+ <tr>
+  <th>Title</th>
+  <th>Text</th>
+ </tr>
+ <% @articles.each do |article| %>
+ <tr>
+  <td><%= article.title %></td>
+  <td><%= article.text %></td>
+  <td><%= link_to 'Show', article_path(article) %></td>
+ </tr>
+ <% end %>
+</table>
+
+http://localhost:3000/articles

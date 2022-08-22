@@ -1,0 +1,356 @@
+bootstrap-sass [Update]
+
+bcrypt
+
+byebug [Update]
+
+faker [Update]
+
+will_paginate
+
+bootstrap-will_paginate
+
+
+
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall bcrypt
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall byebug
+Removing byebug
+Successfully uninstalled byebug-9.0.5
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall bootstrap-sass
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall faker
+Successfully uninstalled faker-1.6.6
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall bootstrap-will_paginate
+Successfully uninstalled bootstrap-will_paginate-0.0.10 
+
+Aspire@Acer MINGW64 ~
+$ gem uninstall will_paginate
+Successfully uninstalled will_paginate-3.1.3
+
+# Note: Uninstall bootstrap-will_paginate before uninstalling will_paginate because bootstrap-will_paginate
+ has dependency on will_paginate
+
+
+
+
+E:\Working\Ruby\Ruby on Rails\Learn Web Development with Rails\Third Edition\workspace\sample_app\Gemfile
+# Temporary Solution 
+# source 'https://rubygems.org'
+source 'http://rubygems.org'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.5.1'
+# Use sqlite3 as the database for Active Record
+
+# gem 'bootstrap-sass', '3.2.0.0'
+# https://rubygems.org/gems/bootstrap-sass
+# gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+# gem 'bootstrap-sass', '~> 3.3'
+# Note [Update]
+# gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bootstrap-sass', '~> 3.3'
+
+gem 'sqlite3'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.1.0'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Use ActiveModel has_secure_password
+
+# gem 'bcrypt', '~> 3.1.7'
+# https://rubygems.org/gems/bcrypt
+# gem 'bcrypt', '~> 3.1', '>= 3.1.11'
+gem 'bcrypt', '~> 3.1.11'
+
+# Adding the Faker gem to the Gemfile
+# gem 'faker', '1.4.2'
+# https://rubygems.org/gems/faker
+# gem 'faker', '~> 1.6', '>= 1.6.3'
+# gem 'faker', '~> 1.6'
+# Note [Update]
+# gem 'faker', '~> 1.6', '>= 1.6.6'
+gem 'faker', '~> 1.6'
+
+# Including will_paginate in the Gemfile
+# gem 'will_paginate', '3.0.7' 
+# gem 'bootstrap-will_paginate', '0.0.10'
+# https://rubygems.org/gems/will_paginate
+# gem 'will_paginate', '~> 3.1', '>= 3.1.3'
+gem 'will_paginate', '~> 3.1'
+# https://rubygems.org/gems/bootstrap-will_paginate
+gem 'bootstrap-will_paginate', '~> 0.0.10'
+
+# Use Unicorn as the app server
+# gem 'unicorn'
+
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # gem 'byebug'
+  # gem 'byebug', github: 'deivid-rodriguez/byebug', branch: 'master'
+  # https://rubygems.org/gems/byebug
+  # gem 'byebug', '~> 9.0', '>= 9.0.5'
+  # gem 'byebug', '~> 9.0'
+  # Note [Update]
+  # gem 'byebug', '~> 9.0', '>= 9.0.6'
+  gem 'byebug', '~> 9.0'
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby on Rails\Learn Web Development with Rails\Third Edition\workspace\sample_app"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby on Rails/Learn Web Development with Rails/Third Edition/workspace/sample_app
+$ bundle install
+Fetching gem metadata from http://rubygems.org/..........
+Fetching version metadata from http://rubygems.org/..
+Fetching dependency metadata from http://rubygems.org/.
+Resolving dependencies...
+Using rake 11.3.0
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.9.1
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 1.6.4
+Using mime-types-data 3.2016.0521
+Using arel 6.0.3
+Using execjs 2.7.0
+Installing bcrypt 3.1.11
+Using debug_inspector 0.0.2
+Using sass 3.4.22
+Installing will_paginate 3.1.3
+Using bundler 1.13.1
+Installing byebug 9.0.5 with native extensions
+Using coffee-script-source 1.10.0
+Using thor 0.19.1
+Using concurrent-ruby 1.0.2
+Using multi_json 1.12.1
+Using tilt 2.0.5
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Installing faker 1.6.6
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using mime-types 3.1
+Using autoprefixer-rails 6.5.0
+Using uglifier 3.0.2
+Using binding_of_caller 0.7.2
+Installing bootstrap-will_paginate 0.0.10
+Using coffee-script 2.4.1
+Using sprockets 3.7.0
+Using turbolinks 5.0.1
+Using sdoc 0.4.1
+Using activesupport 4.2.5.1
+Using tzinfo-data 1.2016.6
+Using loofah 2.0.3
+Using mail 2.6.4
+Installing bootstrap-sass 3.3.7
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.7
+Using activemodel 4.2.5.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.5.1
+Using activerecord 4.2.5.1
+Using actionview 4.2.5.1
+Using actionpack 4.2.5.1
+Using actionmailer 4.2.5.1
+Using railties 4.2.5.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.1.1
+Using jquery-rails 4.2.1
+Using rails 4.2.5.1
+Using sass-rails 5.0.6
+Using web-console 2.3.0
+Bundle complete! 17 Gemfile dependencies, 63 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby on Rails/Learn Web Development with Rails/Third Edition/workspace/sample_app
+$ bundle show
+Gems included by the bundle:
+  * actionmailer (4.2.5.1)
+  * actionpack (4.2.5.1)
+  * actionview (4.2.5.1)
+  * activejob (4.2.5.1)
+  * activemodel (4.2.5.1)
+  * activerecord (4.2.5.1)
+  * activesupport (4.2.5.1)
+  * arel (6.0.3)
+  * autoprefixer-rails (6.5.0)
+  * bcrypt (3.1.11)
+  * binding_of_caller (0.7.2)
+  * bootstrap-sass (3.3.7)
+  * bootstrap-will_paginate (0.0.10)
+  * builder (3.2.2)
+  * bundler (1.13.1)
+  * byebug (9.0.5)
+  * coffee-rails (4.1.1)
+  * coffee-script (2.4.1)
+  * coffee-script-source (1.10.0)
+  * concurrent-ruby (1.0.2)
+  * debug_inspector (0.0.2)
+  * erubis (2.7.0)
+  * execjs (2.7.0)
+  * faker (1.6.6)
+  * globalid (0.3.7)
+  * i18n (0.7.0)
+  * jbuilder (2.6.0)
+  * jquery-rails (4.2.1)
+  * json (1.8.3)
+  * loofah (2.0.3)
+  * mail (2.6.4)
+  * mime-types (3.1)
+  * mime-types-data (3.2016.0521)
+  * mini_portile2 (2.1.0)
+  * minitest (5.9.1)
+  * multi_json (1.12.1)
+  * nokogiri (1.6.8)
+  * pkg-config (1.1.7)
+  * rack (1.6.4)
+  * rack-test (0.6.3)
+  * rails (4.2.5.1)
+  * rails-deprecated_sanitizer (1.0.3)
+  * rails-dom-testing (1.0.7)
+  * rails-html-sanitizer (1.0.3)
+  * railties (4.2.5.1)
+  * rake (11.3.0)
+  * rdoc (4.2.2)
+  * sass (3.4.22)
+  * sass-rails (5.0.6)
+  * sdoc (0.4.1)
+  * sprockets (3.7.0)
+  * sprockets-rails (3.2.0)
+  * sqlite3 (1.3.11)
+  * thor (0.19.1)
+  * thread_safe (0.3.5)
+  * tilt (2.0.5)
+  * turbolinks (5.0.1)
+  * turbolinks-source (5.0.0)
+  * tzinfo (1.2.2)
+  * tzinfo-data (1.2016.6)
+  * uglifier (3.0.2)
+  * web-console (2.3.0)
+  * will_paginate (3.1.3)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby on Rails/Learn Web Development with Rails/Third Edition/workspace/sample_app
+$ gem list
+actionmailer (4.2.5.1)
+actionpack (4.2.5.1)
+actionview (4.2.5.1)
+activejob (4.2.5.1)
+activemodel (4.2.5.1)
+activerecord (4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (4.2.5.1)
+arel (6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.2)
+bundler (1.13.1, 1.11.2)
+byebug (9.0.5)
+coffee-rails (4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.10.0)
+concurrent-ruby (1.0.2, 1.0.0)
+debug_inspector (0.0.2)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+globalid (0.3.7, 0.3.6)
+i18n (0.7.0)
+io-console (0.4.3)
+jbuilder (2.6.0)
+jquery-rails (4.2.1, 4.1.0)
+json (1.8.3, 1.8.1)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.9.1, 5.4.3)
+multi_json (1.12.1)
+nokogiri (1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (2.0.8)
+rack (1.6.4)
+rack-test (0.6.3)
+rails (4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (4.2.5.1)
+rake (11.3.0, 10.4.2)
+rb-readline (0.5.3)
+rdoc (4.2.2, 4.2.0)
+rubyzip (1.1.7)
+sass (3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+sdoc (0.4.1)
+sprockets (3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.6)
+uglifier (3.0.2)
+web-console (2.3.0)
+will_paginate (3.1.3)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby on Rails/Learn Web Development with Rails/Third Edition/workspace/sample_app
+$

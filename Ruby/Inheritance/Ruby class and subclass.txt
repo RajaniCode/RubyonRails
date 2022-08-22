@@ -1,0 +1,17 @@
+# Whether a Ruby class is a subclass of another class
+
+class A
+end
+
+class B < A
+end
+
+Just use the < operator
+
+B < A # => true
+A < A # => false
+
+or use the <= operator
+
+B <= A # => true
+A <= A # => true

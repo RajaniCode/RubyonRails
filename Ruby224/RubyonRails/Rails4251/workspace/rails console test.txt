@@ -1,0 +1,11 @@
+$ rails console test
+Loading test environment (Rails 4.2.5.1)
+Switch to inspect mode.
+Rails.env
+Rails.env
+"test"
+Rails.env.test?
+Rails.env.test?
+true
+exit
+exit

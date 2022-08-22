@@ -1,0 +1,286 @@
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#introduction
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#deploy-the-app
+## Deploy the app
+> heroku open
+
+https://tranquil-castle-80063.herokuapp.com/
+
+Getting Started with Ruby
+
+Welcome!
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#scale-the-app
+## Scale the app
+
+# Scaling an application on Heroku is equivalent to changing the number of dynos that are running
+# Scale the number of web dynos to zero:
+$ heroku ps:scale web=0
+# Access the app again by hitting refresh on the web tab, or heroku open to open it in a web tab
+# Error message is because there is no web dynos available to serve requests
+
+https://tranquil-castle-80063.herokuapp.com/
+
+Application Error
+An error occurred in the application and your page could not be served. Please try again in a few moments.
+
+If you are the application owner, check your logs for details.
+
+Scale it up again:
+$ heroku ps:scale web=1
+# For abuse prevention, scaling a non-free application to more than one dyno requires account verification
+
+https://tranquil-castle-80063.herokuapp.com/
+Getting Started with Ruby
+
+Welcome!
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#run-the-app-locally
+## Run the app locally
+# config/database.yml
+Open the config\database.yml file and set the username and password for your local (development) database
+# Look for these lines:
+development:
+  <<: *default
+  database: ruby-getting-started_development
+
+  # The specified database role being used to connect to postgres.
+  # To create additional roles in postgres see `$ createuser --help`.
+  # When left blank, postgres will use the default role. This is
+  # the same name as the operating system user that initialized the database.
+  #username: ruby-getting-started
+
+  # The password associated with the postgres role (username).
+  #password:
+
+# Modify the username and password like this (but replace the password with the one you used upon installing Postgres):
+  username: postgres
+
+  # The password associated with the postgres role (username).
+  password: P0stgre$ql@Server#9.5
+
+# Repeat this for the ruby-getting-started_test database, which will be in the test: section below the development database entry
+
+# config/database.yml
+####################################################################################################################
+# PostgreSQL. Versions 8.2 and up are supported.
+#
+# Install the pg driver:
+#   gem install pg
+# On OS X with Homebrew:
+#   gem install pg -- --with-pg-config=/usr/local/bin/pg_config
+# On OS X with MacPorts:
+#   gem install pg -- --with-pg-config=/opt/local/lib/postgresql84/bin/pg_config
+# On Windows:
+#   gem install pg
+#       Choose the win32 build.
+#       Install PostgreSQL and put its /bin directory on your path.
+#
+# Configure Using Gemfile
+# gem 'pg'
+#
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: ruby-getting-started_development
+
+  # The specified database role being used to connect to postgres.
+  # To create additional roles in postgres see `$ createuser --help`.
+  # When left blank, postgres will use the default role. This is
+  # the same name as the operating system user that initialized the database.
+  username: postgres
+
+  # The password associated with the postgres role (username).
+  password: P0stgre$ql@Server#9.5
+
+  # Connect on a TCP socket. Omitted by default since the client uses a
+  # domain socket that doesn't need configuration. Windows does not have
+  # domain sockets, so uncomment these lines.
+  #host: localhost
+
+  # The TCP port the server listens on. Defaults to 5432.
+  # If your server runs on a different port number, change accordingly.
+  #port: 5432
+
+  # Schema search path. The server defaults to $user,public
+  #schema_search_path: myapp,sharedapp,public
+
+  # Minimum log levels, in increasing order:
+  #   debug5, debug4, debug3, debug2, debug1,
+  #   log, notice, warning, error, fatal, and panic
+  # Defaults to warning.
+  #min_messages: notice
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: ruby-getting-started_test
+
+# As with config/secrets.yml, you never want to store sensitive information,
+# like your database password, in your source code. If your source code is
+# ever seen by anyone, they now have access to your database.
+#
+# Instead, provide the password as a unix environment variable when you boot
+# the app. Read http://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full rundown on how to provide these environment variables in a
+# production deployment.
+#
+# On Heroku and other platform providers, you may have a full connection URL
+# available as an environment variable. For example:
+#
+#   DATABASE_URL="postgres://myuser:mypass@localhost/somedatabase"
+#
+# You can use this database configuration with:
+#
+#   production:
+#     url: <%= ENV['DATABASE_URL'] %>
+#
+production:
+  <<: *default
+  database: ruby-getting-started_production
+  username: postgres
+  password: P0stgre$ql@Server#9.5
+####################################################################################################################
+
+# Now you can create the appropriate database and tables for the app using this rake task:
+> jruby -S bin\rake db:create db:migrate
+== 20140707111715 CreateWidgets: migrating ====================================
+-- create_table(:widgets)
+   -> 0.0076s
+== 20140707111715 CreateWidgets: migrated (0.0077s) ===========================
+
+# Procfile.windows
+# The example project also contains a Procfile.windows, which contains the line, web: 
+jruby -S bin\puma -t 5:5 -p %PORT% -e development.
+# This file is necessary because the command used to run the application on Windows is different from the command used to run the application on Heroku, which is Linux-based.
+
+# Note # Git Bash
+# Start your application locally using the heroku local command, which was installed as part of the Heroku CLI:
+> heroku local web -f Procfile.windows
+13:15:47 web.1  | started with pid 67489
+13:15:47 web.1  | I, [2014-07-07T13:15:47.655153 #67489]  INFO -- : Refreshing Gem list
+13:15:48 web.1  | I, [2014-07-07T13:15:48.495226 #67489]  INFO -- : listening on addr=0.0.0.0:5000 fd=10
+13:15:48 web.1  | I, [2014-07-07T13:15:48.621967 #67489]  INFO -- : master process ready
+13:15:48 web.1  | I, [2014-07-07T13:15:48.624523 #67491]  INFO -- : worker=0 ready
+13:15:48 web.1  | I, [2014-07-07T13:15:48.626285 #67492]  INFO -- : worker=1 ready
+13:15:48 web.1  | I, [2014-07-07T13:15:48.627737 #67493]  INFO -- : worker=2 ready
+
+# The -f Procfile.windows flag ensures your Windows-specific Procfile is picked up
+# Just like Heroku, heroku local examines it to determine what to run.
+# Open http://localhost:5000 with your web browser. 
+# You should see your app running locally.
+# To stop the app from running locally, go back to your terminal window and press Ctrl+C to exit.
+
+http://localhost:5000/
+Getting Started with Ruby
+
+Welcome!
+
+# Git Bash
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Heroku\Heroku-CLI-for-Windows\Clone-sample-application\jruby-getting-started"
+
+Aspire@Acer MINGW64 ~/Downloads/Ruby/Heroku/Heroku-CLI-for-Windows/Clone-sample-application/jruby-getting-started (master)
+$ heroku local web -f Procfile.windows
+[OKAY] Loaded ENV .env File as KEY=VALUE Format
+7:51:09 PM web.1 |  The signal USR2 is in use by the JVM and will not work correctly on this platform
+7:51:09 PM web.1 |  Puma starting in single mode...
+7:51:09 PM web.1 |  * Version 2.9.1 (jruby 2.3.1), codename: Team High Five
+7:51:09 PM web.1 |  * Min threads: 5, max threads: 5
+7:51:09 PM web.1 |  * Environment: development
+7:51:09 PM web.1 |  The signal USR1 is in use by the JVM and will not work correctly on this platform
+7:51:09 PM web.1 |  The signal HUP is in use by the JVM and will not work correctly on this platform
+7:51:27 PM web.1 |  * Listening on tcp://0.0.0.0:5000
+7:51:27 PM web.1 |  Use Ctrl-C to stop
+7:51:43 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:43] "GET / HTTP/1.1" 200 - 14.5210
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET / HTTP/1.1" 200 - 11.5290
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /scaffolds.css?body=1 HTTP/1.1" 200 2991 0.1420
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /turbolinks.js?body=1 HTTP/1.1" 200 24847 0.1100
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /welcome.css?body=1 HTTP/1.1" 200 - 0.3410
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /widgets.css?body=1 HTTP/1.1" 200 - 0.4350
+7:51:44 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:44] "GET /application.js?body=1 HTTP/1.1" 200 586 0.3340
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /application.css?body=1 HTTP/1.1" 200 650 0.9380
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /jquery.js?body=1 HTTP/1.1" 200 282767 1.1700
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /welcome.js?body=1 HTTP/1.1" 200 31 1.0940
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /widgets.js?body=1 HTTP/1.1" 200 31 1.1430
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET /jquery_ujs.js?body=1 HTTP/1.1" 200 17510 0.5510
+7:51:45 PM web.1 |  0:0:0:0:0:0:0:1 - - [19/Oct/2016 19:51:45] "GET %2Ffavicon.ico HTTP/1.1" 200 - 0.0090
+
+## https://devcenter.heroku.com/articles/getting-started-with-jruby#push-local-changes
+## Push local changes
+
+# Modify Gemfile to include a dependency for the cowsay gem. Your file will look something like this:
+gem 'cowsay'
+
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.1.4'
+...
+
+# app/views/welcome/index.erb
+# Modify app/views/welcome/index.erb so that it uses this gem
+# The final code should look like this:
+[
+<h1>Getting Started with Ruby</h1>
+
+<p>
+  Welcome!
+</p>
+
+<pre>
+<%= Cowsay.say("Hello") %>
+</pre>
+]
+
+<h1>Getting Started with Ruby</h1>
+
+<p>
+  Welcome!
+</p>
+
+<pre>
+  <%= Cowsay.say("hi", "Tux") %>
+</pre>
+
+# Git Bash
+Now test locally:
+$ jruby -S bundle install
+$ heroku local web -f Procfile.windows
+
+# Visit your application at http://localhost:5000. You should see an ASCII picture displayed.
+
+http://localhost:5000
+
+# Git CMD
+Now, deploy this local change to Heroku.
+# Almost every deploy to Heroku follows the same pattern
+# First, add the modified files to your local Git repository:
+> git add .
+Now commit the changes to the repository:
+> git commit -m "Demo"
+Now deploy, just as you did previously:
+> git push heroku master
+Finally, check that everything is working:
+> heroku open
+
+https://tranquil-castle-80063.herokuapp.com/
+Getting Started with Ruby
+
+Welcome!
+
+
+# Note
+
+https://devcenter.heroku.com/articles/heroku-postgresql
+
+https://devcenter.heroku.com/articles/how-heroku-works
+
+https://devcenter.heroku.com/categories/ruby

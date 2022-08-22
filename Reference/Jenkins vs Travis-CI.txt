@@ -1,0 +1,38 @@
+Jenkins vs Travis-CI
+
+Travis-ci and Jenkins, while both are tools for continuous integration are very different.
+
+Travis is a hosted service (free for open source) while you have to host, install and configure Jenkins.
+
+Travis does not have jobs as in Jenkins. The commands to run to test the code are taken from a file named .travis.yml which sits along your project code. This makes it easy to have different test code per branch since each branch can have its own version of the .travis.yml file.
+
+You can have a similar feature with Jenkins if you use one of the following plugins:
+
+Travis YML Plugin - warning: does not seem to be popular, probably not feature complete in comparison to the real Travis.
+Jervis - a modification of Jenkins to make it read create jobs from a .jervis.yml file found at the root of project code. If .jervis.yml does not exist, it fall back to using .travis.yml file.
+There are other hosted services you might also consider for continuous integration (non exhaustive list):
+
+• Circle CI [https://circleci.com/]
+• Wercker [http://wercker.com/]
+• drone.io [https://drone.io/]
+• Gitlab-CI [https://about.gitlab.com/gitlab-ci/]
+• codeship [https://codeship.com/]
+• shippable [https://app.shippable.com/]
+• semaphore [https://semaphoreci.com/]
+
+How to choose?
+
+You might want to stay with Jenkins because you are familiar with it or don't want to depend on 3rd party for your continuous integration system. Else I would drop Jenkins and go with one of the free hosted CI services as they save you a lot of trouble (host, install, configure, prepare jobs)
+
+Depending on where your code repository is hosted I would make the following choices:
+
+in-house ? Jenkins or gitlab-ci
+Github.com ? Travis-CI
+To setup Travis-CI on a github project, all you have to do is:
+
+add a .travis.yml file at the root of your project
+create an account at travis-ci.com and activate your project
+The features you get are:
+
+Travis will run your tests for every push made on your repo
+Travis will run your tests on every pull request contributors will make

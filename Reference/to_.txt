@@ -1,0 +1,187 @@
+##String
+
+
+#to_c
+#Returns a complex which denotes the string form. The parser ignores leading whitespaces and trailing garbage. Any digit sequences can be separated by an underscore. Returns zero for null or garbage string.
+'9'.to_c           #=> (9+0i)
+'2.5'.to_c         #=> (2.5+0i)
+'2.5/1'.to_c       #=> ((5/2)+0i)
+'-3/2'.to_c        #=> ((-3/2)+0i)
+'-i'.to_c          #=> (0-1i)
+'45i'.to_c         #=> (0+45i)
+'3-4i'.to_c        #=> (3-4i)
+'-4e2-4e-2i'.to_c  #=> (-400.0-0.04i)
+'-0.0-0.0i'.to_c   #=> (-0.0-0.0i)
+'1/2+3/4i'.to_c    #=> ((1/2)+(3/4)*i)
+'ruby'.to_c        #=> (0+0i)
+
+
+#to_f
+#Returns the result of interpreting leading characters in str as a floating point number. Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0.0 is returned. This method never raises an exception.
+"123.45e1".to_f        #=> 1234.5
+"45.67 degrees".to_f   #=> 45.67
+"thx1138".to_f         #=> 0.0
+
+
+#to_i(base=10)
+#Returns the result of interpreting leading characters in str as an integer base base (between 2 and 36). Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0 is returned. This method never raises an exception when base is valid.
+"12345".to_i             #=> 12345
+"99 red balloons".to_i   #=> 99
+"0a".to_i                #=> 0
+"0a".to_i(16)            #=> 10
+"hello".to_i             #=> 0
+"1100101".to_i(2)        #=> 101
+"1100101".to_i(8)        #=> 294977
+"1100101".to_i(10)       #=> 1100101
+"1100101".to_i(16)       #=> 17826049
+
+
+#to_r
+#Returns a rational which denotes the string form. The parser ignores leading whitespaces and trailing garbage. Any digit sequences can be separated by an underscore. Returns zero for null or garbage string.
+#NOTE: '0.3'.to_r isn't the same as 0.3.to_r. The former is equivalent to '3/10'.to_r, but the latter isn't so.
+'  2  '.to_r       #=> (2/1)
+'300/2'.to_r       #=> (150/1)
+'-9.2'.to_r        #=> (-46/5)
+'-9.2e2'.to_r      #=> (-920/1)
+'1_234_567'.to_r   #=> (1234567/1)
+'21 june 09'.to_r  #=> (21/1)
+'21/06/09'.to_r    #=> (7/2)
+'bwv 1079'.to_r    #=> (0/1)
+
+
+#to_s
+#Returns the receiver.
+
+
+#to_str
+#Returns the receiver.
+
+
+#to_sym
+#Returns the Symbol corresponding to str, creating the symbol if it did not previously exist. See Symbol#id2name.
+"Koala".intern         #=> :Koala
+s = 'cat'.to_sym       #=> :cat
+s == :cat              #=> true
+s = '@cat'.to_sym      #=> :@cat
+s == :@cat             #=> true
+#This can also be used to create symbols that cannot be represented using the :xxx notation.
+'cat and dog'.to_sym   #=> :"cat and dog"
+
+
+#tr(from_str, to_str) => new_str
+#Returns a copy of str with the characters in from_str replaced by the corresponding characters in to_str. If to_str is shorter than from_str, it is padded with its last character in order to maintain the correspondence.
+"hello".tr('el', 'ip')      #=> "hippo"
+"hello".tr('aeiou', '*')    #=> "h*ll*"
+"hello".tr('aeiou', 'AA*')  #=> "hAll*"
+
+
+#Both strings may use the c1-c2 notation to denote ranges of characters, and from_str may start with a ^, which denotes all characters except those listed.
+"hello".tr('a-y', 'b-z')    #=> "ifmmp"
+"hello".tr('^aeiou', '*')   #=> "*e**o"
+
+
+#The backslash character </code> can be used to escape <code>^ or - and is otherwise ignored unless it appears at the end of a range or the end of the from_str or to_str:
+"hello^world".tr("\\^aeiou", "*") #=> "h*ll**w*rld"
+"hello-world".tr("a\\-eo", "*")   #=> "h*ll**w*rld"
+
+"hello\r\nworld".tr("\r", "")   #=> "hello\nworld"
+"hello\r\nworld".tr("\\r", "")  #=> "hello\r\nwold"
+"hello\r\nworld".tr("\\\r", "") #=> "hello\nworld"
+
+"X['\\b']".tr("X\\", "")   #=> "['b']"
+"X['\\b']".tr("X-\\]", "") #=> "'b'"
+
+
+#tr!(from_str, to_str)
+#Translates str in place, using the same rules as String#tr. Returns str, or nil if no changes were made.
+
+
+#tr_s(from_str, to_str)
+#Processes a copy of str as described under String#tr, then removes duplicate characters in regions that were affected by the translation.
+"hello".tr_s('l', 'r')     #=> "hero"
+"hello".tr_s('el', '*')    #=> "h*o"
+"hello".tr_s('el', 'hx')   #=> "hhxo"
+
+
+#tr_s!(from_str, to_str)
+#Performs String#tr_s processing on str in place, returning str, or nil if no changes were made.
+
+
+##Numeric
+#to_c
+#Returns the value as a complex.
+to_c
+
+#to_int 
+Invokes the child class's to_i method to convert num to an integer.
+to_int
+1.0.class returns Float
+1.0.to_int.class returns Fixnum
+1.0.to_i.class returns Fixnum
+
+
+##Integer
+#to_i
+As int is already an Integer, all these methods simply return the receiver.
+Synonyms are to_int, floor, ceil, truncate.
+
+#to_i
+As int is already an Integer, all these methods simply return the receiver.
+Synonyms are to_int, floor, ceil, truncate.
+
+#to_i
+As int is already an Integer, all these methods simply return the receiver.
+Synonyms are to_int, floor, ceil, truncate.
+
+#to_i
+As int is already an Integer, all these methods simply return the receiver.
+Synonyms are to_int, floor, ceil, truncate.
+
+#to_r
+Returns the value as a rational.
+1.to_r        #=> (1/1)
+(1<<64).to_r  #=> (18446744073709551616/1)
+
+#to_i
+As int is already an Integer, all these methods simply return the receiver.
+Synonyms are to_int, floor, ceil, truncate.
+
+
+##Float
+#to_f
+#float is already a float, returns self
+to_f
+
+#to_i
+#to_int
+#truncate
+#Synonyms are to_i, to_int, and truncate
+#Returns the float truncated to an Integer
+to_i
+to_int
+truncate
+
+#to_r
+#Returns the value as a rational.
+to_r
+#Note: 0.3.to_r isn't the same as '0.3'.to_r. The latter is equivalent to '3/10'.to_r, but the former isn't so.
+2.0.to_r    #=> (2/1)
+2.5.to_r    #=> (5/2)
+-0.75.to_r  #=> (-3/4)
+0.0.to_r    #=> (0/1)
+
+#to_s, inspect, inspect()
+#Returns a string containing a representation of self. 
+#As well as a fixed or exponential form of the float, the call may return NaN, Infinity, and -Infinity.
+#Also aliased as: inspect 
+Alias for: to_s 
+to_s
+inspect
+inspect()
+
+#zero? 
+#Returns true if float is 0.0 else false
+
+#complex
+#Returns the value as a complex
+to_c

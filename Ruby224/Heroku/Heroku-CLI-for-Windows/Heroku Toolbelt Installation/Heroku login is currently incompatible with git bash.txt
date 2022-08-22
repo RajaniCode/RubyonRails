@@ -1,0 +1,21 @@
+Aspire@Acer MINGW64 /
+$ heroku --version
+Heroku CLI submits usage information back to Heroku. If you would like to disable this, set `skip_analytics: true` in C:\Users\Aspire\AppData\Local/heroku/config.json
+heroku/toolbelt/3.43.12 (i386-mingw32) ruby/2.1.7
+heroku-cli/5.4.6-02f2268 (windows-386) go1.7.1
+You have no installed plugins.
+
+Aspire@Acer MINGW64 ~
+$ heroku --version
+heroku/toolbelt/3.43.12 (i386-mingw32) ruby/2.1.7
+heroku-cli/5.4.6-02f2268 (windows-386) go1.7.1
+You have no installed plugins.
+
+Aspire@Acer MINGW64 ~
+$ heroku login
+Enter your Heroku credentials.
+Email: *****@gmail.com
+Password (typing will be hidden):
+ !    Login is currently incompatible with git bash/cygwin
+ !    In the meantime, login via cmd.exe
+ !    https://github.com/heroku/cli/issues/84

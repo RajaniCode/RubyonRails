@@ -1,0 +1,9 @@
+$ heroku pg:psql --app tranquil-castle-80063 DATABASE
+DL is deprecated, please use Fiddle
+select * from widgets;
+ id |     name      |          description           | stock |       created_at        |       updated_at
+----+---------------+--------------------------------+-------+-------------------------+-------------------------
+  1 | Heroku Widget | Tranquil Castle Heroku Widget  |    10 | 2016-10-20 11:39:31.348 | 2016-10-20 11:39:31.348
+(1 row)
+
+\q

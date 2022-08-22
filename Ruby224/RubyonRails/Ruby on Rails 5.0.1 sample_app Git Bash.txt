@@ -1,0 +1,2289 @@
+
+Aspire@Acer MINGW64 /
+$ ruby --version
+ruby 2.2.4p230 (2015-12-16 revision 53155) [i386-mingw32]
+
+Aspire@Acer MINGW64 /
+$ gem --version
+2.6.7
+
+Aspire@Acer MINGW64 /
+$ rake --version
+rake, version 12.0.0
+
+Aspire@Acer MINGW64 /
+$ rails --version
+Rails 5.0.1
+
+Aspire@Acer MINGW64 /
+$ bundler --version
+Bundler version 1.13.5
+
+Aspire@Acer MINGW64 /
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Learn-Web-Development-with-Rails\Fourth-Edition\workspace"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace
+$ rails _5.0.1_ new sample_app
+      create
+      create  README.md
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/config/manifest.js
+      create  app/assets/javascripts/application.js
+      create  app/assets/javascripts/cable.js
+      create  app/assets/stylesheets/application.css
+      create  app/channels/application_cable/channel.rb
+      create  app/channels/application_cable/connection.rb
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/jobs/application_job.rb
+      create  app/mailers/application_mailer.rb
+      create  app/models/application_record.rb
+      create  app/views/layouts/application.html.erb
+      create  app/views/layouts/mailer.html.erb
+      create  app/views/layouts/mailer.text.erb
+      create  app/assets/images/.keep
+      create  app/assets/javascripts/channels
+      create  app/assets/javascripts/channels/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  bin/update
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/cable.yml
+      create  config/puma.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/application_controller_renderer.rb
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/cors.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_framework_defaults.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/apple-touch-icon-precomposed.png
+      create  public/apple-touch-icon.png
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/fixtures/files
+      create  test/fixtures/files/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp
+      create  tmp/.keep
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+      remove  config/initializers/cors.rb
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies....
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using bundler 1.13.5
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using puma 3.6.2
+Using sass 3.4.23
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Installing websocket-driver 0.6.5 with native extensions
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.4
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle complete! 12 Gemfile dependencies, 56 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace
+$ bundle install --without production
+Could not locate Gemfile
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace
+$ cd sample_app/
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle install --without production
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using puma 3.6.2
+Using bundler 1.13.5
+Using sass 3.4.23
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Using websocket-driver 0.6.5
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.4
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle complete! 12 Gemfile dependencies, 56 gems now installed.
+Gems in the group production were not installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle update
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies....
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using bundler 1.13.5
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using puma 3.6.2
+Using sass 3.4.23
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Using websocket-driver 0.6.5
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.4
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle updated!
+Gems in the group production were not installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails generate controller StaticPages home help
+Expected string default value for '--jbuilder'; got true (boolean)
+Expected string default value for '--helper'; got true (boolean)
+Expected string default value for '--assets'; got true (boolean)
+      create  app/controllers/static_pages_controller.rb
+       route  get 'static_pages/help'
+       route  get 'static_pages/home'
+      invoke  erb
+      create    app/views/static_pages
+      create    app/views/static_pages/home.html.erb
+      create    app/views/static_pages/help.html.erb
+      invoke  test_unit
+      create    test/controllers/static_pages_controller_test.rb
+      invoke  helper
+      create    app/helpers/static_pages_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/static_pages.coffee
+      invoke    scss
+      create      app/assets/stylesheets/static_pages.scss
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/static_pages/home" for ::1 at 2017-01-23 16:20:13 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 7424ms (Views: 7330.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/home" for ::1 at 2017-01-23 16:23:45 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 263ms (Views: 224.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/help" for ::1 at 2017-01-23 16:23:53 +0530
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 246ms (Views: 209.1ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 51535
+
+# Running:
+
+..
+
+Finished in 3.516138s, 0.5688 runs/s, 0.5688 assertions/s.
+
+2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 48010
+
+# Running:
+
+E
+
+Error:
+StaticPagesControllerTest#test_should_get_about:
+NameError: undefined local variable or method `static_pages_about_url' for #<StaticPagesControllerTest:0x553c128>
+    test/controllers/static_pages_controller_test.rb:16:in `block in <class:StaticPagesControllerTest>'
+
+bin/rails test test/controllers/static_pages_controller_test.rb:15
+
+..
+
+Finished in 1.666607s, 1.8001 runs/s, 1.2000 assertions/s.
+
+3 runs, 2 assertions, 0 failures, 1 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 29956
+
+# Running:
+
+E
+
+Error:
+StaticPagesControllerTest#test_should_get_about:
+AbstractController::ActionNotFound: The action 'about' could not be found for StaticPagesController
+    test/controllers/static_pages_controller_test.rb:16:in `block in <class:StaticPagesControllerTest>'
+
+bin/rails test test/controllers/static_pages_controller_test.rb:15
+
+..
+
+Finished in 2.205612s, 1.3602 runs/s, 0.9068 assertions/s.
+
+3 runs, 2 assertions, 0 failures, 1 errors, 0 skips
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 54884
+
+# Running:
+
+E
+
+Error:
+StaticPagesControllerTest#test_should_get_about:
+ActionController::UnknownFormat: StaticPagesController#about is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.
+    test/controllers/static_pages_controller_test.rb:16:in `block in <class:StaticPagesControllerTest>'
+
+bin/rails test test/controllers/static_pages_controller_test.rb:15
+
+..
+
+Finished in 6.244819s, 0.4804 runs/s, 0.3203 assertions/s.
+
+3 runs, 2 assertions, 0 failures, 1 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/views/static_pages/about.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 22917
+
+# Running:
+
+...
+
+Finished in 1.725409s, 1.7387 runs/s, 1.7387 assertions/s.
+
+3 runs, 3 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/static_pages/about" for ::1 at 2017-01-25 13:56:50 +0530
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 1584ms (Views: 1519.6ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ mv app/views/layouts/application.html.erb layout_file
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 16469
+
+# Running:
+
+F
+
+Failure:
+StaticPagesControllerTest#test_should_get_about [E:/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app/test/controllers/static_pages_controller_test.rb:20]:
+Expected at least 1 element matching "title", found 0..
+Expected 0 to be >= 1.
+
+bin/rails test test/controllers/static_pages_controller_test.rb:17
+
+F
+
+Failure:
+StaticPagesControllerTest#test_should_get_home [E:/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app/test/controllers/static_pages_controller_test.rb:8]:
+Expected at least 1 element matching "title", found 0..
+Expected 0 to be >= 1.
+
+bin/rails test test/controllers/static_pages_controller_test.rb:5
+
+F
+
+Failure:
+StaticPagesControllerTest#test_should_get_help [E:/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app/test/controllers/static_pages_controller_test.rb:14]:
+Expected at least 1 element matching "title", found 0..
+Expected 0 to be >= 1.
+
+bin/rails test test/controllers/static_pages_controller_test.rb:11
+
+
+
+Finished in 1.485414s, 2.0196 runs/s, 4.0393 assertions/s.
+
+3 runs, 6 assertions, 3 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/static_pages/home" for ::1 at 2017-01-25 14:15:13 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb
+  Rendered static_pages/home.html.erb (5.0ms)
+Completed 200 OK in 187ms (Views: 128.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/static_pages/" for ::1 at 2017-01-25 14:15:31 +0530
+
+ActionController::RoutingError (No route matches [GET] "/static_pages"):
+
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered collection of C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (9.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (191.1ms)
+  Rendering C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (3336.1ms)
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 17885
+
+# Running:
+
+...
+
+Finished in 1.449195s, 2.0701 runs/s, 4.1402 assertions/s.
+
+3 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 30326
+
+# Running:
+
+...
+
+Finished in 1.670207s, 1.7962 runs/s, 3.5924 assertions/s.
+
+3 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 1930
+
+# Running:
+
+...
+
+Finished in 1.721856s, 1.7423 runs/s, 3.4846 assertions/s.
+
+3 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ mv layout_file app/views/layouts/application.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Run options: --seed 31951
+
+# Running:
+
+...
+
+Finished in 1.926939s, 1.5569 runs/s, 3.1137 assertions/s.
+
+3 runs, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2017-01-25 15:01:57 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 600ms (Views: 543.8ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle install
+Fetching gem metadata from https://rubygems.org/...
+Retrying dependency api due to error (2/4): Bundler::HTTPError Network error while fetching https://index.rubygems.org/api/v1/dependencies?gems=thread_safe%2Ci18n%2Cconcurrent-ruby%2Cmethod_source%2Cmemcache-client%2Crack-cache%2Crack-test%2Crack-mount%2Cerubis%2Cjourney%2Crails-html-sanitizer%2Crails-deprecated_sanitizer%2Carel%2Cactiverecord-deprecated_finders%2Crails-observers%2Cmail%2Ctext-format%2Crdoc%2Crack-ssl%2Cwebsocket-driver%2Cnio4r%2Credis%2Cem-hiredis%2Ccelluloid%2Cfaye-websocket%2Cglobalid%2Cactivemodel-globalid%2Cbcrypt-ruby%2Cbones%2Ctest-spec%2Ccamping%2Cfcgi%2Cmongrel%2Cruby-openid%2Cthin%2Clisten%2Csass-listen%2Chike%2Cref%2Clibv8%2Ccoffee-script-source%2Cnokogiri%2Cdebugger-ruby_core_source%2Cruby_core_source%2Choe%2Chashie
+Retrying dependency api due to error (3/4): Bundler::HTTPError Network error while fetching https://index.rubygems.org/api/v1/dependencies?gems=thread_safe%2Ci18n%2Cconcurrent-ruby%2Cmethod_source%2Cmemcache-client%2Crack-cache%2Crack-test%2Crack-mount%2Cerubis%2Cjourney%2Crails-html-sanitizer%2Crails-deprecated_sanitizer%2Carel%2Cactiverecord-deprecated_finders%2Crails-observers%2Cmail%2Ctext-format%2Crdoc%2Crack-ssl%2Cwebsocket-driver%2Cnio4r%2Credis%2Cem-hiredis%2Ccelluloid%2Cfaye-websocket%2Cglobalid%2Cactivemodel-globalid%2Cbcrypt-ruby%2Cbones%2Ctest-spec%2Ccamping%2Cfcgi%2Cmongrel%2Cruby-openid%2Cthin%2Clisten%2Csass-listen%2Chike%2Cref%2Clibv8%2Ccoffee-script-source%2Cnokogiri%2Cdebugger-ruby_core_source%2Cruby_core_source%2Choe%2Chashie........
+Fetching version metadata from https://rubygems.org/.
+Retrying dependency api due to error (2/4): Bundler::HTTPError Network error while fetching https://index.rubygems.org/api/v1/dependencies?gems=bundler%2Cnenv%2Ccelluloid%2Ccelluloid-fsm%2Ccelluloid-pool%2Ccelluloid-supervision%2Ccelluloid-essentials%2Ccelluloid-extras%2Ccelluloid-gems%2Cdotenv-deployment%2Cgit%2Cbones-rcov%2Cbones-rubyforge%2Cbones-rspec%2Cbones-zentest%2Cmetaclass%2Cnio4r%2Cnet-scp%2Catomic%2Cfunctional-ruby%2Cref%2Cruby_parser%2Crack%2Cmultimap%2Cabstract%2Cloofah%2Cactivesupport%2Crailties%2Cactivemodel%2Ci18n%2Ctlsmail%2Ctext-hyphen%2Cminitest%2Cwebsocket-extensions%2Chiredis%2Ceventmachine%2Cfacter%2Cwebsocket-driver%2Cthin%2Cbcrypt%2Clittle-plugger%2Cloquacious%2Cbones-git%2Cbones-extras%2Cflexmock%2Cmocha%2Cactiverecord%2Cmarkaby%2Cmetaid%2Cmab..
+Fetching dependency metadata from https://rubygems.org/
+Resolving dependencies...
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using ansi 1.5.0
+Using bundler 1.13.5
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using ruby-progressbar 1.8.1
+Using puma 3.6.2
+Using sass 3.4.23
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Using websocket-driver 0.6.5
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.4
+Installing minitest-reporters 1.1.14
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle complete! 13 Gemfile dependencies, 59 gems now installed.
+Gems in the group production were not installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle show
+Gems included by the bundle:
+  * actioncable (5.0.1)
+  * actionmailer (5.0.1)
+  * actionpack (5.0.1)
+  * actionview (5.0.1)
+  * activejob (5.0.1)
+  * activemodel (5.0.1)
+  * activerecord (5.0.1)
+  * activesupport (5.0.1)
+  * ansi (1.5.0)
+  * arel (7.1.4)
+  * builder (3.2.3)
+  * bundler (1.13.5)
+  * coffee-rails (4.2.1)
+  * coffee-script (2.4.1)
+  * coffee-script-source (1.12.2)
+  * concurrent-ruby (1.0.4)
+  * debug_inspector (0.0.2)
+  * erubis (2.7.0)
+  * execjs (2.7.0)
+  * globalid (0.3.7)
+  * i18n (0.7.0)
+  * jbuilder (2.6.1)
+  * jquery-rails (4.2.2)
+  * loofah (2.0.3)
+  * mail (2.6.4)
+  * method_source (0.8.2)
+  * mime-types (3.1)
+  * mime-types-data (3.2016.0521)
+  * mini_portile2 (2.1.0)
+  * minitest (5.10.1)
+  * minitest-reporters (1.1.14)
+  * multi_json (1.12.1)
+  * nio4r (1.2.1)
+  * nokogiri (1.7.0.1)
+  * puma (3.6.2)
+  * rack (2.0.1)
+  * rack-test (0.6.3)
+  * rails (5.0.1)
+  * rails-dom-testing (2.0.2)
+  * rails-html-sanitizer (1.0.3)
+  * railties (5.0.1)
+  * rake (12.0.0)
+  * ruby-progressbar (1.8.1)
+  * sass (3.4.23)
+  * sass-rails (5.0.6)
+  * sprockets (3.7.1)
+  * sprockets-rails (3.2.0)
+  * sqlite3 (1.3.13)
+  * thor (0.19.4)
+  * thread_safe (0.3.5)
+  * tilt (2.0.5)
+  * turbolinks (5.0.1)
+  * turbolinks-source (5.0.0)
+  * tzinfo (1.2.2)
+  * tzinfo-data (1.2016.10)
+  * uglifier (3.0.4)
+  * web-console (3.4.0)
+  * websocket-driver (0.6.5)
+  * websocket-extensions (0.1.2)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+minitest-reporters (1.1.14)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 58872
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.98144s
+3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ ps aux
+      PID    PPID    PGID     WINPID   TTY         UID    STIME COMMAND
+    90472       1   90472      90472  ?         197609 13:44:12 /usr/bin/mintty
+    91112   90472   91112      90496  pty0      197609 13:44:12 /usr/bin/bash
+   101992   91112  101992     102320  pty0      197609 16:12:56 /usr/bin/ps
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 8111
+
+
+
+ FAIL["test_should_get_home", StaticPagesControllerTest, 4.922065879000002]
+ test_should_get_home#StaticPagesControllerTest (4.92s)
+        <Ruby on Rails Tutorial Sample App> expected but was
+        <Home | Ruby on Rails Tutorial Sample App>..
+        Expected 0 to be >= 1.
+        test/controllers/static_pages_controller_test.rb:7:in `block in <class:StaticPagesControllerTest>'
+
+========================|
+
+Finished in 4.92348s
+3 tests, 6 assertions, 1 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 31599
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.79870s
+3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 51145
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.69610s
+3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 8111
+
+
+
+ FAIL["test_should_get_home", StaticPagesControllerTest, 4.922065879000002]
+ test_should_get_home#StaticPagesControllerTest (4.92s)
+        <Ruby on Rails Tutorial Sample App> expected but was
+        <Home | Ruby on Rails Tutorial Sample App>..
+        Expected 0 to be >= 1.
+        test/controllers/static_pages_controller_test.rb:7:in `block in <class:StaticPagesControllerTest>'
+
+========================|
+
+Finished in 4.92348s
+3 tests, 6 assertions, 1 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 31599
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.79870s
+3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 51145
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.69610s
+3 tests, 6 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ curl -o app/assets/images/rails.png -OL railstutorial.org/rails.png
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+100 13036  100 13036    0     0   1361      0  0:00:09  0:00:09 --:--:--  2735
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2017-01-26 15:22:26 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1170.4ms)
+Completed 200 OK in 1627ms (Views: 1568.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:22:44 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 184ms (Views: 149.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:22:45 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 163ms (Views: 148.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:22:46 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 186ms (Views: 169.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:22:47 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 170ms (Views: 144.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:22:49 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 173ms (Views: 145.8ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+minitest-reporters (1.1.14)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle install
+Resolving dependencies...
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using ansi 1.5.0
+Using execjs 2.7.0
+Using sass 3.4.23
+Using bundler 1.13.5
+Using coffee-script-source 1.12.2
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using ruby-progressbar 1.8.1
+Using puma 3.6.2
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Using websocket-driver 0.6.5
+Using mime-types 3.1
+Using autoprefixer-rails 6.5.0
+Using uglifier 3.0.4
+Using coffee-script 2.4.1
+Using minitest-reporters 1.1.14
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using bootstrap-sass 3.3.7
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle complete! 14 Gemfile dependencies, 61 gems now installed.
+Gems in the group production were not installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle show
+Gems included by the bundle:
+  * actioncable (5.0.1)
+  * actionmailer (5.0.1)
+  * actionpack (5.0.1)
+  * actionview (5.0.1)
+  * activejob (5.0.1)
+  * activemodel (5.0.1)
+  * activerecord (5.0.1)
+  * activesupport (5.0.1)
+  * ansi (1.5.0)
+  * arel (7.1.4)
+  * autoprefixer-rails (6.5.0)
+  * bootstrap-sass (3.3.7)
+  * builder (3.2.3)
+  * bundler (1.13.5)
+  * coffee-rails (4.2.1)
+  * coffee-script (2.4.1)
+  * coffee-script-source (1.12.2)
+  * concurrent-ruby (1.0.4)
+  * debug_inspector (0.0.2)
+  * erubis (2.7.0)
+  * execjs (2.7.0)
+  * globalid (0.3.7)
+  * i18n (0.7.0)
+  * jbuilder (2.6.1)
+  * jquery-rails (4.2.2)
+  * loofah (2.0.3)
+  * mail (2.6.4)
+  * method_source (0.8.2)
+  * mime-types (3.1)
+  * mime-types-data (3.2016.0521)
+  * mini_portile2 (2.1.0)
+  * minitest (5.10.1)
+  * minitest-reporters (1.1.14)
+  * multi_json (1.12.1)
+  * nio4r (1.2.1)
+  * nokogiri (1.7.0.1)
+  * puma (3.6.2)
+  * rack (2.0.1)
+  * rack-test (0.6.3)
+  * rails (5.0.1)
+  * rails-dom-testing (2.0.2)
+  * rails-html-sanitizer (1.0.3)
+  * railties (5.0.1)
+  * rake (12.0.0)
+  * ruby-progressbar (1.8.1)
+  * sass (3.4.23)
+  * sass-rails (5.0.6)
+  * sprockets (3.7.1)
+  * sprockets-rails (3.2.0)
+  * sqlite3 (1.3.13)
+  * thor (0.19.4)
+  * thread_safe (0.3.5)
+  * tilt (2.0.5)
+  * turbolinks (5.0.1)
+  * turbolinks-source (5.0.0)
+  * tzinfo (1.2.2)
+  * tzinfo-data (1.2016.10)
+  * uglifier (3.0.4)
+  * web-console (3.4.0)
+  * websocket-driver (0.6.5)
+  * websocket-extensions (0.1.2)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+minitest-reporters (1.1.14)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list bootstrap-sass
+bootstrap-sass (3.3.7)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list minitest-reporters
+minitest-reporters (1.1.14)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/assets/stylesheets/custom.css.scss
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2017-01-26 15:43:06 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (17988.9ms)
+Completed 200 OK in 18548ms (Views: 18490.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:44:39 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 7955ms (Views: 7926.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:44:53 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 337ms (Views: 308.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:46:51 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 7791ms (Views: 7759.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 15:48:50 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 8461ms (Views: 8432.8ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/views/layouts/_shim.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/views/layouts/_header.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/views/layouts/_footer.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/" for ::1 at 2017-01-26 16:02:21 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (8251.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 8744ms (Views: 8666.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:50 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 309ms (Views: 286.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:51 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 380ms (Views: 355.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:53 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 358ms (Views: 331.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:54 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 434ms (Views: 408.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:55 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 362ms (Views: 334.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:02:56 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 370ms (Views: 355.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:03:03 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 361ms (Views: 333.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 16:03:25 +0530
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 324ms (Views: 301.2ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 45842
+
+
+
+ERROR["test_should_get_contact", StaticPagesControllerTest, 0.8803178379985184]
+ test_should_get_contact#StaticPagesControllerTest (0.88s)
+NameError:         NameError: undefined local variable or method `static_pages_contact_url' for #<StaticPagesControllerTest:0x55b5a00>
+            test/controllers/static_pages_controller_test.rb:24:in `block in <class:StaticPagesControllerTest>'
+
+====================================================================|
+
+Finished in 2.06446s
+4 tests, 6 assertions, 0 failures, 1 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ touch app/views/static_pages/contact.html.erb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 17788
+
+
+
+Progress: |====================================================================|
+
+Finished in 2.15424s
+4 tests, 8 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 26102
+
+
+
+Progress: |====================================================================|
+
+Finished in 2.31308s
+4 tests, 8 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails server
+=> Booting Puma
+=> Rails 5.0.1 application starting in development on http://localhost:3000
+=> Run `rails server -h` for more startup options
+*** SIGUSR2 not implemented, signal based restart unavailable!
+*** SIGUSR1 not implemented, signal based restart unavailable!
+*** SIGHUP not implemented, signal based logs reopening unavailable!
+Puma starting in single mode...
+* Version 3.6.2 (ruby 2.2.4-p230), codename: Sleepy Sunday Serenity
+* Min threads: 5, max threads: 5
+* Environment: development
+* Listening on tcp://localhost:3000
+Use Ctrl-C to stop
+Started GET "/about" for ::1 at 2017-01-26 16:36:12 +0530
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 8946ms (Views: 8889.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2017-01-26 16:36:25 +0530
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 324ms (Views: 294.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact" for ::1 at 2017-01-26 16:36:26 +0530
+Processing by StaticPagesController#contact as HTML
+  Rendering static_pages/contact.html.erb within layouts/application
+  Rendered static_pages/contact.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (1.0ms)
+Completed 200 OK in 393ms (Views: 368.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about" for ::1 at 2017-01-26 16:36:27 +0530
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (1.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 362ms (Views: 338.0ms | ActiveRecord: 0.0ms)
+
+
+
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rm -rf tmp/pids/server.pid
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails generate integration_test site_layout
+Expected string default value for '--jbuilder'; got true (boolean)
+      invoke  test_unit
+      create    test/integration/site_layout_test.rb
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test:integration
+Started with run options --seed 43521
+
+
+
+ERROR["test_layout_links", SiteLayoutTest, 1.9796193500005757]
+ test_layout_links#SiteLayoutTest (1.98s)
+NoMethodError:         NoMethodError: assert_template has been extracted to a gem. To continue using it,
+                add `gem 'rails-controller-testing'` to your Gemfile.
+            test/integration/site_layout_test.rb:7:in `block in <class:SiteLayoutTest>'
+
+====================================================================|
+
+Finished in 1.98180s
+1 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+minitest-reporters (1.1.14)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle install
+Fetching gem metadata from https://rubygems.org/..........
+Fetching version metadata from https://rubygems.org/..
+Fetching dependency metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 12.0.0
+Using concurrent-ruby 1.0.4
+Using i18n 0.7.0
+Using minitest 5.10.1
+Using thread_safe 0.3.5
+Using builder 3.2.3
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.4
+Using ansi 1.5.0
+Using execjs 2.7.0
+Using sass 3.4.23
+Using bundler 1.13.5
+Using coffee-script-source 1.12.2
+Using method_source 0.8.2
+Using thor 0.19.4
+Using debug_inspector 0.0.2
+Using multi_json 1.12.1
+Using ruby-progressbar 1.8.1
+Using puma 3.6.2
+Using tilt 2.0.5
+Using sqlite3 1.3.13
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.7.0.1
+Using rack-test 0.6.3
+Using sprockets 3.7.1
+Using websocket-driver 0.6.5
+Using mime-types 3.1
+Using autoprefixer-rails 6.5.0
+Using uglifier 3.0.4
+Using coffee-script 2.4.1
+Using minitest-reporters 1.1.14
+Using turbolinks 5.0.1
+Using activesupport 5.0.1
+Using tzinfo-data 1.2016.10
+Using loofah 2.0.3
+Using mail 2.6.4
+Using bootstrap-sass 3.3.7
+Using rails-dom-testing 2.0.2
+Using globalid 0.3.7
+Using activemodel 5.0.1
+Using jbuilder 2.6.1
+Using rails-html-sanitizer 1.0.3
+Using activejob 5.0.1
+Using activerecord 5.0.1
+Using actionview 5.0.1
+Using actionpack 5.0.1
+Using actioncable 5.0.1
+Using actionmailer 5.0.1
+Using railties 5.0.1
+Using sprockets-rails 3.2.0
+Installing rails-controller-testing 1.0.1
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.2
+Using web-console 3.4.0
+Using rails 5.0.1
+Using sass-rails 5.0.6
+Bundle complete! 15 Gemfile dependencies, 62 gems now installed.
+Gems in the group production were not installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ bundle show
+Gems included by the bundle:
+  * actioncable (5.0.1)
+  * actionmailer (5.0.1)
+  * actionpack (5.0.1)
+  * actionview (5.0.1)
+  * activejob (5.0.1)
+  * activemodel (5.0.1)
+  * activerecord (5.0.1)
+  * activesupport (5.0.1)
+  * ansi (1.5.0)
+  * arel (7.1.4)
+  * autoprefixer-rails (6.5.0)
+  * bootstrap-sass (3.3.7)
+  * builder (3.2.3)
+  * bundler (1.13.5)
+  * coffee-rails (4.2.1)
+  * coffee-script (2.4.1)
+  * coffee-script-source (1.12.2)
+  * concurrent-ruby (1.0.4)
+  * debug_inspector (0.0.2)
+  * erubis (2.7.0)
+  * execjs (2.7.0)
+  * globalid (0.3.7)
+  * i18n (0.7.0)
+  * jbuilder (2.6.1)
+  * jquery-rails (4.2.2)
+  * loofah (2.0.3)
+  * mail (2.6.4)
+  * method_source (0.8.2)
+  * mime-types (3.1)
+  * mime-types-data (3.2016.0521)
+  * mini_portile2 (2.1.0)
+  * minitest (5.10.1)
+  * minitest-reporters (1.1.14)
+  * multi_json (1.12.1)
+  * nio4r (1.2.1)
+  * nokogiri (1.7.0.1)
+  * puma (3.6.2)
+  * rack (2.0.1)
+  * rack-test (0.6.3)
+  * rails (5.0.1)
+  * rails-controller-testing (1.0.1)
+  * rails-dom-testing (2.0.2)
+  * rails-html-sanitizer (1.0.3)
+  * railties (5.0.1)
+  * rake (12.0.0)
+  * ruby-progressbar (1.8.1)
+  * sass (3.4.23)
+  * sass-rails (5.0.6)
+  * sprockets (3.7.1)
+  * sprockets-rails (3.2.0)
+  * sqlite3 (1.3.13)
+  * thor (0.19.4)
+  * thread_safe (0.3.5)
+  * tilt (2.0.5)
+  * turbolinks (5.0.1)
+  * turbolinks-source (5.0.0)
+  * tzinfo (1.2.2)
+  * tzinfo-data (1.2016.10)
+  * uglifier (3.0.4)
+  * web-console (3.4.0)
+  * websocket-driver (0.6.5)
+  * websocket-extensions (0.1.2)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list
+actioncable (5.0.1, 5.0.0.1)
+actionmailer (5.0.1, 5.0.0.1, 4.2.5.1)
+actionpack (5.0.1, 5.0.0.1, 4.2.5.1)
+actionview (5.0.1, 5.0.0.1, 4.2.5.1)
+activejob (5.0.1, 5.0.0.1, 4.2.5.1)
+activemodel (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord (5.0.1, 5.0.0.1, 4.2.5.1)
+activerecord-sqlserver-adapter (4.2.6)
+activesupport (5.0.1, 5.0.0.1, 4.2.5.1)
+akami (1.3.1)
+ansi (1.5.0)
+arel (7.1.4, 6.0.3)
+autoprefixer-rails (6.5.0)
+bcrypt (3.1.11 x86-mingw32)
+bigdecimal (default: 1.2.6)
+binding_of_caller (0.7.2)
+bootstrap-sass (3.3.7)
+bootstrap-will_paginate (0.0.10)
+builder (3.2.3, 3.2.2)
+bundler (1.13.5, 1.11.2)
+byebug (9.0.5)
+coderay (1.1.1)
+coffee-rails (4.2.1, 4.1.1)
+coffee-script (2.4.1)
+coffee-script-source (1.12.2, 1.10.0)
+concurrent-ruby (1.0.4, 1.0.2, 1.0.0)
+cowsay (0.3.0)
+debug_inspector (0.0.2)
+diff-lcs (1.2.5)
+docile (1.1.5)
+erubis (2.7.0)
+execjs (2.7.0, 2.6.0)
+faker (1.6.6)
+ffi (1.9.14 x86-mingw32)
+globalid (0.3.7, 0.3.6)
+gyoku (1.3.1)
+haml (4.0.7)
+httpi (2.4.2)
+i18n (0.7.0)
+io-console (default: 0.4.3)
+jbuilder (2.6.1, 2.6.0, 2.4.1)
+jquery-rails (4.2.2, 4.2.1, 4.1.1, 4.1.0)
+json (1.8.3, default: 1.8.1)
+listen (3.0.8)
+loofah (2.0.3)
+mail (2.6.4, 2.6.3)
+method_source (0.8.2)
+mime-types (3.1, 2.99)
+mime-types-data (3.2016.0521)
+mini_portile (0.6.2)
+mini_portile2 (2.1.0, 2.0.0)
+minitest (5.10.1, 5.9.1, 5.4.3)
+minitest-reporters (1.1.14)
+multi_json (1.12.1)
+nio4r (1.2.1)
+nokogiri (1.7.0.1 x86-mingw32, 1.6.8.1 x86-mingw32, 1.6.8 x86-mingw32, 1.6.7.2 x86-mingw32)
+nori (2.6.0)
+pg (0.18.4 x86-mingw32)
+pkg-config (1.1.7)
+power_assert (0.2.2)
+psych (default: 2.0.8)
+puma (3.6.2, 3.6.0, 3.4.0)
+rack (2.0.1, 1.6.5, 1.6.4)
+rack-protection (1.5.3)
+rack-test (0.6.3)
+rails (5.0.1, 5.0.0.1, 4.2.5.1)
+rails-controller-testing (1.0.1)
+rails-deprecated_sanitizer (1.0.3)
+rails-dom-testing (2.0.2, 2.0.1, 1.0.7)
+rails-html-sanitizer (1.0.3)
+railties (5.0.1, 5.0.0.1, 4.2.5.1)
+rake (12.0.0, 11.3.0, default: 10.4.2)
+rb-fsevent (0.9.7)
+rb-inotify (0.9.7)
+rb-readline (0.5.3)
+rdoc (4.2.2, default: 4.2.0)
+rspec (3.5.0)
+rspec-core (3.5.4)
+rspec-expectations (3.5.0)
+rspec-mocks (3.5.0)
+rspec-support (3.5.0)
+ruby-progressbar (1.8.1)
+rubyzip (1.1.7)
+sass (3.4.23, 3.4.22, 3.4.21)
+sass-rails (5.0.6, 5.0.4)
+savon (2.11.1)
+sdoc (0.4.1)
+simplecov (0.12.0)
+simplecov-html (0.10.0)
+sinatra (1.4.7)
+socksify (1.7.0)
+spring (1.7.2)
+spring-watcher-listen (2.0.0)
+sprockets (3.7.1, 3.7.0, 3.5.2)
+sprockets-rails (3.2.0, 3.0.1)
+sqlite3 (1.3.13 x86-mingw32, 1.3.12 x86-mingw32, 1.3.11 x86-mingw32)
+sqlite3-ruby (1.3.3)
+test-unit (3.0.8)
+thor (0.19.4, 0.19.1)
+thread_safe (0.3.5)
+tilt (2.0.5, 2.0.2)
+tiny_tds (0.7.0 x86-mingw32)
+turbolinks (5.0.1)
+turbolinks-source (5.0.0)
+tzinfo (1.2.2)
+tzinfo-data (1.2016.10, 1.2016.7, 1.2016.6)
+uglifier (3.0.4, 3.0.2, 3.0.0)
+wasabi (3.5.0)
+web-console (3.4.0, 3.3.1, 3.1.1, 2.3.0)
+websocket-driver (0.6.5, 0.6.4)
+websocket-extensions (0.1.2)
+will_paginate (3.1.3)
+xml-simple (1.1.5)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ gem list rails-controller-testing
+rails-controller-testing (1.0.1)
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test:integration
+Started with run options --seed 27048
+
+
+
+Progress: |====================================================================|
+
+Finished in 1.59014s
+1 tests, 5 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$ rails test
+Started with run options --seed 34387
+
+
+
+Progress: |====================================================================|
+
+Finished in 2.14322s
+5 tests, 13 assertions, 0 failures, 0 errors, 0 skips
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/sample_app
+$

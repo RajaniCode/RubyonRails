@@ -1,0 +1,195 @@
+# yield
+
+# game.rb
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+
+# seed.rb
+require_relative 'game'
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+
+# library.rb
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)   
+    games.each { |game| yield game if game.system == system } 
+    # games.each do |game|
+      # yield if game.system == system
+    # end
+  end
+end
+
+# example.rb
+require_relative 'library'
+require_relative 'seed'
+library = Library.new(GAMES)
+library.each_on_system("SNES") { |game| puts game.name }
+
+# Git Bash
+
+Aspire@Acer MINGW64 /
+$ cd "E:\Working\Ruby\TODO\yield"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/TODO/yield
+$ ruby example.rb
+Mega Man X2
+Super Metroid
+
+# Git Bash # irb
+
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+ 
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)   
+    games.each { |game| yield game if game.system == system } 
+    # games.each do |game|
+      # yield if game.system == system
+    # end
+  end
+end
+
+library = Library.new(GAMES)
+library.each_on_system("SNES") { |game| puts game.name }
+
+
+# Git Bash
+
+Aspire@Acer MINGW64 /
+$ irb
+Switch to inspect mode.
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)
+    games.each { |game| yield game if game.system == system}
+    # games.each do |game|
+      # yield if game.system == system
+    # end
+  end
+end
+
+library = Library.new(GAMES)
+library.each_on_system("SNES") { |game| puts game.name }class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+
+  def initialize(name, options={})
+    self.name = name
+    self.year = options[:year]
+    self.system = options[:system]
+    @created_at = Time.now
+  end
+end
+:initialize
+
+GAMES = [
+  Game.new('Contra', year: 1987, system: 'NES'),
+  Game.new('Civilization', year: 1991, system: 'PC'),
+  Game.new('The Legend of Zelda', year: 1986, system: 'NES'),
+  Game.new('Mega Man X2', year: 1995, system: 'SNES'),
+  Game.new('Super Metroid', year: 1994, system: 'SNES'),
+  Game.new('Sim City 2000', year: 1993, system: 'PC'),
+  Game.new('Starcraft', year: 1998, system: 'PC')
+]
+[#<Game:0x2b377c0 @name="Contra", @year=1987, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37748 @name="Civilization", @year=1991, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b376d0 @name="The Legend of Zelda", @year=1986, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37658 @name="Mega Man X2", @year=1995, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b375e0 @name="Super Metroid", @year=1994, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37568 @name="Sim City 2000", @year=1993, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b374f0 @name="Starcraft", @year=1998, @system="PC", @created_at=2016-10-24 17:12:08 +0530>]
+
+class Library
+  attr_accessor :games
+
+  def initialize(games = [])
+    self.games = games
+  end
+
+  def each_on_system(system)
+    games.each { |game| yield game if game.system == system }
+    # games.each do |game|
+      # yield if game.system == system
+    # end
+  end
+end
+:each_on_system
+
+library = Library.new(GAMES)
+#<Library:0x2b5dc20 @games=[#<Game:0x2b377c0 @name="Contra", @year=1987, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37748 @name="Civilization", @year=1991, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b376d0 @name="The Legend of Zelda", @year=1986, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37658 @name="Mega Man X2", @year=1995, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b375e0 @name="Super Metroid", @year=1994, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37568 @name="Sim City 2000", @year=1993, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b374f0 @name="Starcraft", @year=1998, @system="PC", @created_at=2016-10-24 17:12:08 +0530>]>
+
+library.each_on_system("SNES") { |game| puts game.name }
+Mega Man X2
+Super Metroid
+[#<Game:0x2b377c0 @name="Contra", @year=1987, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37748 @name="Civilization", @year=1991, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b376d0 @name="The Legend of Zelda", @year=1986, @system="NES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37658 @name="Mega Man X2", @year=1995, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b375e0 @name="Super Metroid", @year=1994, @system="SNES", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b37568 @name="Sim City 2000", @year=1993, @system="PC", @created_at=2016-10-24 17:12:08 +0530>, #<Game:0x2b374f0 @name="Starcraft", @year=1998, @system="PC", @created_at=2016-10-24 17:12:08 +0530>]
+
+exit
+exit

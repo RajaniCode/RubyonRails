@@ -1,0 +1,17 @@
+Microsoft Windows [Version 6.3.9600]
+(c) 2013 Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>jruby --version
+jruby 9.1.5.0 (2.3.1) 2016-09-07 036ce39 Java HotSpot(TM) 64-Bit Server VM 25.102-b14 on 1.8.0_102-b14 +jit [mswin32-x86_64]
+
+C:\WINDOWS\system32>heroku login
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+'MySQL' is not recognized as an internal or external command,
+operable program or batch file.
+Enter your Heroku credentials.
+Email: *****@gmail.com
+Password (typing will be hidden):
+Logged in as *****@gmail.com
+
+C:\WINDOWS\system32>

@@ -1,0 +1,154 @@
+$ rails console --sandbox
+Loading development environment in sandbox (Rails 4.2.5.1)
+Any modifications you make will be rolled back on exit
+Switch to inspect mode.
+User.new
+User.new
+#<User id: nil, name: nil, email: nil, created_at: nil, updated_at: nil>
+user = User.new(name: "Michael Hartl", email: "mhartl@example.com")
+user = User.new(name: "Michael Hartl", email: "mhartl@example.com")
+#<User id: nil, name: "Michael Hartl", email: "mhartl@example.com", created_at: nil, updated_at: nil>
+user.valid?
+user.valid?
+true
+user.save
+user.save
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (31.3ms)  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Michael Hartl"], ["email", "mhartl@example.com"], ["created_at", "2016-09-29 11:19:37.366104"], ["updated_at", "2016-09-29 11:19:37.366104"]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+true
+user
+user
+#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">
+user.name
+user.name
+"Michael Hartl"
+user.email
+user.email
+"mhartl@example.com"
+user.updated_at
+user.updated_at
+Thu, 29 Sep 2016 11:19:37 UTC +00:00
+User.create(name: "A Nother", email: "another@example.org")
+User.create(name: "A Nother", email: "another@example.org")
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (0.0ms)  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "A Nother"], ["email", "another@example.org"], ["created_at", "2016-09-29 11:23:15.471060"], ["updated_at", "2016-09-29 11:23:15.471060"]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+#<User id: 2, name: "A Nother", email: "another@example.org", created_at: "2016-09-29 11:23:15", updated_at: "2016-09-29 11:23:15">
+foo = User.create(name: "Foo", email: "foo@bar.com")
+foo = User.create(name: "Foo", email: "foo@bar.com")
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (0.0ms)  INSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Foo"], ["email", "foo@bar.com"], ["created_at", "2016-09-29 11:24:34.668869"], ["updated_at", "2016-09-29 11:24:34.668869"]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+#<User id: 3, name: "Foo", email: "foo@bar.com", created_at: "2016-09-29 11:24:34", updated_at: "2016-09-29 11:24:34">
+foo.destroy
+foo.destroy
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (0.0ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 3]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+#<User id: 3, name: "Foo", email: "foo@bar.com", created_at: "2016-09-29 11:24:34", updated_at: "2016-09-29 11:24:34">
+foo
+foo
+#<User id: 3, name: "Foo", email: "foo@bar.com", created_at: "2016-09-29 11:24:34", updated_at: "2016-09-29 11:24:34">
+User.find(1)
+User.find(1)
+  User Load (0.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">
+User.find(3)
+User.find(3)
+  User Load (0.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+ActiveRecord::RecordNotFound: Couldn't find User with 'id'=3
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/activerecord-4.2.5.1/lib/active_record/core.rb:155:in `find'
+        from (irb):17
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/commands/console.rb:110:in `start'
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/commands/console.rb:9:in `start'
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/commands/commands_tasks.rb:68:in `console'
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+        from C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/railties-4.2.5.1/lib/rails/commands.rb:17:in `<top (required)>'
+        from bin/rails:4:in `require'
+        from bin/rails:4:in `<main>'
+User.find_by(email: "mhartl@example.com")
+User.find_by(email: "mhartl@example.com")
+  User Load (0.0ms)  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "mhartl@example.com"]]
+#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">
+User.first
+User.first
+  User Load (0.0ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">
+User.all
+User.all
+  User Load (0.0ms)  SELECT "users".* FROM "users"
+#<ActiveRecord::Relation [#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">, #<User id: 2, name: "Foo", email: "foo@bar.com", created_at: "2016-09-29 11:22:47", updated_at: "2016-09-29 11:22:47">, #<User id: 3, name: "A Nother", email: "another@example.org", created_at: "2016-09-29 11:23:15", updated_at: "2016-09-29 11:23:15">]>
+user
+user
+#<User id: 1, name: "Michael Hartl", email: "mhartl@example.com", created_at: "2016-09-29 11:19:37", updated_at: "2016-09-29 11:19:37">
+user.email = "mhartl@example.net"
+user.email = "mhartl@example.net"
+"mhartl@example.net"
+user.save
+user.save
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (15.6ms)  UPDATE "users" SET "email" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["email", "mhartl@example.net"], ["updated_at", "2016-09-29 11:27:04.807909"], ["id", 1]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+true
+user.email
+user.email
+"mhartl@example.net"
+user.email = "foo@bar.com"
+user.email = "foo@bar.com"
+"foo@bar.com"
+user.reload.email
+user.reload.email
+  User Load (0.0ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+"mhartl@example.net"
+user.created_at
+user.created_at
+Thu, 29 Sep 2016 11:19:37 UTC +00:00
+user.updated_at
+user.updated_at
+Thu, 29 Sep 2016 11:27:04 UTC +00:00
+user.update_attributes(name: "The Dude", email: "dude@abides.org")
+user.update_attributes(name: "The Dude", email: "dude@abides.org")
+   (0.0ms)  SAVEPOINT active_record_1
+  SQL (0.0ms)  UPDATE "users" SET "name" = ?, "email" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["name", "The Dude"], ["email", "dude@abides.org"], ["updated_at", "2016-09-29 11:28:35.915347"], ["id", 1]]
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+true
+user.name
+user.name
+"The Dude"
+user.email
+user.email
+"dude@abides.org"
+user.update_attribute(:name, "The Dude")
+user.update_attribute(:name, "The Dude")
+   (0.0ms)  SAVEPOINT active_record_1
+   (0.0ms)  RELEASE SAVEPOINT active_record_1
+true
+user.name
+user.name
+"The Dude"
+exit
+exit
+   (0.0ms)  rollback transaction
+
+$ rails console --sandbox
+Loading development environment in sandbox (Rails 4.2.5.1)
+Any modifications you make will be rolled back on exit
+Switch to inspect mode.
+user = User.new(name: "", email: "mhartl@example.com")
+user = User.new(name: "", email: "mhartl@example.com")
+#<User id: nil, name: "", email: "mhartl@example.com", created_at: nil, updated_at: nil>
+user.valid?
+user.valid?
+false
+user.errors.full_messages
+user.errors.full_messages
+["Name can't be blank"]
+user.save
+user.save
+   (0.0ms)  SAVEPOINT active_record_1
+   (0.0ms)  ROLLBACK TO SAVEPOINT active_record_1
+false
+exit
+exit
+   (0.0ms)  rollback transaction

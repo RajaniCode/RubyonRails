@@ -1,0 +1,372 @@
+$ gem install rails -v 5.0.0.1
+
+$ mkdir workspace
+
+$ cd workspace/       
+
+$ rails _5.0.0.1_ new hello_app
+
+# Gemfile
+source 'https://rubygems.org'
+
+gem 'rails',        '5.0.0.1'
+gem 'puma',         '3.4.0'
+gem 'sass-rails',   '5.0.6'
+gem 'uglifier',     '3.0.0'
+gem 'coffee-rails', '4.2.1'
+gem 'jquery-rails', '4.1.1'
+gem 'turbolinks',   '5.0.1'
+gem 'jbuilder',     '2.4.1'
+
+group :development, :test do
+  gem 'sqlite3', '1.3.11'
+  gem 'byebug',  '9.0.0', platform: :mri
+end
+
+group :development do
+  gem 'web-console',           '3.1.1'
+  gem 'listen',                '3.0.8'
+  gem 'spring',                '1.7.2'
+  gem 'spring-watcher-listen', '2.0.0'
+end
+
+group :production do
+  gem 'pg', '0.18.4'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+$ cd hello_app/
+
+$ bundle install
+
+$ bundle show
+
+$ gem list
+
+$ rails server
+
+http://localhost:3000
+
+
+## 1.3.4 Hello, world!
+
+$ ls app/controllers/*_controller.rb
+
+# Adding a hello action to the Application controller
+# app/controllers/application_controller.rb
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  def hello
+    render html: "hello, world!"
+  end
+end
+
+# Setting the root route
+# config/routes.rb
+Rails.application.routes.draw do
+  root 'application#hello'
+end
+
+
+## 1.4 Version control with Git
+
+# First-time system setup
+# Before using Git, perform a couple of one-time setup steps
+# These are systemsetups, meaning to do them once per computer:
+# .gitconfig
+# $ git config --global user.name #####
+# $ git config --global user.email #####gmail.com
+
+# Navigate to the root directory of the app and initialize a new repository:
+$ git init
+
+# Add all the project files to the repository using git add -A:
+$ git add -A
+# This command adds all the files in the current directory apart from those that match the patterns in .gitignore
+# The rails new command automatically generates a .gitignore file appropriate to a Rails project, however additional patterns can be added as well
+
+# The added files are initially placed in a staging area, which contains pending changes to our project
+# The files are in the staging area can be seen using the status command:
+$ git status
+
+# To tell Git to keep the changes, use the commit command:
+$ git commit -m "Initialize repository"
+# The -m flag lets to add a message for the commit; if -m is omitted, Git will open the system's default editor and the message has to be entered there
+# Note that Git commits are local, recorded only on the machine on which the commits occur
+
+# The list of the commit messages can be seen using the log command:
+$ git log
+
+# Git delete and undo
+$ ls app/controllers/
+$ rm -rf app/controllers/
+# ls command to list the contents of the app/controllers/directory and the rm command to remove it
+# -rf flag means "recursive force", which recursively removes all files, directories, subdirectories, and so on, without asking for explicit confirmation of each deletion
+$ ls app/controllers/
+$ git status
+# See here that a file has been deleted, but the changes are only on the "working tree"; they haven't been committed yet
+# Undo the changes using the checkout command with the -f flag to force overwriting the current changes:
+$ git checkout -f
+$ git status
+$ ls app/controllers/
+# The missing files and directories are back
+
+# 1.4.3 Bitbucket
+# Putting a copy of your Git repository at Bitbucket serves two purposes: 
+# It's a full backup of your code (including the full history of commits), and it makes any future collaboration much easier
+
+# GitHub and Bitbucket
+# GitHub offers unlimited free repositories (with collaboration) for open-source repositories while charging for private repos
+# Bitbucket allows unlimited free private repos while charging for more than a certain number of collaborators
+
+# Sign up for a Bitbucket account [https://bitbucket.org/account/signup/]
+# Follow the instructions on how to install a public key on your Bitbucket account [https://confluence.atlassian.com/x/YwV9E]
+# Add your public key to Bitbucket by clicking on the avatar image in the upper right and selecting "Manage account" and then "SSH keys" 
+# Step 1. Ensure you have an SSH client installed
+SSH should be included with the version of Git you installed. To make sure, do the following to verify your installation:
+1. From the Git Bash window, enter the following command to verify that SSH client is available:
+# New Git Bash
+$ ssh -v 
+If you have ssh installed, the terminal returns version information.
+If you don't have ssh installed, install it now with your package manager.
+2. List the contents of your ~/.ssh directory.
+If you have not used SSH on Git Bash yet, you might see something like this:
+$ ls -a ~/.ssh 
+ls: /c/Users/emmap1/.ssh: No such file or directory
+If you have a default identity already, you'll see two id_* files:
+$ ls -a ~/.ssh 
+.    ..    id_rsa    id_rsa.pub  known_hosts
+In this case, the default identity uses RSA encryption (id_rsa.pub). 
+If you want to use an existing default identity for your Bitbucket account, skip the next section and go to create a config file [https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html#SetupSSHforGit-step-4-ssh-for-git].
+
+# Use the existing default identity (empty for no passphrase) for the Bitbucket account, and create a config file.
+[
+# Step 2. Set up your default identity
+By default, the system adds keys for all identities to the /Users/<yourname>/.ssh directory. The following procedure creates a default identity.
+Open a terminal in your local system.
+Enter ssh-keygen at the command line. 
+The command prompts you for a file to save the key in:
+$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/emmap1/.ssh/id_rsa):
+Press enter to accept the default key and path, /c/Users/<yourname>/.ssh/id_rsa, or you can create a key with another name.
+To create a key with a name other than the default, specify the full path to the key. For example, to create a key called my-new-ssh-key, you would enter a path like this at the prompt:
+$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Documents and Settings/emmap1/.ssh/id_rsa): /c/Users/emmap1/My Documents/keys/my-new-ssh-key
+Enter and renter a passphrase when prompted.
+Unless you need a key for a process such as script, you should always provide a passphrase. 
+The command creates your default identity with its public and private keys. The whole interaction looks similar to the following: 
+$ ssh-keygen 
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/emmap1/.ssh/id_rsa):
+Created directory '/c/Users/emmap1/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/emmap1/.ssh/id_rsa.
+Your public key has been saved in /c/Users/emmap1/.ssh/id_rsa.pub.
+The key fingerprint is: e7:94:d1:a3:02:ee:38:6e:a4:5e:26:a3:a9:f4:95:d4 emmap1@EMMA-PC
+List the contents of ~/.ssh to view the key files.
+You should see something like the following:
+$ ls ~/.ssh 
+id_rsa id_rsa.pub
+The command created two files, one for the public key (for example id_rsa.pub) and one for the private key (for example, id_rsa).
+]
+
+# Step 3. Create a SSH config file
+1. Using your favorite text editor, create a new file (at ~/.ssh/config) or edit the file if it already exists.
+2. Add an entry to the configuration file using the following format:
+ 1 Host bitbucket.org
+ 2 IdentityFile ~/.ssh/<privatekeyfile>
+The second line is indented. That indentation (a single space) is important, so make sure you include it. The second line is the location of your private key file.  If you are following along with these instructions, enter id_rsa for <privatekeyfile>.
+When you are done editing, your configuration looks similar to the following:
+ 1 Host bitbucket.org
+ 2 IdentityFile ~/.ssh/id_rsa
+3. Save and close the file.
+4. Restart the GitBash terminal.
+
+Step 4. Update your .bashrc profile file
+It is a good idea to configure your GitBash shell to automatically start the agent when you launch GitBash. The .bashrc file is the shell initialization file. It contains commands that run each time your GitBash shell starts. You can add commands to the .bashrc file that start the agent when you start GitBash. The folks at GitHub have developed a nice script for this (their script was developed from a post by Joseph M. Reagle Jr. from MIT on the cygwin list). To start the agent automatically, do the following.
+1. Start GitBash.
+2. Edit your ~/.bashrc file.
+If you don't have a .bashrc file you can create the file using your favorite text editor. Keep in mind the file must be in your ~ (home) directory and must be named exactly . bashrc .
+3. Add the following lines to the file:
+Chrome and Opera introduce ASCII \xa0 (non-breaking space characters) on paste that can appear in your destination file. If you copy and paste the lines below, copy from another browser to avoid this problem.
+SSH_ENV=$HOME/.ssh/environment
+  
+# start the ssh-agent
+function start_agent {
+    echo "Initializing new SSH agent..."
+    # spawn ssh-agent
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add
+}
+  
+if [ -f "${SSH_ENV}" ]; then
+     . "${SSH_ENV}" > /dev/null
+	 ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+	    start_agent;
+	}
+else
+    start_agent;
+fi
+4. Save and close the file.
+5. Close GitBash, then reopen GitBash.
+6. The system prompts you for your passphrase:
+ 1 Welcome to Git (version 1.7.8-preview20111206)
+ 2 Run 'git help git' to display the help index.
+ 3 Run 'git help <command>' to display help for specific commands.
+ 4 Enter passphrase for /c/Documents and Settings/manthony/.ssh/id_rsa:
+7. Enter your passphrase.
+After accepting your passphrase, the system displays the command shell prompt. 
+8. Verify that the script identity added your identity successfully by querying the SSH agent:
+$ ssh-add -l
+2048 0f:37:21:af:1b:31:d5:cd:65:58:b2:68:4a:ba:a2:46 /Users/manthony/.ssh/id_rsa (RSA)
+After you install your public key to Bitbucket, having this script should prevent you from having to enter a password each time you push or pull a repository from Bitbucket.
+
+Step 5. Install the public key on your Bitbucket account
+1. From Bitbucket, choose avatar > Bitbucket settings from the application menu. 
+The system displays the Account settings page.
+2. Click SSH keys.
+The SSH keys page displays. It shows a list of any existing keys. Then, below that, a dialog for labeling and entering a new key.
+3. In your terminal window, cat the contents of the public key file by entering the following:
+$ cat ~/.ssh/id_rsa.pub
+4. Select and copy the key output in the clipboard.
+If you have problems with copy and paste, you can open the file directly with Notepad. Select the contents of the file (just avoid selecting the end-of-file character).
+5. Back in your browser, enter a Label for your new key, for example, Default public key.
+6. Paste the copied public key into the SSH Key field.
+7. Press Add key.
+The system adds the key to your account. Bitbucket sends you an email to confirm addition of the key.
+8. Return to the terminal window and verify your configuration by entering the following command.
+$ ssh -T git@bitbucket.org
+The command message tells you which Bitbucket account can log in with that key.
+ 1 conq: logged in as tutorials.
+ 2 You can use git or hg to connect to Bitbucket. Shell access is disabled.
+9. Verify that the command returns your account name.
+If you got a permission denied (publickey) message. 
+The command tests your connection to Bitbucket as a Git user. It first sees if your SSH Agent has an identity loaded. The command then checks if that private key matches a public key for an existing Bitbucket account. You might have either problem.
+To make sure your identity is loaded, enter the following command:
+$ ssh-add -l
+If the identity isn't loaded, check your work in Step 5 above. If it is loaded, try reinstalling your public key on your Bitbucket account. 
+Still having troubles? You can try our Troubleshoot SSH Issues page or email support@bitbucket.org.
+
+Once the public key is added, click on "Create" to create a new repository
+# Fill in the information for the project, take care to leave the box next to "This is a private repository." checked. 
+
+https://bitbucket.org/rajaniruby/hello_app
+
+# Git Bash
+Aspire@Acer MINGW64 ~
+$ ssh -T git@bitbucket.org
+The authenticity of host 'bitbucket.org (104.192.143.2)' can't be established.
+RSA key fingerprint is SHA256:zzXQOXSRBEiUtuE8AikJYKwbHaxvSc0ojez9YXaGp1A.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'bitbucket.org,104.192.143.2' (RSA) to the list of known hosts.
+logged in as rajaniruby.
+
+You can use git or hg to connect to Bitbucket. Shell access is disabled.
+
+Aspire@Acer MINGW64 ~
+$ cd "E:\Working\Ruby\Ruby-on-Rails\Learn-Web-Development-with-Rails\Fourth-Edition\workspace\hello_app"
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git remote add origin git@bitbucket.org:rajaniruby/hello_app.git
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (master)
+$ git push -u origin --all
+Warning: Permanently added the RSA host key for IP address '104.192.143.1' to the list of known hosts.
+Counting objects: 83, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (68/68), done.
+Writing objects: 100% (83/83), 19.01 KiB | 0 bytes/s, done.
+Total 83 (delta 2), reused 0 (delta 0)
+To bitbucket.org:rajaniruby/hello_app.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+https://bitbucket.org/rajaniruby/hello_app
+
+# 1.4.4 Branch, edit, commit, merge
+# Branch # modify-README
+$ git checkout -b modify-README
+Switched to a new branch 'modify-README'
+
+Aspire@Acer MINGW64 /e/Working/Ruby/Ruby-on-Rails/Learn-Web-Development-with-Rails/Fourth-Edition/workspace/hello_app (modify-README)
+$ git branch
+  master
+* modify-READMEh
+# git branch, just lists all the local branches, and the asterisk * identifies the current branch
+# git checkout -b modify-README both creates a new branch and switches to it, as indicated by the asterisk in front of themodify-README branch
+
+# Edit
+# Edit the README to add custom content
+# README.md
+# Ruby on Rails Tutorial
+
+## "hello, world!"
+
+This is the first application for the
+[*Ruby on Rails Tutorial*](http://www.railstutorial.org/)
+by [Michael Hartl](http://www.michaelhartl.com/). Hello, world!
+
+# Commit # Branch # modify-README
+$ git status
+$ git commit -a -m "Improve the README file"
+
+# Merge # Branch # modify-README
+$ git checkout master
+$ git merge modify-README
+$ git branch -d modify-README
+Deleted branch modify-README (was 399b927).
+
+# It's also possible to abandon the topic branch changes, in this case with git branch -D:
+# For illustration only; don't do this unless a branch is messed up
+$ git checkout -b topic-branch
+$ <really mess up the branch>
+$ git add -A
+$ git commit -a -m "Make major mistake"
+$ git checkout master
+$ git branch -D topic-branch
+Unlike the -d flag, the -D flag will delete the branch even though we haven't merged in the changes.
+
+# Push
+# Now that README has been updated, push the changes up to Bitbucket to see the result. 
+# Since one push has already been done, on most systems omit origin master, and simply run git push:
+$ git push
+
+## 1.5 Deploying
+# 1.5.1 Heroku setup
+# Note # Gemfile
+# pg gem in the production environment to allow Rails to talk to Postgres
+group :production do
+  gem 'pg', '0.18.4'
+end
+# Also be sure to incorporate the changes made (above) preventing the sqlite3 gem from being included in a production environment
+# since SQLite isn't supported at Heroku:
+group :development, :test do
+  gem 'sqlite3', '1.3.11'
+  gem 'byebug',  '9.0.0', platform: :mri
+end
+
+# To prepare the system for deployment to production
+# run bundle install with a special flag to prevent the local installation of any production gems (which in this case consists of the pg gem):
+$ bundle install --without production
+# Because the only gem added (above) is restricted to a production environment, right now this command doesn't actually install any additional local gems
+# however it's needed to update Gemfile.lock with the pg gem
+# commit the resulting change as follows:
+$ git commit -a -m "Update Gemfile for Heroku"
+[
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+]
+
+# Create and configure a new Heroku account. 
+# Sign up for Heroku
+# Then check to see if your system already has the Heroku command-line client installed:

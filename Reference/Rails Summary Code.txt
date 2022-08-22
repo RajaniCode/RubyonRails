@@ -1,0 +1,268 @@
+#CRUD
+#Database
+<<-DOC
+#tweets
+id status 					zombie
+1 Where can I get a good bite to eat? 		Ash
+2 My left arm is missing, but I don't care. 	Bob
+3 I just ate some delicious brains. 		Jim
+4 OMG, my fingers turned green. #FML 		Ash
+DOC
+
+
+#Create
+t = Tweet.new
+t.status = "I <3 brains."
+t.save
+#OR
+t = Tweet.new(status: "I <3 brains", zombie)
+t.save
+#OR
+Tweet.create(status: "I <3 brains", zombie)
+
+
+#Read
+Tweet.find(3)
+Tweet.find(3, 4, 5)
+Tweet.first
+Tweet.last
+Tweet.all
+Tweet.count
+Tweet.order(:zombie)
+Tweet.limit(10)
+Tweet.where(zombie: "ash")
+Tweet.where(zombie: "ash").order(:status).limit(10)
+Tweet.where(zombie: "ash").first
+
+
+#Update
+t = Tweet.find(2)
+t.zombie = "EyeballChomper"
+t.save
+#OR
+t = Tweet.find(2)
+t.attributes = {status: "Can I much your eyeballs?", zombie: "EyeballChomper"}
+t.save
+#OR
+t = Tweet.find(2)
+t.update(status: "Can I much your eyeballs?", zombie: "EyeballChomper"}
+
+
+#Delete
+t = Tweet.find(2)
+t.destroy
+#OR
+Tweet.find(2).destroy
+#Note:
+Tweet.destroy_all
+
+
+#hash or dot syntax
+puts t[:zombie]
+puts t.zombie
+
+
+#Model 
+
+#Model Validations
+class Tweet < ActiveRecord::Base
+  validates_presence_of :status
+  validates_numericality_of :fingers
+  validates_uniqueness_of :toothmarks
+  validates_confirmation_of :password
+  validates_acceptance_of :zombification
+  validates_length_of :password, minimum: 3
+  validates_format_of :email, with: /regex/i
+  validates_inclusion_of :age, in: 21..99
+  validates_exclusion_of :age, in: 0...21, message: “Sorry you must be over 21”
+  validates :status, presence: true
+  validates :status, length: { minimum: 3 }
+
+#OR
+
+  validates :status, presence: true, length: { minimum: 3 }
+  validates :status, presence: true
+  validates :status, length: { minimum: 3 }
+  presence: true
+  uniqueness: true
+  numericality: true
+  length: { minimum: 0, maximum: 2000 }
+  format: { with: /.*/ }
+  acceptance: true
+  confirmation: true
+end
+
+
+#Model Relationships
+#Database
+<<-DOC
+#tweets
+id 	status 					zombie_id
+1 	Where can I get a good bite to eat? 		1
+2 	y left arm is missing, but I don't care. 	2
+3 	I just ate some delicious brains. 		3
+4 	OMG, my fingers turned green. #FML 		1
+
+#zombies
+id	name 	graveyard
+1 	Ash 	Glen Haven Memorial
+2 	Bob 	Chapel Hill Cemetery
+3 	Jim 	My Father’s Basement
+DOC
+
+class Zombie < ActiveRecord::Base
+  has_many :tweets
+end
+
+class Tweet < ActiveRecord::Base
+  belongs_to :zombie
+end
+
+> ash = Zombie.find(1)
+=> #<Zombie id: 1, name: "Ash", graveyard: "Glen Haven Memorial Cemetery">
+
+> t = Tweet.create(status: "Your eyelids taste like bacon.", zombie: ash)
+=> #<Tweet id: 5, status: "Your eyelids taste like bacon.", zombie_id: 1>
+
+> ash.tweets.count
+=> 3
+
+> ash.tweets
+=> 
+[#<Tweet id: 1, status: "Where can I get a good bite to eat?", zombie_id: 1>,
+#<Tweet id: 4, status: "OMG, my fingers turned green. #FML", zombie_id: 1>,
+#<Tweet id: 5, status: "Your eyelids taste like bacon.", zombie_id: 1>]
+
+
+#View
+
+##Show a tweet
+##/app/views/layouts/application.html.erb
+<!DOCTYPE html>
+<html>
+  <head><title>Twitter for Zombies</title></head>
+  <body>
+    <header>...</header>
+    <%= yield %>
+  </body>
+</html>
+##/app/views/tweets/show.html.erb
+<% tweet = Tweet.find(1) %>
+<h1><%= tweet.status %></h1>
+<p>Posted by <%= tweet.zombie.name %></p>
+
+
+##Create a Link
+<%= link_to tweet.zombie.name, zombie_path(tweet.zombie) %>
+##OR
+<%= link_to tweet.zombie.name, tweet.zombie %>
+
+
+##List Tweets
+##/app/views/tweets/index.html.erb
+<h1>Listing tweets</h1>
+<table>
+<tr>
+<th>Status</th>
+<th>Zombie</th>
+</tr>
+<% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= tweet.status %></td>
+    <td><%= tweet.zombie.name %></td>
+  </tr>
+<% end %>
+
+
+##Create Links
+##/app/views/tweets/index.html.erb
+<% Tweet.all.each do |tweet| %>
+  <tr>
+    <td><%= tweet.status %></td>
+    <td><%= tweet.zombie.name %></td>
+  </tr>
+<% end %>
+
+
+##Show a tweet
+##/app/views/tweets/show.html.erb
+<% tweet = Tweet.find(1) %>
+<h1><%= tweet.status %></h1>
+<p>Posted by <%= link_to tweet.zombie.name, tweet.zombie %></p>
+
+
+##All Links For Tweets
+<<-DOC
+Action 		Code 				The URL
+List all tweets tweets_path 			/tweets
+New tweet form 	new_tweet_path 			/tweets/new
+DOC
+
+tweet = Tweet.find(1)
+
+<<-DOC
+Action 		Code 			    	The URL
+Show a tweet 	tweet 				/tweets/1
+Edit a tweet 	edit_tweet_path(tweet) 		/tweets/1/edit
+Delete a tweet 	tweet, :method => :delete 	/tweets/1
+DOC
+
+
+#Controller
+
+class TweetsController < ApplicationController
+  def index List all tweets
+  def show Show a single tweet
+  def new Show a new tweet form
+  def edit Show an edit tweet form 
+  def create Create a new tweet 
+  def update Update a tweet
+  def destroy Delete a tweet
+end
+
+
+
+#Route 
+
+#Resource Route
+TwitterForZombies::Application.routes.draw do
+  resources :zombies
+end
+
+#Route Matching
+TwitterForZombies::Application.routes.draw do
+  get '/undead' => 'zombies#undead'
+end
+
+
+#Root Redirecting
+TwitterForZombies::Application.routes.draw do
+  get '/undead' => redirect('/zombies')
+end
+
+
+#Root Route
+TwitterForZombies::Application.routes.draw do
+  root to: "zombies#index"
+end
+
+
+#Named Route
+TwitterForZombies::Application.routes.draw do
+  get '/zombies/:name' => 'zombies#index', :as => 'graveyard'
+end
+
+
+
+#http://stackoverflow.com/questions/3901619/how-to-comment-lines-in-rails-html-erb-files
+
+#Comment line
+
+<%-# commented line -%>
+
+#Comment block
+
+<% if false %>
+code to comment
+<% end %>
+
